@@ -2,7 +2,8 @@
   display: flex;
   justify-self: center;
 
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
   -webkit-backdrop-filter: blur(1px);
   backdrop-filter: blur(1px);
 
@@ -18,8 +19,17 @@
 
     a {
       display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 10px 24px;
       border-radius: 40px;
+      gap: 0.5rem;
+
+      position: relative;
+
+      span {
+        display: none;
+      }
     }
 
     a:hover {
@@ -33,4 +43,32 @@
       color: var(--color-purple-300);
     }
   }
+}
+
+// Tablet View
+@media (min-width: 768px) {
+  .navigation {
+    ul {
+      a {
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// Laptop View
+@media (min-width: 1024px) {
+  //
+}
+
+// Desktop View
+@media (min-width: 1280px) {
+  //
+}
+
+// Large Desktop
+@media (min-width: 1536px) {
+  //
 }

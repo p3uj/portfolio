@@ -1,7 +1,35 @@
 .navigation {
   display: flex;
   justify-self: center;
+
   background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(1px);
+
   position: fixed;
   top: 24px;
+
+  padding: 8px;
+  border-radius: 40px;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+
+    a {
+      display: flex;
+      padding: 10px 24px;
+      border-radius: 40px;
+    }
+
+    a:hover {
+      color: var(--color-purple-300);
+    }
+
+    .active {
+      box-shadow: 0 0 0 1px var(--primary);
+      background-color: var(--primary-25);
+
+      color: var(--color-purple-300);
+    }
+  }
 }

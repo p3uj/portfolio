@@ -1,0 +1,42 @@
+.base {
+  border-radius: 40px;
+  font-weight: 400;
+  padding: 12px 16px;
+}
+
+.base:hover {
+  cursor: pointer;
+}
+
+.default {
+  background-color: var(--primary);
+  color: var(--foreground);
+}
+
+.default:hover {
+  background-color: var(--primary-hover);
+}
+
+.outline {
+  border: 1px solid var(--primary);
+  color: var(--foreground);
+}
+
+.outline:hover {
+  background-color: var(--primary);
+  opacity: 0.25;
+}
+
+.ghost {
+  color: var(--foreground);
+}
+
+.ghost:hover {
+  color: var(--color-purple-300);
+}
+
+.ghost:active {
+  box-shadow: 0 0 0 1px var(--primary);
+  background-color: var(--primary-25);
+  color: var(--color-purple-300);
+}

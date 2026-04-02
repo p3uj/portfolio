@@ -5,11 +5,13 @@
 
   --primary: oklch(49.6% 0.265 301.924);
   --primary-25: oklch(49.6% 0.265 301.924 / 0.25);
-  --foreground: var(--color-neutral-50);
+  --primary-10: oklch(49.6% 0.265 301.924 / 0.10);
+  --foreground-primary: var(--color-neutral-50);
+  --foreground-secondary: var(--color-neutral-300);
 
   /* Card */
-  --background-card: hsl(0, 0%, 5%);
-  --border-card: hsl(0, 0%, 50%);
+  --background-card: hsl(0, 0%, 100%, 0.05);
+  --border-card: hsl(0, 0%, 100%, 0.5);
 
   /* Text */
   --primary-text: oklch(98.5% 0 0);
@@ -32,8 +34,8 @@
     --primary: oklch(49.6% 0.265 301.924);
 
     /* Card */
-    --background-card: hsl(0, 0%, 5%);
-    --border-card: hsl(0, 0%, 50%);
+    /* --background-card: hsl(0, 0%, 5%);
+    --border-card: hsl(0, 0%, 50%); */
 
     /* Text */
     --primary-text: oklch(14.5% 0 0);
@@ -46,7 +48,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  color: var(--foreground);
+  box-sizing: border-box;
+  overflow-x: hidden;
+  color: var(--foreground-primary);
   font-family: Arial, Helvetica, sans-serif;
 }
 

@@ -1,0 +1,16 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  height: fit-content;
+  width: fit-content;
+
+  background-color: var(--background-card);
+  box-shadow: 0 0 0 1px var(--border-card);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+
+  padding: 36px;
+  border-radius: 40px;
+}

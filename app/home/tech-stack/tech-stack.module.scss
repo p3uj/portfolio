@@ -1,0 +1,198 @@
+.carouselContainer {
+  display: flex;
+  width: 100%;
+
+  .carouselTrack {
+    display: flex;
+    width: max-content;
+
+    align-items: center;
+    justify-content: center;
+    animation: scroll-normal 24s infinite linear;
+
+    .icon {
+      display: flex;
+      flex: 0 0 auto;
+      width: 50px;
+      margin: 0 25px;
+      padding: 4px 12px;
+      border-radius: 8px;
+
+      box-shadow: 0 0 0 1px var(--color-gray-400);
+    }
+
+    .django:hover {
+      background-color: rgba(43, 169, 119, 0.1);
+      box-shadow:
+        0 0 0 1px #2ba977,
+        0 0 50 20 rgba(43, 169, 119, 0.15);
+    }
+
+    .react:hover {
+      background-color: rgba(97, 218, 251, 0.1);
+      box-shadow:
+        0 0 0 1px #61dafb,
+        0 0 50 20 rgba(97, 218, 251, 0.15);
+    }
+
+    .laravel:hover {
+      background-color: rgba(255, 45, 32, 0.1);
+      box-shadow:
+        0 0 0 1px #ff2d20,
+        0 0 50 20 rgba(255, 45, 32, 0.15);
+    }
+
+    .html5:hover {
+      background-color: rgba(241, 101, 41, 0.1);
+      box-shadow:
+        0 0 0 1px #f16529,
+        0 0 50 20 rgba(241, 101, 41, 0.15);
+    }
+
+    .css3:hover {
+      background-color: rgba(38, 77, 228, 0.1);
+      box-shadow:
+        0 0 0 1px #264de4,
+        0 0 50 20 rgba(38, 77, 228, 0.15);
+    }
+
+    .sass:hover {
+      background-color: rgba(204, 102, 153, 0.1);
+      box-shadow:
+        0 0 0 1px #cc6699,
+        0 0 50 20 rgba(204, 102, 153, 0.15);
+    }
+
+    .js:hover {
+      background-color: rgba(247, 223, 30, 0.1);
+      box-shadow:
+        0 0 0 1px #f7df1e,
+        0 0 50 20 rgba(247, 223, 30, 0.15);
+    }
+
+    .typescript:hover {
+      background-color: rgba(1, 122, 203, 0.1);
+      box-shadow:
+        0 0 0 1px #017acb,
+        0 0 50 20 rgba(1, 122, 203, 0.15);
+    }
+
+    .tailwindcss:hover {
+      background-color: rgba(6, 182, 212, 0.1);
+      box-shadow:
+        0 0 0 1px #06b6d4,
+        0 0 50 20 rgba(6, 182, 212, 0.15);
+    }
+
+    .nextjs:hover,
+    .github:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow:
+        0 0 0 1px #ffffff,
+        0 0 50 20 rgba(255, 255, 255, 0.15);
+    }
+
+    .mysql:hover {
+      background-color: rgba(0, 84, 107, 0.1);
+      box-shadow:
+        0 0 0 1px #00546b,
+        0 0 50 20 rgba(0, 84, 107, 0.15);
+    }
+
+    .postgresql:hover {
+      background-color: rgba(51, 103, 145, 0.1);
+      box-shadow:
+        0 0 0 1px #336791,
+        0 0 50 20 rgba(51, 103, 145, 0.15);
+    }
+
+    .firebase:hover {
+      background-color: rgba(255, 202, 40, 0.1);
+      box-shadow:
+        0 0 0 1px #ffca28,
+        0 0 50 20 rgba(255, 202, 40, 0.15);
+    }
+
+    .flutterflow:hover {
+      background-color: rgba(75, 57, 239, 0.1);
+      box-shadow:
+        0 0 0 1px #4b39ef,
+        0 0 50 20 rgba(75, 57, 239, 0.15);
+    }
+
+    .vitejs:hover {
+      background-color: rgba(65, 209, 255, 0.1);
+      box-shadow:
+        0 0 0 1px #41d1ff,
+        0 0 50 20 rgba(65, 209, 255, 0.15);
+    }
+
+    .git:hover {
+      background-color: rgba(222, 76, 54, 0.1);
+      box-shadow:
+        0 0 0 1px #de4c36,
+        0 0 50 20 rgba(222, 76, 54, 0.15);
+    }
+  }
+
+  .carouselTrack:hover {
+    animation-play-state: paused;
+  }
+}
+
+.carouselContainer[data-direction="left-to-right"] .carouselTrack {
+  animation: scroll-reverse 24s infinite linear;
+}
+
+.carouselContainer[data-direction="left-to-right"] .carouselTrack:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-normal {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+// Sm Breakpoint
+@media (min-width: 640) {
+  //
+}
+
+// Tablet View
+@media (min-width: 768px) {
+  //
+}
+
+// Laptop View
+@media (min-width: 1024px) {
+  //
+}
+
+// Desktop View
+@media (min-width: 1280px) {
+  //
+}
+
+// Large Desktop
+@media (min-width: 1536px) {
+  .carouselContainer {
+    .carouselTrack {
+      .icon {
+        margin: 0 50px;
+      }
+    }
+  }
+}

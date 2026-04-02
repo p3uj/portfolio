@@ -1,10 +1,10 @@
-import NavBar from "@/components/ui/navbar";
+import NavBar from "@/components/ui/navbar/navbar";
 import styles from "./page.module.scss";
 import Home from "./home/page";
 import About from "./about/page";
 import Project from "./project/page";
 import Contact from "./contact/page";
-import Footer from "@/components/ui/footer";
+import Footer from "@/components/ui/footer/footer";
 
 export default function Page() {
   return (

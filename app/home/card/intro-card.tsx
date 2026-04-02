@@ -1,6 +1,6 @@
-import { Card } from "@/components/ui/card";
+import { Card } from "@/components/ui/card/card";
 import styles from "./intro-card.module.scss";
-import Button from "@/components/ui/button";
+import Button from "@/components/ui/button/button";
 import { MousePointerClick } from "lucide-react";
 
 export default function IntroCard() {

@@ -1,6 +1,11 @@
 .home {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   height: 100%;
-  color: white;
-  border: 1px solid blue;
+  width: 100vw;
+  gap: 2rem;
+  overflow-x: hidden;
 }

@@ -1,0 +1,76 @@
+.intro {
+  display: flex;
+  align-items: center;
+  width: 90%;
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--foreground-secondary);
+    text-align: center;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    gap: 8px;
+    padding-top: 8px;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+// Sm Breakpoint
+@media (min-width: 640) {
+  .intro {
+    width: 450px;
+
+    section {
+      flex-direction: row;
+
+      button {
+        width: fit-content;
+      }
+    }
+  }
+}
+
+// Tablet View
+@media (min-width: 768px) {
+  .intro {
+    width: 500px;
+  }
+}
+
+// Laptop View
+@media (min-width: 1024px) {
+  .intro {
+    width: 550px;
+  }
+}
+
+// Desktop View
+@media (min-width: 1280px) {
+  .intro {
+    width: 600px;
+  }
+}
+
+// Large Desktop
+@media (min-width: 1536px) {
+  .intro {
+    width: 650px;
+  }
+}

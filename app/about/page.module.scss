@@ -1,6 +1,128 @@
 .about {
   display: flex;
-  height: 100%;
-  color: white;
-  border: 1px solid green;
+  flex-direction: column;
+  height: calc(100vh - 84px);
+
+  position: relative;
+
+  margin: 0 !important;
+
+  overflow: hidden;
+
+  h1 {
+    font-size: 2rem;
+    color: var(--color-purple-400);
+
+    position: absolute;
+
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+
+    span {
+      font-size: 10rem;
+    }
+  }
+
+  .profile {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+      filter: grayscale(100%) contrast(1.1);
+
+      position: absolute;
+      transform: scale(1.05);
+
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 65%,
+        transparent 100%
+      );
+      mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 400px;
+      height: 400px;
+
+      background: radial-gradient(
+        circle,
+        rgba(168, 85, 247, 0.25) 0%,
+        transparent 70%
+      );
+
+      filter: blur(80px);
+    }
+  }
+
+  // Description
+  div:not(.profile) {
+    position: absolute;
+    bottom: 0;
+
+    margin: 1rem;
+    padding: 1rem;
+
+    border-radius: 24px;
+
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+
+    p {
+      font-size: 14px;
+      text-align: justify;
+    }
+
+    .icon {
+      position: absolute;
+      bottom: 0.5rem;
+      right: 1rem;
+
+      animation: clickHint 1.5s infinite;
+    }
+  }
+}
+
+@keyframes clickHint {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.9);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+}
+
+// Small Mobile View
+@media (min-width: 320px) {
+  //
+}
+
+// Medium Mobile View
+@media (min-width: 375px) {
+  //
+}
+
+// Large Mobile View
+@media (min-width: 425px) {
+  //
 }

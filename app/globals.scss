@@ -1,0 +1,55 @@
+@use "../styles" as *;
+@import "tailwindcss";
+
+:root {
+  --background: #{$background-light};
+
+  --primary: #{$primary};
+  --primary-25: #{$primary-25};
+  --primary-10: #{$primary-10};
+  --foreground-primary: #{$foreground-primary};
+  --foreground-secondary: #{$foreground-secondary};
+
+  /* Card */
+  --background-card: #{$background-card};
+  --border-card: #{$border-card};
+
+  /* Text */
+  --primary-text: #{$primary-text};
+  --secondary-text: #{$secondary-text};
+}
+
+/*
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+*/
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #{$background-dark};
+    --primary: #{$primary-dark};
+
+    /* Text */
+    --primary-text: #{$primary-text};
+    --secondary-text: #{$secondary-text};
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  color: var(--foreground-primary);
+  font-family: Arial, Helvetica, sans-serif;
+}

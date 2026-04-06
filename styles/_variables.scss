@@ -1,34 +1,3 @@
-/* COLORS: LIGHT MODE */
-$background-light: #ffffff;
-$primary: oklch(49.6% 0.265 301.924);
-$primary-25: oklch(49.6% 0.265 301.924 / 0.25);
-$primary-10: oklch(49.6% 0.265 301.924 / 0.1);
-$foreground-primary: var(--color-neutral-50);
-$foreground-secondary: var(--color-neutral-300);
-
-// Card
-$background-card: hsl(0, 0%, 100%, 0.05);
-$border-card: hsl(0, 0%, 100%, 0.5);
-
-// Text
-$primary-text: oklch(98.5% 0 0);
-$secondary-text: oklch(87% 0 0);
-/* --------------------------------------------- */
-
-/* COLORS: DARK MODE */
-$background-dark: linear-gradient(
-  55deg,
-  rgba(59, 7, 100, 1) 0%,
-  rgba(41, 37, 36, 1) 100%
-);
-$primary-dark: oklch(49.6% 0.265 301.924);
-
-// Text
-$primary-text: oklch(14.5% 0 0);
-$secondary-text: oklch(37.1% 0 0);
-
-/* --------------------------------------------- */
-
 /* BREAKPOINTS */
 $breakpoint-sm: 640px;
 $breakpoint-tablet: 768px;

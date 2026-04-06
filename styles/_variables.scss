@@ -5,3 +5,19 @@ $breakpoint-laptop: 1024px;
 $breakpoint-desktop: 1280px;
 $breakpoint-large-desktop: 1536px;
 /* --------------------------------------------- */
+
+/* TYPOGRAPHY */
+$header: clamp(26px, 5vw, 2.5rem);
+/* --------------------------------------------- */
+
+/* SPACING */
+$space-sm: 0.5rem;
+$space-md: 1rem;
+/* --------------------------------------------- */
+
+/* BORDER RADIUS */
+$radius-sm: 0.5rem;
+$radius-md: 1rem;
+$radius-lg: 1.5rem;
+$radius-xl: 2rem;
+/* --------------------------------------------- */

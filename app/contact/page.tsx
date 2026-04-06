@@ -1,9 +1,86 @@
+import { Card } from "@/components/ui/card/card";
 import styles from "./page.module.scss";
+import { LocateIcon, Mail, Phone, Send } from "lucide-react";
+import Button from "@/components/ui/button/button";
 
 export default function Contact() {
   return (
     <section id="contact" className={styles.contact}>
-      <h1>Contact Section</h1>
+      <h1>Get in Touch</h1>
+
+      {/* prettier-ignore */}
+      <p>
+        Looking for a reliable developer to handle your next project?<br />
+        Let's connect and start building a solution that works for you.
+      </p>
+
+      {/* Email */}
+      <Card>
+        <Mail />
+
+        <fieldset>
+          <label>Email</label>
+          <p>bvillesco@gmail.com</p>
+        </fieldset>
+      </Card>
+
+      {/* Phone Number */}
+      <Card>
+        <Phone />
+
+        <fieldset>
+          <label>Phone Number</label>
+          <p>0938874883</p>
+        </fieldset>
+      </Card>
+
+      {/* Location */}
+      <Card>
+        <LocateIcon />
+
+        <fieldset>
+          <label>Location</label>
+          <p>Quezon City, Philippines</p>
+        </fieldset>
+      </Card>
+
+      {/* Send Message */}
+      <Card>
+        <form action="" method="post">
+          {/* Name */}
+          <fieldset>
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="e.g Bengie Villesco"
+            />
+          </fieldset>
+
+          {/* Email */}
+          <fieldset>
+            <label htmlFor="email">Email</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="e.g bvillesco@gmail.com"
+            />
+          </fieldset>
+
+          {/* Message */}
+          <fieldset>
+            <label htmlFor="message">Message</label>
+            <textarea id="message" placeholder="enter your message"></textarea>
+          </fieldset>
+
+          <Button type="submit">
+            <Send size={20} />
+            Send
+          </Button>
+        </form>
+      </Card>
     </section>
   );
 }

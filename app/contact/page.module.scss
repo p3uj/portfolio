@@ -1,6 +1,93 @@
+@use "../../styles" as *;
+
 .contact {
-  display: flex;
-  height: 100%;
-  color: white;
-  border: 1px solid orange;
+  display: grid;
+  grid-template-columns: 1fr;
+  height: fit-content;
+  gap: $space-md;
+  padding-bottom: $space-md;
+
+  @include header;
+
+  p {
+    color: var(--foreground-secondary);
+  }
+
+  div {
+    width: 100%;
+    padding: $space-md;
+    border-radius: $radius-lg;
+
+    form {
+      display: grid;
+      gap: $space-md;
+    }
+
+    fieldset {
+      display: flex;
+      flex-direction: column;
+      gap: $space-sm;
+
+      label {
+        font-weight: 600;
+      }
+
+      input,
+      textarea {
+        background-color: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+
+        padding: $space-sm $space-md;
+        border-radius: $radius-md;
+
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 0 1px var(--primary);
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+@include responsiveness($breakpoint-sm) {
+  .contact {
+    grid-template-columns: 1fr 1fr;
+
+    // prettier-ignore
+    grid-template-areas: 
+      "header header"
+      "paragraph paragraph"
+      "email message"
+      "phone message"
+      "location message";
+
+    h1 {
+      grid-area: header;
+    }
+
+    p {
+      grid-area: paragraph;
+    }
+
+    div:first-of-type {
+      grid-area: email;
+    }
+
+    div:nth-of-type(2) {
+      grid-area: phone;
+    }
+
+    div:nth-of-type(3) {
+      grid-area: location;
+    }
+
+    div:last-of-type {
+      grid-area: message;
+    }
+  }
 }

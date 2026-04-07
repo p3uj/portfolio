@@ -13,3 +13,11 @@
     font-weight: 600;
   }
 }
+
+@mixin social-icon-hover {
+  background-color: var(--foreground-primary);
+  border-radius: $radius-sm;
+  padding: 2px;
+
+  @content;
+}

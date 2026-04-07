@@ -19,17 +19,27 @@ export default function About() {
       </div>
 
       <Card onClick={() => setOnClick(!onClick)}>
-        {onClick === false ? (
-          <>
-            {/* prettier-ignore */}
-            <p>He is a fourth-year Information Technology student at the Polytechnic University of the Philippines - Quezon City Branch with a strong passion for technology and continuous learning. He thrives on new challenges, which has led him to explore various areas of IT, including programming, databases, cybersecurity, UI/UX design, and software development.</p>
-          </>
-        ) : (
-          <>
-            {/* prettier-ignore */}
-            <p>Bengie aspires to build a dynamic career in the tech industry, with interests in becoming a full-stack software developer, frontend/full-stack web developer, penetration tester, database administrator, data analyst, or UI/UX designer. While he has multiple career paths in mind, he remains open to new opportunities and is committed to continuously expanding his knowledge in the ever-evolving world of technology.</p>
-          </>
-        )}
+        <section>
+          {onClick === false ? (
+            <>
+              {/* prettier-ignore */}
+              <p>He is a fourth-year Information Technology student at the Polytechnic University of the Philippines - Quezon City Branch with a strong passion for technology and continuous learning. He thrives on new challenges, which has led him to explore various areas of IT, including programming, databases, cybersecurity, UI/UX design, and software development.</p>
+            </>
+          ) : (
+            <>
+              {/* prettier-ignore */}
+              <p>Bengie aspires to build a dynamic career in the tech industry, with interests in becoming a full-stack software developer, frontend/full-stack web developer, penetration tester, database administrator, data analyst, or UI/UX designer. While he has multiple career paths in mind, he remains open to new opportunities and is committed to continuously expanding his knowledge in the ever-evolving world of technology.</p>
+            </>
+          )}
+        </section>
+
+        <section>
+          {/* prettier-ignore */}
+          <p>
+            He is a fourth-year Information Technology student at the Polytechnic University of the Philippines - Quezon City Branch with a strong passion for technology and continuous learning. He thrives on new challenges, which has led him to explore various areas of IT, including programming, databases, cybersecurity, UI/UX design, and software development. <br /> <br />
+            Bengie aspires to build a dynamic career in the tech industry, with interests in becoming a full-stack software developer, frontend/full-stack web developer, penetration tester, database administrator, data analyst, or UI/UX designer. While he has multiple career paths in mind, he remains open to new opportunities and is committed to continuously expanding his knowledge in the ever-evolving world of technology.
+          </p>
+        </section>
 
         <MousePointerClick className={styles.icon} />
       </Card>

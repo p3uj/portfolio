@@ -14,5 +14,45 @@
     display: flex;
     flex-direction: row;
     gap: $space-sm;
+
+    svg {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+
+      g {
+        transition: fill 0.3s ease;
+      }
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    // Github icon
+    svg:first-of-type:hover {
+      @include social-icon-hover;
+
+      g {
+        fill: #181717;
+      }
+    }
+
+    // Facebook icon
+    svg:nth-of-type(2):hover {
+      @include social-icon-hover;
+
+      g {
+        fill: #1877f2;
+      }
+    }
+
+    // LinkedIn icon
+    svg:last-of-type:hover {
+      @include social-icon-hover;
+
+      g {
+        fill: #0a66c2;
+      }
+    }
   }
 }

@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card/card";
 import styles from "./page.module.scss";
+import Button from "@/components/ui/button/button";
 
 export default function Project() {
   return (
@@ -8,52 +9,87 @@ export default function Project() {
 
       <section>
         <Card>
-          <img
-            src="/images/projects/project1/Image1.png"
-            alt="Image project 1"
-          />
+          <div className={styles.buttonWrapper}>
+            <Button variant="default">View Details</Button>
+          </div>
+          <div className={styles.imageWrapper}>
+            <img
+              src="/images/projects/project1/Image1.png"
+              alt="Image project 1"
+            />
+          </div>
         </Card>
 
         <Card>
-          <img
-            src="/images/projects/project1/Image2.png"
-            alt="Image project 1"
-          />
+          <div className={styles.buttonWrapper}>
+            <Button variant="default">View Details</Button>
+          </div>
+          <div className={styles.imageWrapper}>
+            <img
+              src="/images/projects/project1/Image2.png"
+              alt="Image project 1"
+            />
+          </div>
         </Card>
 
         <Card>
-          <img
-            src="/images/projects/project1/Image3.png"
-            alt="Image project 1"
-          />
+          <div className={styles.buttonWrapper}>
+            <Button variant="default">View Details</Button>
+          </div>
+          <div className={styles.imageWrapper}>
+            <img
+              src="/images/projects/project1/Image3.png"
+              alt="Image project 1"
+            />
+          </div>
         </Card>
 
         <Card>
-          <img
-            src="/images/projects/project1/Image1.png"
-            alt="Image project 1"
-          />
+          <div className={styles.buttonWrapper}>
+            <Button variant="default">View Details</Button>
+          </div>
+          <div className={styles.imageWrapper}>
+            <img
+              src="/images/projects/project1/Image1.png"
+              alt="Image project 1"
+            />
+          </div>
         </Card>
 
         <Card>
-          <img
-            src="/images/projects/project1/Image2.png"
-            alt="Image project 1"
-          />
+          <div className={styles.buttonWrapper}>
+            <Button variant="default">View Details</Button>
+          </div>
+          <div className={styles.imageWrapper}>
+            <img
+              src="/images/projects/project1/Image2.png"
+              alt="Image project 1"
+            />
+          </div>
         </Card>
 
         <Card>
-          <img
-            src="/images/projects/project1/Image3.png"
-            alt="Image project 1"
-          />
+          <div className={styles.buttonWrapper}>
+            <Button variant="default">View Details</Button>
+          </div>
+          <div className={styles.imageWrapper}>
+            <img
+              src="/images/projects/project1/Image3.png"
+              alt="Image project 1"
+            />
+          </div>
         </Card>
 
         <Card>
-          <img
-            src="/images/projects/project1/Image1.png"
-            alt="Image project 1"
-          />
+          <div className={styles.buttonWrapper}>
+            <Button variant="default">View Details</Button>
+          </div>
+          <div className={styles.imageWrapper}>
+            <img
+              src="/images/projects/project1/Image1.png"
+              alt="Image project 1"
+            />
+          </div>
         </Card>
       </section>
     </section>

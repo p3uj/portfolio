@@ -1,96 +1,48 @@
 import { Card } from "@/components/ui/card/card";
 import styles from "./page.module.scss";
 import Button from "@/components/ui/button/button";
+import { PROJECT_MOCK } from "@/data/mock/project-mock";
+import { GetImage } from "@/lib/utils/project";
 
-export default function Project() {
+interface ProjectProps {
+  modalOpen: (value: boolean) => void;
+  id: (value: number | null) => void;
+}
+
+export default function Project({ modalOpen, id }: ProjectProps) {
   return (
     <section id="project" className={styles.project}>
       <h1>My Projects</h1>
 
       <section>
-        <Card>
-          <div className={styles.buttonWrapper}>
-            <Button variant="default">View Details</Button>
-          </div>
-          <div className={styles.imageWrapper}>
-            <img
-              src="/images/projects/project1/Image1.png"
-              alt="Image project 1"
-            />
-          </div>
-        </Card>
+        {PROJECT_MOCK.map((project) => (
+          <Card
+            onClick={() => {
+              modalOpen(true);
+              id(project.id);
+            }}
+            key={project.id}
+          >
+            <div className={styles.buttonWrapper}>
+              <Button
+                variant="default"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  modalOpen(true);
+                }}
+              >
+                View Details
+              </Button>
+            </div>
 
-        <Card>
-          <div className={styles.buttonWrapper}>
-            <Button variant="default">View Details</Button>
-          </div>
-          <div className={styles.imageWrapper}>
-            <img
-              src="/images/projects/project1/Image2.png"
-              alt="Image project 1"
-            />
-          </div>
-        </Card>
-
-        <Card>
-          <div className={styles.buttonWrapper}>
-            <Button variant="default">View Details</Button>
-          </div>
-          <div className={styles.imageWrapper}>
-            <img
-              src="/images/projects/project1/Image3.png"
-              alt="Image project 1"
-            />
-          </div>
-        </Card>
-
-        <Card>
-          <div className={styles.buttonWrapper}>
-            <Button variant="default">View Details</Button>
-          </div>
-          <div className={styles.imageWrapper}>
-            <img
-              src="/images/projects/project1/Image1.png"
-              alt="Image project 1"
-            />
-          </div>
-        </Card>
-
-        <Card>
-          <div className={styles.buttonWrapper}>
-            <Button variant="default">View Details</Button>
-          </div>
-          <div className={styles.imageWrapper}>
-            <img
-              src="/images/projects/project1/Image2.png"
-              alt="Image project 1"
-            />
-          </div>
-        </Card>
-
-        <Card>
-          <div className={styles.buttonWrapper}>
-            <Button variant="default">View Details</Button>
-          </div>
-          <div className={styles.imageWrapper}>
-            <img
-              src="/images/projects/project1/Image3.png"
-              alt="Image project 1"
-            />
-          </div>
-        </Card>
-
-        <Card>
-          <div className={styles.buttonWrapper}>
-            <Button variant="default">View Details</Button>
-          </div>
-          <div className={styles.imageWrapper}>
-            <img
-              src="/images/projects/project1/Image1.png"
-              alt="Image project 1"
-            />
-          </div>
-        </Card>
+            <div className={styles.imageWrapper}>
+              <img
+                src={GetImage(project.id, true)}
+                alt={project.project_name}
+              />
+            </div>
+          </Card>
+        ))}
       </section>
     </section>
   );

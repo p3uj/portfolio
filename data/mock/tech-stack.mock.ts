@@ -1,4 +1,4 @@
-import { TechStack } from "@/types/tech-stack";
+import { TechStack } from "@/types";
 
 export const TECH_STACK_MOCK: TechStack[] = [
   {

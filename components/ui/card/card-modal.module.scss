@@ -1,0 +1,44 @@
+@use "./../../../styles" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  height: 70%;
+
+  background-color: var(--color-neutral-800);
+  border-radius: $radius-xl;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /*
+  &::before {
+    content: "";
+    height: 100%;
+    width: calc(100% - 20px);
+
+    background: var(--color-neutral-800);
+    border-radius: 32px;
+
+    position: absolute;
+    z-index: 1;
+    top: -1rem;
+  }
+
+  &::after {
+    content: "";
+    height: 100%;
+    width: calc(100% - 40px);
+
+    background: var(--color-neutral-900);
+    border-radius: 32px;
+
+    position: absolute;
+    top: -2rem;
+  }
+  */
+}

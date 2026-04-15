@@ -4,9 +4,10 @@ import { useState } from "react";
 import styles from "./navbar.module.scss";
 import { AlignVerticalJustifyEnd, Home, Send, UserRound } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../tooltip/tooltip";
+import { NavBarTab } from "@/types";
 
 export default function NavBar() {
-  const [activeTab, setActiveTab] = useState<Tab>("home");
+  const [activeTab, setActiveTab] = useState<NavBarTab>("home");
 
   return (
     <nav className={styles.navigation}>

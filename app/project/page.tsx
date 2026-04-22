@@ -21,23 +21,21 @@ export default function Project({ modalOpen, id }: ProjectProps) {
               modalOpen(true);
               id(project.id);
             }}
-            key={project.id}
-          >
+            key={project.id}>
             <div className={styles.buttonWrapper}>
               <Button
                 variant="default"
                 onClick={(e) => {
                   e.stopPropagation();
                   modalOpen(true);
-                }}
-              >
+                }}>
                 View Details
               </Button>
             </div>
 
             <div className={styles.imageWrapper}>
               <img
-                src={GetImage(project.id, true)}
+                src={GetImage(null, project.id, true)?.image_path}
                 alt={project.project_name}
               />
             </div>

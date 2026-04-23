@@ -39,6 +39,31 @@ function GetProject(project_id: number) {
   };
 }
 
+function GetProjectWithFeature(project_id: number) {
+  const project = PROJECT_MOCK.find((project) => project.id === project_id);
+  const image = GetImage(null, project_id, true)?.image_path;
+  const tech_stack = GetTechStack(project?.tech_stack_id);
+  const feature = GetFeature(project_id);
+
+  if (!project) return null;
+
+  const { tech_stack_id, ...cleanedProject } = project;
+
+  return [
+    {
+      type: "project",
+      ...cleanedProject,
+      image_path: image,
+      tech_stack: tech_stack,
+    },
+    ...feature.map((feature) => ({
+      type: "feature",
+      ...feature,
+      tech_stack: tech_stack,
+    })),
+  ];
+}
+
 function GetTechStack(tech_stack_id: number[] = []) {
   return TECH_STACK_MOCK.filter((tech) => tech_stack_id.includes(tech.id));
 }
@@ -54,4 +79,4 @@ function GetFeature(project_id: number) {
   return features;
 }
 
-export { GetImage, GetProject };
+export { GetImage, GetProject, GetProjectWithFeature };

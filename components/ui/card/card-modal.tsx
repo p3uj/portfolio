@@ -1,14 +1,16 @@
-import { GetProject } from "@/lib/utils/project";
+import { GetProjectWithFeature } from "@/lib/utils/project";
 import styles from "./card-modal.module.scss";
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import Badge from "../badge/badge";
+import Button from "../button/button";
 
 interface CardModalProps {
   project_id: number | null;
 }
 
 export default function CardModal({ project_id }: CardModalProps) {
-  const Project = GetProject(project_id || 0);
+  const Project = GetProjectWithFeature(project_id || 0);
 
   const [active, setActive] = useState(0);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -75,17 +77,31 @@ export default function CardModal({ project_id }: CardModalProps) {
         ref={wrapperRef}
         className={styles.wrapper}
         onClick={(e) => e.stopPropagation()}>
-        {items.map((item, index) => (
+        {Project?.map((item, index) => (
           <div
             key={index}
             className={cn(styles.content, index === active && styles.active)}>
-            {item}
+            <img src={item.image_path} alt="" />
+
+            <section className={styles.textWrapper}>
+              <h1>{item.name}</h1>
+
+              <p>{item.description}</p>
+            </section>
+
+            <section className={styles.techStack}>
+              {item.tech_stack.map((ts, index) => (
+                <Badge key={index} name={ts.name} />
+              ))}
+            </section>
+
+            <Button>Demo</Button>
           </div>
         ))}
       </section>
 
       <section className={styles.bar} onClick={(e) => e.stopPropagation()}>
-        {items.map((_, index) => (
+        {Project?.map((_, index) => (
           <div
             key={index}
             className={cn(index === active && styles.active)}

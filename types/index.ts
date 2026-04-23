@@ -17,7 +17,7 @@ export interface TechStack {
 export interface Project {
   id: number;
   tech_stack_id: TechStack["id"][];
-  project_name: string;
+  name: string;
   description: string;
 }
 
@@ -25,6 +25,7 @@ export interface ProjectFeature {
   id: number;
   project_id: Project["id"];
   image_id?: ProjectImage["id"];
+  name: string;
   description: string;
 }
 

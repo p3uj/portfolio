@@ -102,11 +102,11 @@
     }
 
     .content:first-child {
-      margin-left: 5rem;
+      margin-inline-start: calc(100% - 90%);
     }
 
     .content:last-child {
-      margin-right: 5rem;
+      margin-inline-end: calc(100% - 90%);
     }
   }
 
@@ -170,11 +170,11 @@
       }
 
       .content:first-child {
-        margin-left: 100rem;
+        margin-inline-start: calc(100% / 3);
       }
 
       .content:last-child {
-        margin-right: 100rem;
+        margin-inline-end: calc(100% / 3);
       }
     }
   }

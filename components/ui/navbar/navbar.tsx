@@ -5,9 +5,13 @@ import styles from "./navbar.module.scss";
 import { AlignVerticalJustifyEnd, Home, Send, UserRound } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../tooltip/tooltip";
 import { NavBarTab } from "@/types";
+import { useRouter } from "next/navigation";
+import Button from "../button/button";
+import { cn } from "@/lib/utils";
 
 export default function NavBar() {
   const [activeTab, setActiveTab] = useState<NavBarTab>("home");
+  const router = useRouter();
 
   return (
     <nav className={styles.navigation}>
@@ -15,14 +19,15 @@ export default function NavBar() {
         <li>
           <Tooltip>
             <TooltipTrigger asChild>
-              <a
-                href="#home"
-                className={activeTab === "home" ? styles.active : ""}
-                onClick={() => setActiveTab("home")}
-              >
+              <Button
+                className={cn(activeTab === "home" && styles.active)}
+                onClick={() => {
+                  setActiveTab("home");
+                  router.push("/#home");
+                }}>
                 <Home size={20} />
                 <span>Home</span>
-              </a>
+              </Button>
             </TooltipTrigger>
             <TooltipContent className="md:hidden">
               <p>Home</p>
@@ -32,14 +37,15 @@ export default function NavBar() {
         <li>
           <Tooltip>
             <TooltipTrigger asChild>
-              <a
-                href="#about"
-                className={activeTab === "about" ? styles.active : ""}
-                onClick={() => setActiveTab("about")}
-              >
+              <Button
+                className={cn(activeTab === "about" && styles.active)}
+                onClick={() => {
+                  setActiveTab("about");
+                  router.push("/#about");
+                }}>
                 <UserRound size={20} />
                 <span>About</span>
-              </a>
+              </Button>
             </TooltipTrigger>
             <TooltipContent className="md:hidden">
               <p>About</p>
@@ -49,14 +55,15 @@ export default function NavBar() {
         <li>
           <Tooltip>
             <TooltipTrigger asChild>
-              <a
-                href="#project"
-                className={activeTab === "project" ? styles.active : ""}
-                onClick={() => setActiveTab("project")}
-              >
+              <Button
+                className={cn(activeTab === "project" && styles.active)}
+                onClick={() => {
+                  setActiveTab("project");
+                  router.push("/#project");
+                }}>
                 <AlignVerticalJustifyEnd size={20} />
                 <span>Project</span>
-              </a>
+              </Button>
             </TooltipTrigger>
             <TooltipContent className="md:hidden">
               <p>Project</p>
@@ -66,14 +73,15 @@ export default function NavBar() {
         <li>
           <Tooltip>
             <TooltipTrigger asChild>
-              <a
-                href="#contact"
-                className={activeTab === "contact" ? styles.active : ""}
-                onClick={() => setActiveTab("contact")}
-              >
+              <Button
+                className={cn(activeTab === "contact" && styles.active)}
+                onClick={() => {
+                  setActiveTab("contact");
+                  router.push("/#contact");
+                }}>
                 <Send size={20} />
                 <span>Contact</span>
-              </a>
+              </Button>
             </TooltipTrigger>
             <TooltipContent className="md:hidden">
               <p>Contact</p>

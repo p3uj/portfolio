@@ -19,29 +19,17 @@ export default function About() {
       </div>
 
       <Card onClick={() => setOnClick(!onClick)}>
-        <section>
-          {onClick === false ? (
-            <>
-              {/* prettier-ignore */}
-              <p>He is a fourth-year Information Technology student at the Polytechnic University of the Philippines - Quezon City Branch with a strong passion for technology and continuous learning. He thrives on new challenges, which has led him to explore various areas of IT, including programming, databases, cybersecurity, UI/UX design, and software development.</p>
-            </>
-          ) : (
-            <>
-              {/* prettier-ignore */}
-              <p>Bengie aspires to build a dynamic career in the tech industry, with interests in becoming a full-stack software developer, frontend/full-stack web developer, penetration tester, database administrator, data analyst, or UI/UX designer. While he has multiple career paths in mind, he remains open to new opportunities and is committed to continuously expanding his knowledge in the ever-evolving world of technology.</p>
-            </>
-          )}
-        </section>
-
-        <section>
+        <section className={styles.textWrapper}>
           {/* prettier-ignore */}
           <p>
-            He is a fourth-year Information Technology student at the Polytechnic University of the Philippines - Quezon City Branch with a strong passion for technology and continuous learning. He thrives on new challenges, which has led him to explore various areas of IT, including programming, databases, cybersecurity, UI/UX design, and software development. <br /> <br />
-            Bengie aspires to build a dynamic career in the tech industry, with interests in becoming a full-stack software developer, frontend/full-stack web developer, penetration tester, database administrator, data analyst, or UI/UX designer. While he has multiple career paths in mind, he remains open to new opportunities and is committed to continuously expanding his knowledge in the ever-evolving world of technology.
-          </p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente iusto illum corporis veniam vitae nobis beatae consequatur iure maiores sint perferendis voluptate accusamus minima numquam culpa quod, quos neque esse. <br /> <br />
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, mollitia hic? Commodi, est incidunt! Corporis commodi eum est ipsum. Accusamus minima sit incidunt? Sint architecto ipsam debitis alias impedit commodi. <br /> <br />
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos asperiores sunt quis doloribus eum nulla facere accusantium commodi eius, architecto illo quidem vero tempora magni alias sequi adipisci fuga cumque. <br /> <br />
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, impedit eius repellendus expedita voluptatibus incidunt eaque quidem harum, beatae nihil dolore aliquid, porro nobis in aut sequi ipsam vitae magni? <br /> <br />
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique commodi quos aperiam quisquam ad debitis placeat nulla pariatur repellat voluptas perspiciatis, impedit amet odio, iusto ab. Aliquam quis totam praesentium. <br /> <br />
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos labore veritatis at id. Culpa iure rem ratione eaque earum, libero vel placeat obcaecati magnam necessitatibus sapiente possimus at consequatur quia?
+            </p>
         </section>
-
-        <MousePointerClick className={styles.icon} />
       </Card>
     </section>
   );

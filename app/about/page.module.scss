@@ -73,49 +73,53 @@
     }
   }
 
-  // Description
+  // Card - Description
   div:not(.profile) {
+    max-height: 40%;
     position: absolute;
     bottom: 0;
 
     margin: 1rem;
-    padding: 1rem;
+    padding: 1rem 0;
 
     border-radius: 24px;
 
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
 
-    p {
-      font-size: 14px;
-      text-align: justify;
+    overflow: hidden;
+
+    .textWrapper {
+      flex: 1;
+      min-height: 0;
+      margin-right: 5px;
+      padding: 0 1rem;
+
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 12px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 12px;
+        transition: background 0.3s;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-25);
+      }
+
+      p {
+        font-size: 14px;
+        text-align: justify;
+      }
     }
-
-    .icon {
-      position: absolute;
-      bottom: 0.5rem;
-      right: 1rem;
-
-      animation: clickHint 1.5s infinite;
-    }
-
-    // Tablet to Desktop View
-    section:last-of-type {
-      display: none;
-    }
-  }
-}
-
-@keyframes clickHint {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  40% {
-    transform: scale(0.9);
-  }
-  60% {
-    transform: scale(1.1);
   }
 }
 
@@ -181,55 +185,29 @@
       }
     }
 
-    // Description
+    // Card - Description
     div:not(.profile) {
       grid-area: description;
-      max-height: 50%;
+      max-height: 70%;
+
       position: static;
 
-      overflow-y: auto;
-      overflow-x: hidden;
+      overflow: hidden;
 
       border: 1px solid var(--border-card);
       border-radius: $radius-xl;
-      padding: 2rem;
+      margin: 1rem;
+      padding: 1.5rem 0;
 
-      p {
-        font-size: 1rem;
-      }
+      .textWrapper {
+        flex: 1;
+        min-height: 0;
+        margin-right: 8px;
+        padding: 0 1.5rem;
 
-      &::-webkit-scrollbar {
-        width: 6px;
-      }
-
-      &::-webkit-scrollbar-track {
-        background: rgba(0, 0, 0, 0.05);
-        border-radius: 12px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background: var(--primary);
-        border-radius: 12px;
-        transition: background 0.3s;
-      }
-
-      &::-webkit-scrollbar-thumb:hover {
-        background: var(--primary-25);
-      }
-
-      // Mobile View
-      section:first-of-type {
-        display: none;
-      }
-
-      // Tablet to Desktop View
-      section:last-of-type {
-        display: block;
-        margin: 0;
-      }
-
-      svg {
-        display: none;
+        p {
+          font-size: 1rem;
+        }
       }
     }
   }

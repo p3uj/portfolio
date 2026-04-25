@@ -28,6 +28,7 @@ export default function Project({ modalOpen, id }: ProjectProps) {
                 onClick={(e) => {
                   e.stopPropagation();
                   modalOpen(true);
+                  id(project.id);
                 }}>
                 View Details
               </Button>

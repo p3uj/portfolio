@@ -2,8 +2,11 @@ import { Card } from "@/components/ui/card/card";
 import styles from "./intro-card.module.scss";
 import Button from "@/components/ui/button/button";
 import { MousePointerClick } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function IntroCard() {
+  const router = useRouter();
+
   return (
     <Card className={styles.intro}>
       <h1>Bengie Villesco</h1>
@@ -15,11 +18,13 @@ export default function IntroCard() {
       </p>
 
       <section>
-        <Button>
+        <Button onClick={() => router.push("/#contact")}>
           <MousePointerClick className="h-[18px] w-fit" />
           Hire Me
         </Button>
-        <Button variant="outline">View Projects</Button>
+        <Button variant="outline" onClick={() => router.push("/#project")}>
+          View Projects
+        </Button>
         <Button variant="outline">View Resume</Button>
       </section>
     </Card>

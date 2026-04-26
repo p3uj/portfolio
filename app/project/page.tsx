@@ -1,3 +1,5 @@
+"use client";
+
 import { Card } from "@/components/ui/card/card";
 import styles from "./page.module.scss";
 import Button from "@/components/ui/button/button";

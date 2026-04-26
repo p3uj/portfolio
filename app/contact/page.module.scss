@@ -5,7 +5,7 @@
   grid-template-columns: 1fr;
   height: fit-content;
   gap: $space-md;
-  padding-bottom: $space-md;
+  padding: 2rem 0;
 
   @include header;
 

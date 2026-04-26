@@ -15,7 +15,7 @@ export default function About() {
       </h1>
 
       <div className={styles.profile}>
-        <img src="/images/Profile2.png" alt="Picture of the owner" />
+        <img src="./images/Profile2.png" alt="Picture of the owner" />
       </div>
 
       <Card onClick={() => setOnClick(!onClick)}>

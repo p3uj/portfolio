@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
 
-  padding: $space-md;
+  padding: $space-md $space-md calc(88px + 32px) $space-md;
   gap: $space-md;
 
   background: var(--primary);
@@ -54,5 +54,12 @@
         fill: #0a66c2;
       }
     }
+  }
+}
+
+// Small Screen View
+@include responsiveness($breakpoint-sm) {
+  .footer {
+    padding: $space-md;
   }
 }

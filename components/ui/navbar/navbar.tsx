@@ -20,7 +20,7 @@ export default function NavBar() {
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
-                className={cn(activeTab === "home" && styles.active)}
+                className={cn(activeTab === "home" ? styles.active : "")}
                 onClick={() => {
                   setActiveTab("home");
                   router.push("/#home");

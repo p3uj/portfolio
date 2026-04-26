@@ -1,3 +1,7 @@
+body:has(.noScroll) {
+  overflow: hidden;
+}
+
 .layout {
   display: grid;
   grid-template-rows: auto 1fr;

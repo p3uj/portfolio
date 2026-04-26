@@ -9,6 +9,7 @@ import Contact from "./contact/page";
 import Footer from "@/components/ui/footer/footer";
 import Modal from "@/components/ui/modal/modal";
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 export default function Page() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -24,7 +25,7 @@ export default function Page() {
     <>
       {modalOpen && <Modal open={setModalOpen} project_id={projectId} />}
 
-      <div className={styles.layout}>
+      <div className={cn(styles.layout, modalOpen && styles.noScroll)}>
         <NavBar />
         <main>
           <Home />

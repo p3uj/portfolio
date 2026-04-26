@@ -81,7 +81,7 @@ export default function CardModal({ project_id }: CardModalProps) {
           <div
             key={index}
             className={cn(styles.content, index === active && styles.active)}>
-            <img src={item.image_path} alt="" />
+            <img src={`.${item.image_path}`} alt="" />
 
             <section className={styles.textWrapper}>
               <h1>{item.name}</h1>

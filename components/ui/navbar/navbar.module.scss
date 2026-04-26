@@ -1,6 +1,9 @@
+@use "../../../styles" as *;
+
 .navigation {
   display: flex;
   justify-self: center;
+  height: fit-content;
 
   background: rgba(255, 255, 255, 0.03);
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
@@ -8,11 +11,14 @@
   backdrop-filter: blur(3px);
 
   position: fixed;
-  top: 24px;
+  bottom: 24px;
   z-index: 100;
 
   padding: 8px;
-  border-radius: 40px;
+  margin: 0 2rem;
+  border-radius: 33px;
+
+  overflow: auto;
 
   ul {
     display: flex;
@@ -20,17 +26,12 @@
 
     button {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
       background-color: transparent;
-      border-radius: 40px;
-      gap: 0.5rem;
-
-      position: relative;
-
-      span {
-        display: none;
-      }
+      border-radius: 25px;
+      gap: 0.25rem;
     }
 
     button:hover {
@@ -48,30 +49,17 @@
   }
 }
 
-// Tablet View
-@media (min-width: 768px) {
+// Small Screnn View
+@include responsiveness($breakpoint-sm) {
   .navigation {
+    top: 24px;
+    border-radius: 40px;
+
     ul {
       button {
-        span {
-          display: block;
-        }
+        border-radius: 40px;
+        gap: 0.5rem;
       }
     }
   }
-}
-
-// Laptop View
-@media (min-width: 1024px) {
-  //
-}
-
-// Desktop View
-@media (min-width: 1280px) {
-  //
-}
-
-// Large Desktop
-@media (min-width: 1536px) {
-  //
 }

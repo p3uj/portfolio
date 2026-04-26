@@ -57,7 +57,7 @@ export default function NavBar() {
               router.push("/#home");
             }}>
             <Home size={20} />
-            <span>Home</span>
+            Home
           </Button>
         </li>
         <li>
@@ -68,7 +68,7 @@ export default function NavBar() {
               router.push("/#about");
             }}>
             <UserRound size={20} />
-            <span>About</span>
+            About
           </Button>
         </li>
         <li>
@@ -79,7 +79,7 @@ export default function NavBar() {
               router.push("/#project");
             }}>
             <AlignVerticalJustifyEnd size={20} />
-            <span>Project</span>
+            Project
           </Button>
         </li>
         <li>
@@ -90,7 +90,7 @@ export default function NavBar() {
               router.push("/#contact");
             }}>
             <Send size={20} />
-            <span>Contact</span>
+            Contact
           </Button>
         </li>
       </ul>

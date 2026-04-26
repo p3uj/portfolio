@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./navbar.module.scss";
 import { AlignVerticalJustifyEnd, Home, Send, UserRound } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../tooltip/tooltip";
@@ -12,6 +12,40 @@ import { cn } from "@/lib/utils";
 export default function NavBar() {
   const [activeTab, setActiveTab] = useState<NavBarTab>("home");
   const router = useRouter();
+
+  // Update activeTab state and url when scroll
+  useEffect(() => {
+    const sections = document.querySelectorAll<HTMLElement>(
+      "section#home, section#about, section#project, section#contact",
+    );
+
+    let current: NavBarTab | null = null;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          const id = entry.target.id as NavBarTab;
+
+          if (current !== id) {
+            current = id;
+            setActiveTab(current);
+            window.history.replaceState(null, "", `#${id}`);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "-50% 0px -50% 0px",
+        threshold: 0,
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <nav className={styles.navigation}>

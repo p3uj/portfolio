@@ -26,17 +26,15 @@
 }
 */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: linear-gradient(55deg,
-        rgba(59, 7, 100, 1) 0%,
-        rgba(41, 37, 36, 1) 100%);
-    --primary: oklch(49.6% 0.265 301.924);
+.dark {
+  --background: linear-gradient(55deg,
+      rgba(59, 7, 100, 1) 0%,
+      rgba(41, 37, 36, 1) 100%);
+  --primary: oklch(49.6% 0.265 301.924);
 
-    /* Text */
-    --primary-text: oklch(14.5% 0 0);
-    --secondary-text: oklch(37.1% 0 0);
-  }
+  /* Text */
+  --primary-text: oklch(14.5% 0 0);
+  --secondary-text: oklch(37.1% 0 0);
 }
 
 /* Scrollbar */

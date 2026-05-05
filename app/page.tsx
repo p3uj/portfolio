@@ -10,6 +10,7 @@ import Footer from "@/components/ui/footer/footer";
 import Modal from "@/components/ui/modal/modal";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "../components/ui/theme-toggle";
 
 export default function Page() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -24,6 +25,8 @@ export default function Page() {
   return (
     <>
       {modalOpen && <Modal open={setModalOpen} project_id={projectId} />}
+
+      <ThemeToggle />
 
       <div className={cn(styles.layout, modalOpen && styles.noScroll)}>
         <NavBar />

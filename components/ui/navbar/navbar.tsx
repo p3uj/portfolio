@@ -7,10 +7,15 @@ import { NavBarTab } from "@/types";
 import { useRouter } from "next/navigation";
 import Button from "../button/button";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 export default function NavBar() {
   const [activeTab, setActiveTab] = useState<NavBarTab>("home");
   const router = useRouter();
+  const { theme } = useTheme();
+  const [isProjectSection, setProjectSection] = useState(false);
+  const isMobile = useMediaQuery("(max-width: 639px)");
 
   // Update activeTab state and url when scroll
   useEffect(() => {
@@ -46,12 +51,37 @@ export default function NavBar() {
     return () => observer.disconnect();
   }, []);
 
+  // Track project section
+  useEffect(() => {
+    if (!isMobile) {
+      const handleScroll = () => {
+        const project = document.querySelector<HTMLElement>("#project");
+        if (!project) return;
+
+        const top = project.getBoundingClientRect().top;
+
+        setProjectSection(top <= 50 && top >= -80);
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      handleScroll();
+
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, [isMobile]);
+
   return (
-    <nav className={styles.navigation}>
+    <nav
+      className={cn(
+        styles.navigation,
+        theme === "light" && isProjectSection ? "!bg-stone-800/20" : "",
+      )}>
       <ul>
         <li>
           <Button
-            className={cn(activeTab === "home" ? styles.active : "")}
+            className={cn({
+              [styles.active]: activeTab === "home",
+            })}
             onClick={() => {
               setActiveTab("home");
               router.push("/#home");
@@ -62,7 +92,9 @@ export default function NavBar() {
         </li>
         <li>
           <Button
-            className={cn(activeTab === "about" && styles.active)}
+            className={cn({
+              [styles.active]: activeTab === "about",
+            })}
             onClick={() => {
               setActiveTab("about");
               router.push("/#about");
@@ -73,7 +105,14 @@ export default function NavBar() {
         </li>
         <li>
           <Button
-            className={cn(activeTab === "project" && styles.active)}
+            className={cn(
+              {
+                [styles.active]: activeTab === "project",
+              },
+              theme === "light" && isProjectSection && activeTab === "project"
+                ? "!text-purple-800"
+                : "",
+            )}
             onClick={() => {
               setActiveTab("project");
               router.push("/#project");
@@ -84,7 +123,9 @@ export default function NavBar() {
         </li>
         <li>
           <Button
-            className={cn(activeTab === "contact" && styles.active)}
+            className={cn({
+              [styles.active]: activeTab === "contact",
+            })}
             onClick={() => {
               setActiveTab("contact");
               router.push("/#contact");

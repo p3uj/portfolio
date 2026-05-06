@@ -5,8 +5,8 @@
   justify-self: center;
   height: fit-content;
 
-  background: rgba(255, 255, 255, 0.03);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+  background: var(--background-card);
+  box-shadow: 0 0 0 1px var(--border-card);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
 
@@ -36,7 +36,7 @@
 
     button:hover {
       background-color: transparent;
-      color: var(--color-purple-300);
+      color: var(--primary);
     }
 
     .active,
@@ -44,7 +44,7 @@
       box-shadow: 0 0 0 1px var(--primary);
       background-color: var(--primary-25);
 
-      color: var(--color-purple-300);
+      color: var(--primary);
     }
   }
 }

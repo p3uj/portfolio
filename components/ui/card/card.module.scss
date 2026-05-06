@@ -8,8 +8,8 @@
 
   background-color: var(--background-card);
   box-shadow: 0 0 0 1px var(--border-card);
-  -webkit-backdrop-filter: blur(1px);
-  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 
   padding: 36px;
   border-radius: 32px;

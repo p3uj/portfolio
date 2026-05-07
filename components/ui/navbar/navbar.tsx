@@ -9,7 +9,7 @@ import {
   Send,
   UserRound,
 } from "lucide-react";
-import { NavBarTab } from "@/types";
+import { NAVBAR_LIST, NavBarList } from "@/types";
 import { useRouter } from "next/navigation";
 import Button from "../button/button";
 import { cn } from "@/lib/utils";
@@ -18,13 +18,13 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import { NAV_BAR } from "@/data/mock/navbar-mock";
 
 export default function NavBar() {
-  const [activeTab, setActiveTab] = useState<NavBarTab>("home");
+  const [activeTab, setActiveTab] = useState<NavBarList["section"]>("home");
   const router = useRouter();
   const { theme } = useTheme();
   const [isProjectSection, setProjectSection] = useState(false);
   const isMobile = useMediaQuery("(max-width: 639px)");
 
-  const getIcon = (navBarItem: NavBarTab) => {
+  const getIcon = (navBarItem: NavBarList["name"]) => {
     switch (navBarItem) {
       case "home":
         return <Home size={20} />;
@@ -48,18 +48,20 @@ export default function NavBar() {
 
   // Update activeTab state and url when scroll
   useEffect(() => {
-    const sections = document.querySelectorAll<HTMLElement>(
-      "section#home, section#about, section#project, section#contact",
-    );
+    const sectionSelector = NAVBAR_LIST.map(
+      (item) => `section#${item.section}`,
+    ).join(", ");
 
-    let current: NavBarTab | null = null;
+    const sections = document.querySelectorAll<HTMLElement>(sectionSelector);
+
+    let current: NavBarList["section"] | null = null;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
 
-          const id = entry.target.id as NavBarTab;
+          const id = entry.target.id as NavBarList["section"];
 
           if (current !== id) {
             current = id;
@@ -111,12 +113,12 @@ export default function NavBar() {
             <Button
               className={cn(
                 {
-                  [styles.active]: activeTab === item.name,
+                  [styles.active]: activeTab === item.section,
                 },
                 "capitalize",
               )}
               onClick={() => {
-                setActiveTab(item.name);
+                setActiveTab(item.section);
                 router.push(`/#${item.section}`);
               }}>
               {getIcon(item.name)}

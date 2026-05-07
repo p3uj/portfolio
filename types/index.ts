@@ -1,4 +1,10 @@
-export type NavBarTab = "home" | "about" | "project" | "contact";
+export type NavBarTab = "home" | "about" | "project" | "tech stack" | "contact";
+
+export interface NavBar {
+  id: number;
+  name: NavBarTab;
+  section: string;
+}
 
 export const TECH_STACK_TYPES = [
   "frontend",

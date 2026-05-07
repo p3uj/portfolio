@@ -35,3 +35,10 @@ export interface ProjectImage {
   image_path: string;
   is_cover: boolean;
 }
+
+export const ROLES = [
+  "full stack web developer",
+  "mobile developer",
+  "UI/UX designer",
+] as const;
+export type RolesType = (typeof ROLES)[number];

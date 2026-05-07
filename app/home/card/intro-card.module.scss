@@ -1,14 +1,14 @@
+@use "../../../styles" as *;
+
 .intro {
   display: flex;
   align-items: center;
-  width: 90%;
 
-  h1 {
-    font-size: 1.75rem;
-  }
+  @include header;
 
   h2 {
     font-size: 1.5rem;
+    text-transform: capitalize;
   }
 
   p {
@@ -58,6 +58,32 @@
 @media (min-width: 1024px) {
   .intro {
     width: 550px;
+
+    h1 {
+      font-size: 4.5rem;
+      line-height: 1;
+
+      span {
+        background: linear-gradient(to right, var(--title-text), gray);
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        background-clip: text;
+
+        color: transparent;
+      }
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    section {
+      padding-top: 2rem;
+      gap: 1rem;
+    }
   }
 }
 

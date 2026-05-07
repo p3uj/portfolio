@@ -5,19 +5,34 @@ import styles from "./intro-card.module.scss";
 import Button from "@/components/ui/button/button";
 import { MousePointerClick } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { ROLES } from "@/types";
+import { useEffect, useState } from "react";
 
 export default function IntroCard() {
   const router = useRouter();
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % ROLES.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Card className={styles.intro}>
-      <h1>Bengie Villesco</h1>
-      <h2>Frontend Developer</h2>
+      <h1>
+        Hi, I'm <br />
+        <span>Bengie</span>
+      </h1>
+      <h2>{ROLES[index]}</h2>
 
       {/* prettier-ignore */}
       <p>
-        Bengie is a fourth-year IT student at the Polytechnic University of the Philippines – Quezon City, passionate about full-stack development, UI/UX, cybersecurity, and data analysis. He enjoys building projects and creating meaningful tech solutions.
+        I create complete digital experiences by combining UI/UX design with full stack development. I focus on building fast, responsive, and user-friendly applications that solve real problems.
       </p>
+      <p>Let's build something meaningful together.</p>
 
       <section>
         <Button onClick={() => router.push("/#contact")}>

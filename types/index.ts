@@ -17,7 +17,7 @@ export const TECH_STACK_TYPES = [
   "frontend",
   "backend",
   "database",
-  "tool",
+  "tools",
 ] as const;
 export type TechStackType = (typeof TECH_STACK_TYPES)[number];
 

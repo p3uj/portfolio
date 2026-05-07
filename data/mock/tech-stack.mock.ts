@@ -69,21 +69,21 @@ export const TECH_STACK_MOCK: TechStack[] = [
   {
     id: 14,
     name: "flutterflow",
-    type: "tool",
+    type: "tools",
   },
   {
     id: 15,
     name: "vitejs",
-    type: "tool",
+    type: "tools",
   },
   {
     id: 16,
     name: "git",
-    type: "tool",
+    type: "tools",
   },
   {
     id: 17,
     name: "github",
-    type: "tool",
+    type: "tools",
   },
 ];

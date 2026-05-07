@@ -2,13 +2,20 @@
 
 import { useEffect, useState } from "react";
 import styles from "./navbar.module.scss";
-import { AlignVerticalJustifyEnd, Home, Send, UserRound } from "lucide-react";
+import {
+  AlignVerticalJustifyEnd,
+  CirclePile,
+  Home,
+  Send,
+  UserRound,
+} from "lucide-react";
 import { NavBarTab } from "@/types";
 import { useRouter } from "next/navigation";
 import Button from "../button/button";
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import { NAV_BAR } from "@/data/mock/navbar-mock";
 
 export default function NavBar() {
   const [activeTab, setActiveTab] = useState<NavBarTab>("home");
@@ -16,6 +23,28 @@ export default function NavBar() {
   const { theme } = useTheme();
   const [isProjectSection, setProjectSection] = useState(false);
   const isMobile = useMediaQuery("(max-width: 639px)");
+
+  const getIcon = (navBarItem: NavBarTab) => {
+    switch (navBarItem) {
+      case "home":
+        return <Home size={20} />;
+
+      case "about":
+        return <UserRound size={20} />;
+
+      case "project":
+        return <AlignVerticalJustifyEnd size={20} />;
+
+      case "tech stack":
+        return <CirclePile size={20} />;
+
+      case "contact":
+        return <Send size={20} />;
+
+      default:
+        return null;
+    }
+  };
 
   // Update activeTab state and url when scroll
   useEffect(() => {
@@ -77,63 +106,24 @@ export default function NavBar() {
         theme === "light" && isProjectSection ? "!bg-stone-800/20" : "",
       )}>
       <ul>
-        <li>
-          <Button
-            className={cn({
-              [styles.active]: activeTab === "home",
-            })}
-            onClick={() => {
-              setActiveTab("home");
-              router.push("/#home");
-            }}>
-            <Home size={20} />
-            Home
-          </Button>
-        </li>
-        <li>
-          <Button
-            className={cn({
-              [styles.active]: activeTab === "about",
-            })}
-            onClick={() => {
-              setActiveTab("about");
-              router.push("/#about");
-            }}>
-            <UserRound size={20} />
-            About
-          </Button>
-        </li>
-        <li>
-          <Button
-            className={cn(
-              {
-                [styles.active]: activeTab === "project",
-              },
-              theme === "light" && isProjectSection && activeTab === "project"
-                ? "!text-purple-800"
-                : "",
-            )}
-            onClick={() => {
-              setActiveTab("project");
-              router.push("/#project");
-            }}>
-            <AlignVerticalJustifyEnd size={20} />
-            Project
-          </Button>
-        </li>
-        <li>
-          <Button
-            className={cn({
-              [styles.active]: activeTab === "contact",
-            })}
-            onClick={() => {
-              setActiveTab("contact");
-              router.push("/#contact");
-            }}>
-            <Send size={20} />
-            Contact
-          </Button>
-        </li>
+        {NAV_BAR.map((item, index) => (
+          <li key={index}>
+            <Button
+              className={cn(
+                {
+                  [styles.active]: activeTab === item.name,
+                },
+                "capitalize",
+              )}
+              onClick={() => {
+                setActiveTab(item.name);
+                router.push(`/#${item.section}`);
+              }}>
+              {getIcon(item.name)}
+              {item.name}
+            </Button>
+          </li>
+        ))}
       </ul>
     </nav>
   );

@@ -1,15 +1,53 @@
+@use "../../styles" as *;
+
 .home {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
+  // height: 100vh;
   height: fit-content;
   min-width: 320px;
   width: 100vw;
 
-  padding: calc(84px + 1rem) 0 50px 0;
+  padding: calc(84px + 1rem) 1rem 50px 1rem;
 
   gap: 2rem;
   overflow-x: hidden;
+}
+
+@include responsiveness($breakpoint-laptop) {
+  .home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    height: 100vh;
+
+    padding: calc(84px + 1rem) 2rem 50px 2rem;
+
+    section:not(.home div section) {
+      grid-column-start: 2;
+      grid-row-start: 1;
+
+      justify-self: end;
+    }
+
+    div {
+      grid-column-start: 1;
+      grid-row-start: 1;
+      // background-color: transparent;
+
+      align-items: start;
+      width: 100%;
+
+      p {
+        text-align: left;
+      }
+
+      section {
+        justify-content: start;
+      }
+    }
+  }
 }

@@ -1,9 +1,16 @@
-export type NavBarTab = "home" | "about" | "project" | "tech stack" | "contact";
+export const NAVBAR_LIST = [
+  { id: 1, name: "home", section: "home" },
+  { id: 2, name: "about", section: "about" },
+  { id: 3, name: "project", section: "project" },
+  { id: 4, name: "tech stack", section: "tech-stack" },
+  { id: 5, name: "contact", section: "contact" },
+] as const;
+export type NavBarList = (typeof NAVBAR_LIST)[number];
 
 export interface NavBar {
   id: number;
-  name: NavBarTab;
-  section: string;
+  name: NavBarList["name"];
+  section: NavBarList["section"];
 }
 
 export const TECH_STACK_TYPES = [

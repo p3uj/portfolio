@@ -1,0 +1,160 @@
+@use "../../../styles" as *;
+
+.profile {
+  .profileWrapper {
+    position: relative;
+
+    // Badge
+    div:not(.card1, .card2, .card3) {
+      align-items: center;
+      gap: 0.5rem;
+
+      position: absolute;
+      left: -20px;
+
+      &::before {
+        content: "";
+        height: 8px;
+        width: 8px;
+
+        background-color: var(--primary);
+        border-radius: 50%;
+
+        box-shadow:
+          0 0 0 2px var(--primary-25),
+          0 0 0 4px var(--primary-25);
+      }
+    }
+
+    img {
+      height: 300px;
+      width: 300px;
+      justify-self: center;
+    }
+
+    .cardWrapper {
+      //   position: relative;
+      position: absolute;
+      background-color: red;
+      height: 300px;
+      width: fit-content;
+
+      bottom: 0;
+      right: 0;
+
+      cursor: pointer;
+
+      .card1 {
+        background-color: var(--primary);
+        border: 1px solid white;
+
+        height: 110px;
+        width: 120px;
+
+        border-radius: 30px;
+
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        z-index: 2;
+
+        transition: all 0.5s ease;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+
+          border-radius: 30px;
+        }
+      }
+
+      .card2 {
+        background-color: yellow;
+        border: 1px solid white;
+
+        height: 100px;
+        width: 120px;
+
+        border-radius: 30px;
+
+        position: absolute;
+        bottom: 0;
+        right: -20px;
+        rotate: 12deg;
+
+        z-index: 1;
+
+        transition: all 0.5s ease;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+
+          border-radius: 30px;
+        }
+      }
+
+      .card3 {
+        background-color: pink;
+        border: 1px solid white;
+
+        height: 100px;
+        width: 120px;
+
+        border-radius: 30px;
+
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+        rotate: -12deg;
+
+        z-index: 1;
+
+        transition: all 0.5s ease;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+
+          border-radius: 30px;
+        }
+      }
+
+      &:hover {
+        .card1 {
+          transform: scale(1.1);
+        }
+
+        .card2 {
+          transform: scale(1.1);
+          right: -100px;
+        }
+
+        .card3 {
+          transform: scale(1.1);
+          right: 100px;
+        }
+      }
+    }
+  }
+}
+
+@include responsiveness($breakpoint-laptop) {
+  .profile {
+    height: 100%;
+    width: 100%;
+
+    .profileWrapper {
+      height: 75%;
+      width: 95%;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

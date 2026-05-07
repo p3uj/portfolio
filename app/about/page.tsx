@@ -15,7 +15,12 @@ export default function About() {
       </h1>
 
       <div className={styles.profile}>
-        <img src="./images/Profile2.png" alt="Picture of the owner" />
+        <img
+          src="./images/Profile2.png"
+          alt="Bengie Villesco"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
 
       <Card onClick={() => setOnClick(!onClick)}>

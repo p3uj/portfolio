@@ -40,6 +40,8 @@ export default function Project({ modalOpen, id }: ProjectProps) {
               <img
                 src={`.${GetImage(null, project.id, true)?.image_path}`}
                 alt={project.name}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </Card>

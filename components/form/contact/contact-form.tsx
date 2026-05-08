@@ -6,12 +6,14 @@ import { useForm } from "react-hook-form";
 import { contactSchema } from "@/lib/schema/contact";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import contactService from "@/lib/services/contact-service";
 
 export default function ContactForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    reset,
+    formState: { errors, isValid, isSubmitting },
   } = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
     mode: "onChange",
@@ -24,6 +26,22 @@ export default function ContactForm() {
 
   const submission = async (values: z.infer<typeof contactSchema>) => {
     console.table(values);
+
+    try {
+      const response = await contactService.sendMessage(values);
+
+      reset();
+      alert(response.message);
+    } catch (error) {
+      console.error(error);
+
+      if (error instanceof Error) {
+        alert(error.message);
+        return;
+      }
+
+      alert("Something went wrong");
+    }
   };
 
   return (
@@ -53,7 +71,7 @@ export default function ContactForm() {
             </label>
             <input
               data-error={!!errors.email}
-              type="text"
+              type="email"
               id="email"
               placeholder="e.g bvillesco@gmail.com"
               {...register("email")}
@@ -76,9 +94,9 @@ export default function ContactForm() {
             {errors.message && <span>{errors.message.message}</span>}
           </fieldset>
 
-          <Button type="submit" disabled={!isValid}>
+          <Button type="submit" disabled={!isValid || isSubmitting}>
             <Send size={20} />
-            Send
+            {isSubmitting ? "Sending..." : "Send"}
           </Button>
         </form>
       </Card>

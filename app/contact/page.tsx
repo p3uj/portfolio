@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card/card";
 import styles from "./page.module.scss";
 import { LocateIcon, Mail, Phone, Send } from "lucide-react";
 import Button from "@/components/ui/button/button";
+import ContactForm from "@/components/form/contact/contact-form";
 
 export default function Contact() {
   return (
@@ -44,43 +45,7 @@ export default function Contact() {
         </fieldset>
       </Card>
 
-      {/* Send Message */}
-      <Card>
-        <form action="" method="post">
-          {/* Name */}
-          <fieldset>
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="e.g Bengie Villesco"
-            />
-          </fieldset>
-
-          {/* Email */}
-          <fieldset>
-            <label htmlFor="email">Email</label>
-            <input
-              type="text"
-              name="email"
-              id="email"
-              placeholder="e.g bvillesco@gmail.com"
-            />
-          </fieldset>
-
-          {/* Message */}
-          <fieldset>
-            <label htmlFor="message">Message</label>
-            <textarea id="message" placeholder="enter your message"></textarea>
-          </fieldset>
-
-          <Button type="submit">
-            <Send size={20} />
-            Send
-          </Button>
-        </form>
-      </Card>
+      <ContactForm />
     </section>
   );
 }

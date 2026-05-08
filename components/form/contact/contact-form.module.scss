@@ -12,6 +12,10 @@
 
       label {
         font-weight: 600;
+
+        &[data-error="true"] {
+          color: red;
+        }
       }
 
       p {
@@ -30,6 +34,14 @@
           outline: none;
           box-shadow: 0 0 0 1px var(--primary);
         }
+
+        &[data-error="true"] {
+          box-shadow: 0 0 0 1px red;
+        }
+      }
+
+      span {
+        color: red;
       }
     }
 

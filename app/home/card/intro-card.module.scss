@@ -4,7 +4,21 @@
   display: flex;
   align-items: center;
 
-  @include header;
+  @include header {
+    span {
+      background: linear-gradient(
+        135deg,
+        #e5e7eb 0%,
+        var(--color-stone-800) 50%,
+        transparent 100%
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      background-clip: text;
+    }
+  }
 
   h2 {
     font-size: 1.5rem;
@@ -13,7 +27,7 @@
 
   p {
     font-size: 1rem;
-    color: var(--foreground-secondary);
+    color: var(--secondary-text);
     text-align: center;
   }
 
@@ -28,6 +42,24 @@
 
     button {
       width: 100%;
+    }
+  }
+}
+
+:global(.dark) .intro {
+  h1 {
+    span {
+      background: linear-gradient(
+        135deg,
+        var(--color-stone-800) 0%,
+        #e5e7eb 50%,
+        transparent 100%
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      background-clip: text;
     }
   }
 }
@@ -62,17 +94,6 @@
     h1 {
       font-size: 4.5rem;
       line-height: 1;
-
-      span {
-        background: linear-gradient(to right, var(--title-text), gray);
-
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-
-        background-clip: text;
-
-        color: transparent;
-      }
     }
 
     h2 {

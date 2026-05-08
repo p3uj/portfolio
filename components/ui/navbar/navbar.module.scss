@@ -5,7 +5,7 @@
   justify-self: center;
   height: fit-content;
 
-  background: var(--background-card);
+  background: var(--navbar);
   box-shadow: 0 0 0 1px var(--border-card);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
@@ -29,23 +29,28 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      background-color: transparent;
       border-radius: 25px;
       gap: 0.25rem;
+
+      color: var(--color-neutral-400);
     }
 
-    button:hover {
-      background-color: transparent;
-      color: var(--primary);
+    button:hover:not(.active) {
+      color: var(--color-purple-500);
     }
 
-    .active,
-    .active:hover {
+    .active {
       box-shadow: 0 0 0 1px var(--primary);
       background-color: var(--primary-25);
 
-      color: var(--color-purple-200);
+      color: var(--primary);
     }
+  }
+}
+
+:global(.dark) .navigation {
+  button:hover:not(.active) {
+    color: var(--color-purple-300);
   }
 }
 

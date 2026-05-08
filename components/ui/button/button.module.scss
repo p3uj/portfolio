@@ -33,16 +33,16 @@
 
 .outline {
   box-shadow: 0 0 0 1px var(--primary);
-  color: var(--foreground-primary);
+  color: var(--foreground-outline);
 }
 
 .outline:hover {
   background-color: var(--primary-10);
-  color: var(--color-purple-300);
+  color: var(--primary);
 }
 
 .ghost {
-  color: var(--foreground-primary);
+  color: var(--foreground-outline);
 }
 
 .ghost:hover {
@@ -52,7 +52,7 @@
 .ghost:active {
   box-shadow: 0 0 0 1px var(--primary);
   background-color: var(--primary-25);
-  color: var(--color-purple-300);
+  color: var(--primary);
 }
 
 .smDefault {

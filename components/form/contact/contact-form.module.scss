@@ -24,8 +24,8 @@
 
       input,
       textarea {
-        background-color: rgba(255, 255, 255, 0.05);
-        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+        background-color: var(--color-stone-100);
+        box-shadow: 0 0 0 1px var(--color-stone-200);
 
         padding: $space-sm $space-md;
         border-radius: $radius-md;
@@ -49,5 +49,13 @@
       width: 100%;
       margin-top: 0.5rem;
     }
+  }
+}
+
+:global(.dark) .contactForm {
+  input,
+  textarea {
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
   }
 }

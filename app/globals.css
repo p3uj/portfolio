@@ -2,23 +2,24 @@
 
 
 :root {
-  --background: linear-gradient(55deg,
-      rgba(59, 7, 100, 1) 0%,
-      rgba(251, 251, 251, 1) 100%);
+  --background: #f5f5f7;
   --primary: var(--color-purple-700);
   --primary-25: oklch(49.6% 0.265 301.924 / 0.25);
   --primary-10: oklch(49.6% 0.265 301.924 / 0.1);
   --foreground-primary: var(--color-neutral-50);
   --foreground-secondary: var(--color-neutral-200);
+  --foreground-outline: var(--color-neutral-950);
 
   /* Card */
-  --background-card: hsl(0, 0%, 100%, 0.05);
+  --background-card: hsl(0, 0%, 100%);
   --border-card: hsl(0, 0%, 100%, 0.5);
+
+  --navbar: hsl(0, 0%, 100%, 0.3);
 
   /* Text */
   --primary-text: var(--color-stone-800);
-  --secondary-text: var(--color-stone-700);
-  --title-text: var(--color-neutral-50);
+  --secondary-text: var(--color-stone-600);
+  --title-text: var(--color-purple-700);
 
   --project-bg-color: var(--color-neutral-50);
 }
@@ -33,16 +34,17 @@
 */
 
 .dark {
-  --background: linear-gradient(55deg,
-      rgba(59, 7, 100, 1) 0%,
-      rgba(41, 37, 36, 1) 100%);
+  --background: var(--color-stone-950);
   --primary: var(--color-purple-500);
   --foreground-primary: var(--color-neutral-50);
   --foreground-secondary: var(--color-neutral-200);
+  --foreground-outline: var(--color-neutral-50);
 
   /* Card */
   --background-card: hsl(56, 2%, 11%, 0.3);
   --border-card: hsl(56, 2%, 11%, 0.5);
+
+  --navbar: hsl(20, 14%, 4%, 0.3);
 
   /* Text */
   --primary-text: var(--color-neutral-50);
@@ -85,6 +87,6 @@ body {
   background-attachment: fixed;
   box-sizing: border-box;
   overflow-x: hidden;
-  color: var(--foreground-primary);
+  color: var(--primary-text);
   font-family: Arial, Helvetica, sans-serif;
 }

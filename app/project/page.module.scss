@@ -12,9 +12,7 @@
 
   background-color: var(--project-bg-color);
 
-  @include header {
-    color: var(--color-purple-400);
-  }
+  @include header;
 
   -webkit-mask-image: linear-gradient(
     to bottom,

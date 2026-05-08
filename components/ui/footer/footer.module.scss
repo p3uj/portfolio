@@ -10,6 +10,10 @@
 
   background: var(--primary);
 
+  p {
+    color: var(--color-neutral-50);
+  }
+
   section {
     display: flex;
     flex-direction: row;

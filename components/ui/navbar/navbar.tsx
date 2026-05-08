@@ -111,6 +111,7 @@ export default function NavBar() {
         {NAV_BAR.map((item, index) => (
           <li key={index}>
             <Button
+              variant="ghost"
               className={cn(
                 {
                   [styles.active]: activeTab === item.section,

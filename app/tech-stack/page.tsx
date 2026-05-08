@@ -16,8 +16,8 @@ export function TechStack() {
 
             <section className={styles.techStack}>
               {TECH_STACK_MOCK.filter((item) => item.type === type).map(
-                (techStack) => (
-                  <Badge name={techStack.name} />
+                (techStack, index) => (
+                  <Badge key={index} name={techStack.name} />
                 ),
               )}
             </section>

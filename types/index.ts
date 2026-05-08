@@ -1,3 +1,6 @@
+import { contactSchema } from "@/lib/schema/contact";
+import z from "zod";
+
 export const NAVBAR_LIST = [
   { id: 1, name: "home", section: "home" },
   { id: 2, name: "about", section: "about" },
@@ -55,3 +58,5 @@ export const ROLES = [
   "UI/UX designer",
 ] as const;
 export type RolesType = (typeof ROLES)[number];
+
+export type ContactPayload = z.infer<typeof contactSchema>;

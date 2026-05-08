@@ -12,6 +12,16 @@
   cursor: pointer;
 }
 
+.base:not(:disabled):hover {
+  cursor: pointer;
+}
+
+.base:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .default {
   background-color: var(--primary);
   color: var(--foreground-primary);

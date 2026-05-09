@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card/card";
 import Badge from "@/components/ui/badge/badge";
 import Button from "@/components/ui/button/button";
-import { MousePointerClick } from "lucide-react";
+import { ArrowUpRight, MousePointerClick } from "lucide-react";
 
 export default function Home() {
   return (
@@ -28,11 +28,12 @@ export default function Home() {
 
       <Card className={styles.card2}>
         <p>Let's build something meaningful together.</p>
+        <ArrowUpRight size={18} />
       </Card>
 
       <section className={styles.buttonWrapper}>
         <Button>
-          <MousePointerClick className="h-[18px] w-fit" />
+          <MousePointerClick size={18} />
           Hire Me
         </Button>
         <Button variant="outline"> Projects</Button>

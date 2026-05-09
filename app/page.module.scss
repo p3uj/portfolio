@@ -20,65 +20,9 @@ body:has(.noScroll) {
 
   main {
     grid-area: main;
-
-    section {
-      scroll-margin-bottom: 84px;
-      margin: 0 1rem 0 1rem;
-    }
-
-    section:first-of-type {
-      margin: 0;
-    }
   }
 
   footer {
     grid-area: footer;
-  }
-}
-
-// Small Screen View
-@include responsiveness($breakpoint-sm) {
-  .layout {
-    main {
-      section {
-        scroll-margin-top: 84px;
-      }
-    }
-  }
-}
-
-// Tablet View
-@media (min-width: 768px) {
-  .layout {
-    main section {
-      margin: 0 2rem 0 2rem;
-    }
-  }
-}
-
-// Laptop View
-@media (min-width: 1024px) {
-  .layout {
-    main section {
-      margin: 0 3rem 0 3rem;
-    }
-  }
-}
-
-// Desktop View
-@media (min-width: 1280px) {
-  .layout {
-    main section {
-      margin: 0 4rem 0 4rem;
-    }
-  }
-}
-
-// Large Desktop
-@media (min-width: 1536px) {
-  .layout {
-    main section {
-      margin: 0 5rem 0 5rem;
-    }
   }
 }

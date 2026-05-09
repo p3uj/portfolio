@@ -9,6 +9,8 @@
 
   @include header;
 
+  padding: 1rem;
+
   p {
     color: var(--secondary-text);
   }
@@ -55,5 +57,35 @@
     div:last-of-type {
       grid-area: message;
     }
+  }
+}
+
+@include responsiveness($breakpoint-sm) {
+  .contact {
+    scroll-margin-top: 84px;
+  }
+}
+
+@include responsiveness($breakpoint-tablet) {
+  .contact {
+    padding: 2rem 2rem;
+  }
+}
+
+@include responsiveness($breakpoint-laptop) {
+  .contact {
+    padding: 2rem 3rem;
+  }
+}
+
+@include responsiveness($breakpoint-desktop) {
+  .contact {
+    padding: 2rem 4rem;
+  }
+}
+
+@include responsiveness($breakpoint-large-desktop) {
+  .contact {
+    padding: 2rem 5rem;
   }
 }

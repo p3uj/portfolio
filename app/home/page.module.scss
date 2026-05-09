@@ -131,6 +131,12 @@
   }
 }
 
+@include responsiveness($breakpoint-tablet) {
+  .home {
+    padding: 0 2rem;
+  }
+}
+
 /*
 .home {
   display: flex;

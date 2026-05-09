@@ -7,8 +7,6 @@
 
   position: relative;
 
-  margin: 0 !important;
-
   overflow: hidden;
 
   h1 {
@@ -125,6 +123,12 @@
   }
 }
 
+@include responsiveness($breakpoint-sm) {
+  .about {
+    scroll-margin-top: 84px;
+  }
+}
+
 @include responsiveness($breakpoint-tablet) {
   .about {
     display: grid;
@@ -137,7 +141,7 @@
     position: static;
     align-items: center;
 
-    margin: 0 2rem 0 2rem !important;
+    padding: 2rem;
 
     @include header {
       grid-area: header;
@@ -224,7 +228,7 @@
 @include responsiveness($breakpoint-laptop) {
   .about {
     grid-template-columns: 1fr 3fr;
-    margin: 0 3rem 0 3rem !important;
+    padding: 2rem 3rem;
 
     @include responsiveness($breakpoint-desktop) {
       margin: 0 4rem 0 4rem;
@@ -233,5 +237,17 @@
     @include responsiveness($breakpoint-large-desktop) {
       margin: 0 5rem 0 5rem;
     }
+  }
+}
+
+@include responsiveness($breakpoint-desktop) {
+  .about {
+    padding: 2rem 4rem;
+  }
+}
+
+@include responsiveness($breakpoint-large-desktop) {
+  .about {
+    padding: 2rem 5rem;
   }
 }

@@ -7,6 +7,8 @@
 
   @include header;
 
+  padding: 2rem 1rem;
+
   h2 {
     text-transform: capitalize;
     font-size: 24px;
@@ -26,7 +28,7 @@
       height: 100%;
       gap: 2rem;
 
-      .techStack {
+      .techStackWrapper {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
@@ -40,10 +42,35 @@
   }
 }
 
+@include responsiveness($breakpoint-sm) {
+  .techStack {
+    scroll-margin-top: 84px;
+  }
+}
+
+@include responsiveness($breakpoint-tablet) {
+  .techStack {
+    padding: 2rem 2rem;
+  }
+}
+
 @include responsiveness($breakpoint-laptop) {
   .techStack {
+    padding: 2rem 3rem;
     .content {
       grid-template-columns: repeat(3, minmax(250px, 1fr));
     }
+  }
+}
+
+@include responsiveness($breakpoint-desktop) {
+  .techStack {
+    padding: 2rem 4rem;
+  }
+}
+
+@include responsiveness($breakpoint-large-desktop) {
+  .techStack {
+    padding: 2rem 5rem;
   }
 }

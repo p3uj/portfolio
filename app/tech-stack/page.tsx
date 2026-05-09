@@ -14,7 +14,7 @@ export function TechStack() {
           <Card key={index}>
             <h2>{type}</h2>
 
-            <section className={styles.techStack}>
+            <section className={styles.techStackWrapper}>
               {TECH_STACK_MOCK.filter((item) => item.type === type).map(
                 (techStack, index) => (
                   <Badge key={index} name={techStack.name} />

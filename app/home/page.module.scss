@@ -14,6 +14,18 @@
     transparent 80%
   );
 
+  .status {
+    position: absolute;
+    top: 7%;
+
+    align-items: center;
+    gap: 12px;
+
+    &::before {
+      @include circle;
+    }
+  }
+
   span {
     display: flex;
     flex-direction: column;
@@ -45,12 +57,11 @@
     }
   }
 
-  // Card 1
-  div {
+  .card1 {
     position: absolute;
     padding: 1rem;
     margin: 1rem;
-    bottom: 58px;
+    bottom: calc(48px + 8px + 50px + 8px);
 
     z-index: 1;
 
@@ -60,9 +71,11 @@
     }
   }
 
-  // Card 2
-  div:nth-of-type(2) {
-    bottom: 0;
+  .card2 {
+    position: absolute;
+    padding: 1rem;
+    margin: 1rem;
+    bottom: calc(48px + 8px);
     z-index: 1;
 
     p {
@@ -70,33 +83,66 @@
     }
   }
 
-  // Badge
-  .role {
-    top: 30%;
-    left: 5%;
-    align-items: center;
-    gap: 12px;
+  .buttonWrapper {
+    position: absolute;
+    bottom: 1rem;
+    z-index: 1;
 
-    &::before {
-      content: "";
-      height: 8px;
-      width: 8px;
+    display: flex;
+    gap: 0.5rem;
 
-      background-color: var(--primary);
-      border-radius: 50%;
+    button:not(button:first-of-type) {
+      -webkit-backdrop-filter: blur(3px);
+      backdrop-filter: blur(3px);
 
-      box-shadow:
-        0 0 0 2px var(--primary-25),
-        0 0 0 4px var(--primary-25);
+      background-color: var(--navbar);
     }
   }
 
   .profileWrapper {
-    // background-color: yellow;
     height: 100%;
     width: 100%;
     position: relative;
     overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+
+    .roleWrapper {
+      position: absolute;
+      top: 30%;
+      z-index: 1;
+
+      height: 20%;
+      width: calc(100% - 1rem);
+
+      .role-0,
+      .role-1,
+      .role-2 {
+        position: absolute;
+      }
+
+      .role-0 {
+        background-color: var(--color-blue-700);
+        color: var(--color-blue-100);
+      }
+
+      .role-1 {
+        top: 39%;
+        right: 30%;
+
+        background-color: var(--color-emerald-700);
+        color: var(--color-emerald-100);
+      }
+
+      .role-2 {
+        bottom: 0;
+        right: 15%;
+
+        background-color: var(--color-purple-700);
+        color: var(--color-purple-100);
+      }
+    }
 
     img {
       height: 90%;
@@ -116,6 +162,10 @@
     transparent 100%
   );
 
+  .status {
+    box-shadow: 0 0 30px 2px var(--primary-10);
+  }
+
   h1 {
     background: linear-gradient(
       135deg,
@@ -128,6 +178,36 @@
     -webkit-text-fill-color: transparent;
 
     background-clip: text;
+  }
+
+  .roleWrapper {
+    // Full Stack
+    .role-0 {
+      background-color: var(--color-blue-600);
+      box-shadow: 0 0 8px 2px hsl(221, 83%, 53%, 0.4);
+    }
+
+    // Mobile Dev
+    .role-1 {
+      background-color: var(--color-emerald-600);
+      box-shadow: 0 0 8px 2px hsl(161, 94%, 30%, 0.4);
+    }
+
+    // UI/UX
+    .role-2 {
+      background-color: var(--color-purple-600);
+      box-shadow: 0 0 8px 2px hsl(271, 81%, 56%, 0.4);
+    }
+  }
+}
+
+@include responsiveness($breakpoint-mobile-medium) {
+  .home {
+    .profileWrapper {
+      .roleWrapper {
+        width: 350px;
+      }
+    }
   }
 }
 

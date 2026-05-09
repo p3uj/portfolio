@@ -40,8 +40,8 @@ export default function Home() {
           Hire Me
         </Button>
         <Button variant="outline" onClick={() => router.push("/#project")}>
-          {" "}
           Projects
+          <ArrowUpRight size={18} />
         </Button>
         <Button variant="outline">Resume</Button>
       </section>

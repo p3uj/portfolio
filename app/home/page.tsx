@@ -8,8 +8,11 @@ import { Card } from "@/components/ui/card/card";
 import Badge from "@/components/ui/badge/badge";
 import Button from "@/components/ui/button/button";
 import { ArrowUpRight, MousePointerClick } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <section id="home" className={styles.home}>
       <Badge name="available for work" className={styles.status} />
@@ -26,17 +29,20 @@ export default function Home() {
       </p>
       </Card>
 
-      <Card className={styles.card2}>
+      <Card className={styles.card2} onClick={() => router.push("/#contact")}>
         <p>Let's build something meaningful together.</p>
         <ArrowUpRight size={18} />
       </Card>
 
       <section className={styles.buttonWrapper}>
-        <Button>
+        <Button onClick={() => router.push("/#contact")}>
           <MousePointerClick size={18} />
           Hire Me
         </Button>
-        <Button variant="outline"> Projects</Button>
+        <Button variant="outline" onClick={() => router.push("/#project")}>
+          {" "}
+          Projects
+        </Button>
         <Button variant="outline">Resume</Button>
       </section>
 

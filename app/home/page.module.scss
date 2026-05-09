@@ -125,6 +125,8 @@
       .role-0 {
         background-color: var(--color-blue-700);
         color: var(--color-blue-100);
+
+        animation: floatUpDown 3s ease-in-out infinite;
       }
 
       .role-1 {
@@ -133,6 +135,8 @@
 
         background-color: var(--color-emerald-700);
         color: var(--color-emerald-100);
+
+        animation: floatUpDown 3s ease-in-out 0.5s infinite;
       }
 
       .role-2 {
@@ -141,6 +145,8 @@
 
         background-color: var(--color-purple-700);
         color: var(--color-purple-100);
+
+        animation: floatUpDown 3s ease-in-out 1s infinite;
       }
     }
 
@@ -198,6 +204,17 @@
       background-color: var(--color-purple-600);
       box-shadow: 0 0 8px 2px hsl(271, 81%, 56%, 0.4);
     }
+  }
+}
+
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
   }
 }
 

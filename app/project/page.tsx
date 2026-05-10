@@ -38,7 +38,7 @@ export default function Project({ modalOpen, id }: ProjectProps) {
 
             <div className={styles.imageWrapper}>
               <img
-                src={`.${GetImage(null, project.id, true)?.image_path}`}
+                src={`${GetImage(null, project.id, true)?.image_path}`}
                 alt={project.name}
                 loading="lazy"
                 decoding="async"

@@ -68,17 +68,17 @@ export default function Home() {
 
         <section className={styles.project}>
           <div>
-            <img src="./images/projects/project1/Image1.png" alt="image" />
+            <img src="/images/projects/project1/Image1.png" alt="image" />
           </div>
           <div>
-            <img src="./images/projects/project1/Image2.png" alt="image" />
+            <img src="/images/projects/project1/Image2.png" alt="image" />
           </div>
           <div>
-            <img src="./images/projects/project1/Image3.png" alt="image" />
+            <img src="/images/projects/project1/Image3.png" alt="image" />
           </div>
         </section>
 
-        <img src="./images/ID.png" alt="Bengie Villesco" />
+        <img src="/images/ID.png" alt="Bengie Villesco" />
       </section>
     </section>
   );

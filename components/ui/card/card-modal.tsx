@@ -82,7 +82,7 @@ export default function CardModal({ project_id }: CardModalProps) {
             key={index}
             className={cn(styles.content, index === active && styles.active)}>
             <img
-              src={`.${item.image_path}`}
+              src={`${item.image_path}`}
               alt={item.name}
               loading="lazy"
               decoding="async"

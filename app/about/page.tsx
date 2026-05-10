@@ -16,7 +16,7 @@ export default function About() {
 
       <div className={styles.profile}>
         <img
-          src="./images/Profile2.png"
+          src="/images/Profile2.png"
           alt="Bengie Villesco"
           loading="lazy"
           decoding="async"

@@ -57,28 +57,27 @@ export default function Home() {
           ))}
         </section>
 
-        <section className={styles.cardWrapper}>
-          <section className={styles.overview}>
-            <Card className={styles.projectDone}>
-              <h1>3+</h1>
-              <p>Project Done</p>
-            </Card>
-            <Card className={styles.experience}>
-              <h1>2+</h1>
-              <p>Years Experience</p>
-            </Card>
-          </section>
-          <section className={styles.project}>
-            <div>
-              <img src="./images/projects/project1/Image1.png" alt="image" />
-            </div>
-            <div>
-              <img src="./images/projects/project1/Image2.png" alt="image" />
-            </div>
-            <div>
-              <img src="./images/projects/project1/Image3.png" alt="image" />
-            </div>
-          </section>
+        <section className={styles.overview}>
+          <Card className={styles.projectDone}>
+            <h1>3+</h1>
+            <p>Project Done</p>
+          </Card>
+          <Card className={styles.experience}>
+            <h1>2+</h1>
+            <p>Years Experience</p>
+          </Card>
+        </section>
+
+        <section className={styles.project}>
+          <div>
+            <img src="./images/projects/project1/Image1.png" alt="image" />
+          </div>
+          <div>
+            <img src="./images/projects/project1/Image2.png" alt="image" />
+          </div>
+          <div>
+            <img src="./images/projects/project1/Image3.png" alt="image" />
+          </div>
         </section>
 
         <img src="./images/ID.png" alt="Bengie Villesco" />

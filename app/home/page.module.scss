@@ -145,7 +145,7 @@
     .roleWrapper {
       position: absolute;
       top: 30%;
-      z-index: 1;
+      z-index: 2;
 
       height: 20%;
       width: calc(100% - 1rem);
@@ -194,7 +194,8 @@
     }
   }
 
-  .cardWrapper {
+  .overview,
+  .project {
     display: none;
   }
 }
@@ -293,127 +294,129 @@
       }
 
       img {
-        height: 90%;
+        height: 89%;
         width: fit-content;
       }
     }
 
-    .cardWrapper {
+    .overview {
       display: flex;
-      justify-content: space-between;
       height: fit-content;
-      width: 610px;
+      gap: 0.5rem;
+
+      // background-color: red;
+
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        transparent 100%
+      );
+      mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
 
       position: absolute;
-      bottom: 30%;
+      bottom: 13rem;
+      left: 1rem;
 
-      .overview {
-        display: flex;
-        gap: 0.5rem;
+      .projectDone,
+      .experience {
+        align-items: center;
 
-        -webkit-mask-image: linear-gradient(
-          to bottom,
-          black 0%,
-          transparent 100%
-        );
-        mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+        padding: 1rem;
 
-        .projectDone,
-        .experience {
-          align-items: center;
+        h1 {
+          font-size: 26px;
+          line-height: 1;
 
-          padding: 1rem;
+          font-weight: 600;
+        }
 
-          h1 {
-            font-size: 26px;
-            line-height: 1;
-
-            font-weight: 600;
-          }
-
-          p {
-            font-size: 14px;
-            color: var(--secondary-text);
-          }
+        p {
+          font-size: 14px;
+          color: var(--secondary-text);
         }
       }
+    }
 
-      .project {
-        display: flex;
-        height: 100%;
-        width: fit-content;
-        justify-content: center;
+    .project {
+      display: flex;
+      height: fit-content;
+      width: fit-content;
+      justify-content: center;
 
-        position: absolute;
-        right: 60px;
+      // background-color: red;
 
-        cursor: pointer;
+      position: absolute;
+      bottom: 13rem;
+      right: 60px;
 
-        &:hover {
-          div:nth-child(1) {
-            left: -55px;
-            rotate: -12deg;
-            transform: scale(1.05);
-          }
+      cursor: pointer;
 
-          div:nth-child(2) {
-            transform: scale(1.05);
-          }
-
-          div:nth-child(3) {
-            right: -55px;
-            rotate: 12deg;
-            transform: scale(1.05);
-          }
-        }
-
-        div {
-          height: 80px;
-          width: 90px;
-          border-radius: 20px;
-          border: 1px solid white;
-
-          position: relative;
-
-          img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-
-            position: absolute;
-            top: 0;
-
-            border-radius: 20px;
-          }
-        }
+      &:hover {
+        z-index: 2;
 
         div:nth-child(1) {
-          position: absolute;
-          left: -20px;
-          bottom: 0;
+          left: -55px;
           rotate: -12deg;
-          z-index: 1;
-
-          transition: all 0.5s ease;
+          transform: scale(1.05);
         }
 
         div:nth-child(2) {
-          height: 90px;
-
-          z-index: 2;
-
-          transition: all 0.5s ease;
+          transform: scale(1.05);
         }
 
         div:nth-child(3) {
-          position: absolute;
-          right: -20;
-          bottom: 0;
+          right: -55px;
           rotate: 12deg;
-          z-index: 1;
-
-          transition: all 0.5s ease;
+          transform: scale(1.05);
         }
+      }
+
+      div {
+        height: 80px;
+        width: 90px;
+        border-radius: 20px;
+        border: 1px solid white;
+
+        position: relative;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+
+          position: absolute;
+          top: 0;
+
+          border-radius: 20px;
+        }
+      }
+
+      div:nth-child(1) {
+        position: absolute;
+        left: -20px;
+        bottom: 0;
+        rotate: -12deg;
+        z-index: 1;
+
+        transition: all 0.5s ease;
+      }
+
+      div:nth-child(2) {
+        height: 90px;
+
+        z-index: 2;
+
+        transition: all 0.5s ease;
+      }
+
+      div:nth-child(3) {
+        position: absolute;
+        right: -20;
+        bottom: 0;
+        rotate: 12deg;
+        z-index: 1;
+
+        transition: all 0.5s ease;
       }
     }
   }
@@ -438,15 +441,9 @@
       }
     }
 
-    .cardWrapper {
-      bottom: 2rem;
-
-      width: 100%;
-      padding: 0 1rem;
-
-      .project {
-        right: 80px;
-      }
+    .overview,
+    .project {
+      bottom: 9rem;
     }
   }
 }
@@ -454,6 +451,7 @@
 @include responsiveness($breakpoint-laptop) {
   .home {
     padding: 0 3rem;
+
     .card1 {
       margin-left: 2rem;
     }
@@ -464,8 +462,14 @@
       top: calc(35% + 180px);
     }
 
-    .cardWrapper {
-      padding: 0;
+    .profileWrapper {
+      img {
+        height: 81%;
+      }
+    }
+
+    .overview,
+    .project {
       bottom: 2rem;
     }
   }

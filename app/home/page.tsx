@@ -1,3 +1,5 @@
+"use client";
+
 import { ROLES } from "@/types";
 import styles from "./page.module.scss";
 import { Card } from "@/components/ui/card/card";

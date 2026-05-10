@@ -1,9 +1,5 @@
 import { ROLES } from "@/types";
-import IntroCard from "./card/intro-card";
 import styles from "./page.module.scss";
-import { Profile } from "./profile/profile";
-import TechStack from "./tech-stack/tech-stack";
-import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card/card";
 import Badge from "@/components/ui/badge/badge";
 import Button from "@/components/ui/button/button";
@@ -82,12 +78,6 @@ export default function Home() {
 
         <img src="./images/ID.png" alt="Bengie Villesco" />
       </section>
-      {/* <TechStack />
-      <TechStack direction="left-to-right" /> */}
-      {/* <Profile /> */}
-      {/* <IntroCard /> */}
-      {/* <TechStack />
-      <TechStack direction="left-to-right" /> */}
     </section>
   );
 }

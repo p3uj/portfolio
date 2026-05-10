@@ -1,13 +1,13 @@
 import { Card } from "@/components/ui/card/card";
-import styles from "./page.module.scss";
+import styles from "./skills-section.module.scss";
 import { TECH_STACK_MOCK } from "@/data/mock/tech-stack.mock";
 import Badge from "@/components/ui/badge/badge";
 import { TECH_STACK_TYPES } from "@/types";
 
-export default function TechStack() {
+export default function SkillsSections() {
   return (
-    <section id="tech-stack" className={styles.techStack}>
-      <h1>Tech Stack </h1>
+    <section id="skills" className={styles.skills}>
+      <h1>Skills & Expertise</h1>
 
       <section className={styles.content}>
         {TECH_STACK_TYPES.map((type, index) => (

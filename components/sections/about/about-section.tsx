@@ -1,10 +1,10 @@
 "use client";
 
-import styles from "./page.module.scss";
+import styles from "./about-section.module.scss";
 import { Card } from "@/components/ui/card/card";
 import { useState } from "react";
 
-export default function About() {
+export default function AboutSection() {
   const [onClick, setOnClick] = useState(false);
 
   return (

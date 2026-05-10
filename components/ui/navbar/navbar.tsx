@@ -35,7 +35,7 @@ export default function NavBar() {
       case "project":
         return <AlignVerticalJustifyEnd size={20} />;
 
-      case "tech stack":
+      case "skills":
         return <CirclePile size={20} />;
 
       case "contact":

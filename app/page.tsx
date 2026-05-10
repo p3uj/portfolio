@@ -2,16 +2,16 @@
 
 import NavBar from "@/components/ui/navbar/navbar";
 import styles from "./page.module.scss";
-import Home from "./home/page";
-import About from "./about/page";
-import Project from "./project/page";
-import Contact from "./contact/page";
 import Footer from "@/components/ui/footer/footer";
 import Modal from "@/components/ui/modal/modal";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "../components/ui/theme-toggle";
-import TechStack from "./tech-stack/page";
+import HeroSection from "@/components/sections/hero/hero-section";
+import AboutSection from "../components/sections/about/about-section";
+import ProjectsSection from "../components/sections/projects/projects-section";
+import SkillsSections from "../components/sections/skills/skills-section";
+import ContactSection from "@/components/sections/contact/contack-section";
 
 export default function Page() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -32,11 +32,11 @@ export default function Page() {
       <div className={cn(styles.layout, modalOpen && styles.noScroll)}>
         <NavBar />
         <main>
-          <Home />
-          <About />
-          <Project modalOpen={setModalOpen} id={setProjectId} />
-          <TechStack />
-          <Contact />
+          <HeroSection />
+          <AboutSection />
+          <ProjectsSection modalOpen={setModalOpen} id={setProjectId} />
+          <SkillsSections />
+          <ContactSection />
           <Footer />
         </main>
       </div>

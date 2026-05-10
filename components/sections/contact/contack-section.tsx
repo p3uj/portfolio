@@ -1,9 +1,9 @@
 import { Card } from "@/components/ui/card/card";
-import styles from "./page.module.scss";
+import styles from "./contact-section.module.scss";
 import { LocateIcon, Mail, Phone, Send } from "lucide-react";
 import ContactForm from "@/components/form/contact/contact-form";
 
-export default function Contact() {
+export default function ContactSection() {
   return (
     <section id="contact" className={styles.contact}>
       <h1>Get in Touch</h1>

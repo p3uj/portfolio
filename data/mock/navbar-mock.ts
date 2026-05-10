@@ -18,8 +18,8 @@ export const NAV_BAR: NavBar[] = [
   },
   {
     id: 4,
-    name: "tech stack",
-    section: "tech-stack",
+    name: "skills",
+    section: "skills",
   },
   {
     id: 5,

@@ -1,7 +1,7 @@
 "use client";
 
 import { ROLES } from "@/types";
-import styles from "./page.module.scss";
+import styles from "./hero-section.module.scss";
 import { Card } from "@/components/ui/card/card";
 import Badge from "@/components/ui/badge/badge";
 import Button from "@/components/ui/button/button";
@@ -13,11 +13,11 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip/tooltip";
 
-export default function Home() {
+export default function HeroSection() {
   const router = useRouter();
 
   return (
-    <section id="home" className={styles.home}>
+    <section id="home" className={styles.hero}>
       <Badge name="available for work" className={styles.status} />
 
       <span>

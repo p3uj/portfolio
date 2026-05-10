@@ -1,7 +1,7 @@
 "use client";
 
 import { Card } from "@/components/ui/card/card";
-import styles from "./page.module.scss";
+import styles from "./projects-section.module.scss";
 import Button from "@/components/ui/button/button";
 import { PROJECT_MOCK } from "@/data/mock/project-mock";
 import { GetImage } from "@/lib/utils/project";
@@ -11,7 +11,7 @@ interface ProjectProps {
   id: (value: number | null) => void;
 }
 
-export default function Project({ modalOpen, id }: ProjectProps) {
+export default function ProjectsSection({ modalOpen, id }: ProjectProps) {
   return (
     <section id="project" className={styles.project}>
       <h1>My Projects</h1>

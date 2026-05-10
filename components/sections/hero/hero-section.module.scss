@@ -1,6 +1,6 @@
-@use "../../styles" as *;
+@use "../../../styles/" as *;
 
-.home {
+.hero {
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -201,7 +201,7 @@
 }
 
 // ----------------- DARK MODE ----------------- //
-:global(.dark) .home {
+:global(.dark) .hero {
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 0.15) 0%,
@@ -268,7 +268,7 @@
 
 // ----------------- RESPONSIVENESS ----------------- //
 @include responsiveness($breakpoint-mobile-medium) {
-  .home {
+  .hero {
     .profileWrapper {
       .roleWrapper {
         width: 350px;
@@ -278,7 +278,7 @@
 }
 
 @include responsiveness($breakpoint-sm) {
-  .home {
+  .hero {
     padding-top: 60px;
 
     .status,
@@ -423,7 +423,7 @@
 }
 
 @include responsiveness($breakpoint-tablet) {
-  .home {
+  .hero {
     .card1 {
       width: 250px;
       margin: 0;
@@ -449,7 +449,7 @@
 }
 
 @include responsiveness($breakpoint-laptop) {
-  .home {
+  .hero {
     padding: 0 3rem;
 
     .card1 {
@@ -476,7 +476,7 @@
 }
 
 @include responsiveness($breakpoint-desktop) {
-  .home {
+  .hero {
     padding: 0 4rem;
 
     .card1 {
@@ -490,7 +490,7 @@
 }
 
 @include responsiveness($breakpoint-large-desktop) {
-  .home {
+  .hero {
     padding: 0 5rem;
 
     .card1 {

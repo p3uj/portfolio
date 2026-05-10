@@ -1,6 +1,6 @@
-@use "./../../styles" as *;
+@use "./../../../styles/" as *;
 
-.techStack {
+.skills {
   display: grid;
   grid-template-rows: auto 1fr;
   gap: 1rem;
@@ -43,19 +43,19 @@
 }
 
 @include responsiveness($breakpoint-sm) {
-  .techStack {
+  .skills {
     scroll-margin-top: 84px;
   }
 }
 
 @include responsiveness($breakpoint-tablet) {
-  .techStack {
+  .skills {
     padding: 2rem 2rem;
   }
 }
 
 @include responsiveness($breakpoint-laptop) {
-  .techStack {
+  .skills {
     padding: 2rem 3rem;
     .content {
       grid-template-columns: repeat(3, minmax(250px, 1fr));
@@ -64,13 +64,13 @@
 }
 
 @include responsiveness($breakpoint-desktop) {
-  .techStack {
+  .skills {
     padding: 2rem 4rem;
   }
 }
 
 @include responsiveness($breakpoint-large-desktop) {
-  .techStack {
+  .skills {
     padding: 2rem 5rem;
   }
 }

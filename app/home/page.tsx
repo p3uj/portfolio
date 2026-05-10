@@ -7,6 +7,11 @@ import Badge from "@/components/ui/badge/badge";
 import Button from "@/components/ui/button/button";
 import { ArrowUpRight, MousePointerClick } from "lucide-react";
 import { useRouter } from "next/navigation";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip/tooltip";
 
 export default function Home() {
   const router = useRouter();
@@ -66,17 +71,24 @@ export default function Home() {
           </Card>
         </section>
 
-        <section className={styles.project}>
-          <div>
-            <img src="/images/projects/project1/Image1.png" alt="image" />
-          </div>
-          <div>
-            <img src="/images/projects/project1/Image2.png" alt="image" />
-          </div>
-          <div>
-            <img src="/images/projects/project1/Image3.png" alt="image" />
-          </div>
-        </section>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <section className={styles.project}>
+              <div onClick={() => router.push("/#project")}>
+                <img src="/images/projects/project1/Image1.png" alt="image" />
+              </div>
+              <div onClick={() => router.push("/#project")}>
+                <img src="/images/projects/project1/Image2.png" alt="image" />
+              </div>
+              <div onClick={() => router.push("/#project")}>
+                <img src="/images/projects/project1/Image3.png" alt="image" />
+              </div>
+            </section>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>View projects</p>
+          </TooltipContent>
+        </Tooltip>
 
         <img src="/images/ID.png" alt="Bengie Villesco" />
       </section>

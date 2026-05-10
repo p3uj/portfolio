@@ -199,6 +199,7 @@
   }
 }
 
+// ----------------- DARK MODE ----------------- //
 :global(.dark) .home {
   background: radial-gradient(
     circle,
@@ -249,7 +250,9 @@
     background-color: var(--color-stone-800);
   }
 }
+// ----------------- END DARK MODE ----------------- //
 
+// ----------------- ANIMATION ----------------- //
 @keyframes floatUpDown {
   0%,
   100% {
@@ -260,7 +263,9 @@
     transform: translateY(-6px);
   }
 }
+// ----------------- END ANIMATION ----------------- //
 
+// ----------------- RESPONSIVENESS ----------------- //
 @include responsiveness($breakpoint-mobile-medium) {
   .home {
     .profileWrapper {
@@ -283,11 +288,13 @@
     .profileWrapper {
       .roleWrapper {
         top: 40%;
+        margin-left: 5rem;
+        width: 380px;
       }
 
       img {
-        height: 80%;
-        width: 75%;
+        height: 90%;
+        width: fit-content;
       }
     }
 
@@ -414,62 +421,81 @@
 
 @include responsiveness($breakpoint-tablet) {
   .home {
-    .cardWrapper {
-      width: 700px;
-    }
-  }
-}
+    .card1 {
+      width: 250px;
+      margin: 0;
 
-/*
-.home {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+      top: 35%;
+      left: 0;
 
-  // height: 100vh;
-  height: fit-content;
-  min-width: 320px;
-  width: 100vw;
-
-  padding: calc(84px + 1rem) 1rem 50px 1rem;
-
-  gap: 2rem;
-  overflow-x: hidden;
-}
-
-@include responsiveness($breakpoint-laptop) {
-  .home {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    height: 100vh;
-
-    padding: calc(84px + 1rem) 2rem 50px 2rem;
-
-    section:not(.home div section) {
-      grid-column-start: 2;
-      grid-row-start: 1;
-
-      justify-self: end;
-    }
-
-    div {
-      grid-column-start: 1;
-      grid-row-start: 1;
-      // background-color: transparent;
-
-      align-items: start;
-      width: 100%;
+      background-color: transparent;
+      box-shadow: none;
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
 
       p {
         text-align: left;
       }
+    }
 
-      section {
-        justify-content: start;
+    .cardWrapper {
+      bottom: 2rem;
+
+      width: 100%;
+      padding: 0 1rem;
+
+      .project {
+        right: 80px;
       }
     }
   }
 }
-*/
+
+@include responsiveness($breakpoint-laptop) {
+  .home {
+    padding: 0 3rem;
+    .card1 {
+      margin-left: 2rem;
+    }
+
+    .card2 {
+      margin: 0;
+      left: 3rem;
+      top: calc(35% + 180px);
+    }
+
+    .cardWrapper {
+      padding: 0;
+      bottom: 2rem;
+    }
+  }
+}
+
+@include responsiveness($breakpoint-desktop) {
+  .home {
+    padding: 0 4rem;
+
+    .card1 {
+      margin-left: 3rem;
+    }
+
+    .card2 {
+      left: 4rem;
+    }
+  }
+}
+
+@include responsiveness($breakpoint-large-desktop) {
+  .home {
+    padding: 0 5rem;
+
+    .card1 {
+      margin-left: 4rem;
+    }
+
+    .card2 {
+      left: 5rem;
+    }
+  }
+}
+// ----------------- END RESPONSIVENESS ----------------- //

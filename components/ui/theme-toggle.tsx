@@ -16,7 +16,7 @@ export function ThemeToggle() {
   return (
     <Button
       variant="ghost"
-      className="fixed right-4 top-4 z-10"
+      className="fixed right-4 top-4 z-[101]"
       onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}>
       {resolvedTheme === "dark" ? (
         <Sun />

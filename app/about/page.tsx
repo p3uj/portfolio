@@ -2,7 +2,6 @@
 
 import styles from "./page.module.scss";
 import { Card } from "@/components/ui/card/card";
-import { MousePointerClick } from "lucide-react";
 import { useState } from "react";
 
 export default function About() {

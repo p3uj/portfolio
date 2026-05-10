@@ -1,7 +1,6 @@
 import { Card } from "@/components/ui/card/card";
 import styles from "./page.module.scss";
 import { LocateIcon, Mail, Phone, Send } from "lucide-react";
-import Button from "@/components/ui/button/button";
 import ContactForm from "@/components/form/contact/contact-form";
 
 export default function Contact() {

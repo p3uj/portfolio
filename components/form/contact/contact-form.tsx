@@ -1,6 +1,8 @@
+"use client";
+
 import { Card } from "@/components/ui/card/card";
 import styles from "./contact-form.module.scss";
-import { LocateIcon, Mail, Phone, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import Button from "@/components/ui/button/button";
 import { useForm } from "react-hook-form";
 import { contactSchema } from "@/lib/schema/contact";

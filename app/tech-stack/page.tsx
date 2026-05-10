@@ -4,7 +4,7 @@ import { TECH_STACK_MOCK } from "@/data/mock/tech-stack.mock";
 import Badge from "@/components/ui/badge/badge";
 import { TECH_STACK_TYPES } from "@/types";
 
-export function TechStack() {
+export default function TechStack() {
   return (
     <section id="tech-stack" className={styles.techStack}>
       <h1>Tech Stack </h1>

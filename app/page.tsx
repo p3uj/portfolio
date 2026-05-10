@@ -11,7 +11,7 @@ import Modal from "@/components/ui/modal/modal";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "../components/ui/theme-toggle";
-import { TechStack } from "./tech-stack/page";
+import TechStack from "./tech-stack/page";
 
 export default function Page() {
   const [modalOpen, setModalOpen] = useState(false);

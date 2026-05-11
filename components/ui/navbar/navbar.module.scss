@@ -5,6 +5,9 @@
   justify-self: center;
   height: fit-content;
 
+  min-width: 0;
+  width: calc(100% - 2rem);
+
   background: var(--navbar);
   box-shadow: 0 0 0 1px var(--border-card);
   -webkit-backdrop-filter: blur(3px);
@@ -15,7 +18,6 @@
   z-index: 100;
 
   padding: 8px;
-  margin: 0 2rem;
   border-radius: 33px;
 
   overflow: auto;

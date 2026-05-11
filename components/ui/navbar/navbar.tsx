@@ -20,8 +20,8 @@ import { NAV_BAR } from "@/data/mock/navbar-mock";
 export default function NavBar() {
   const [activeTab, setActiveTab] = useState<NavBarList["section"]>("home");
   const router = useRouter();
-  const { theme } = useTheme();
-  const [isProjectSection, setProjectSection] = useState(false);
+  // const { theme } = useTheme();
+  // const [isProjectSection, setProjectSection] = useState(false);
   const isMobile = useMediaQuery("(max-width: 639px)");
 
   const getIcon = (navBarItem: NavBarList["name"]) => {
@@ -83,6 +83,7 @@ export default function NavBar() {
   }, []);
 
   // Track project section
+  /*
   useEffect(() => {
     if (!isMobile) {
       const handleScroll = () => {
@@ -100,12 +101,13 @@ export default function NavBar() {
       return () => window.removeEventListener("scroll", handleScroll);
     }
   }, [isMobile]);
+  */
 
   return (
     <nav
       className={cn(
         styles.navigation,
-        theme === "light" && isProjectSection ? "!bg-stone-800/20" : "",
+        // theme === "light" && isProjectSection ? "!bg-stone-800/20" : "",
       )}>
       <ul>
         {NAV_BAR.map((item, index) => (

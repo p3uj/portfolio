@@ -10,6 +10,8 @@
   overflow: hidden;
 
   h1 {
+    font-family: var(--font-bebas), sans-serif;
+
     font-size: 2rem;
     color: var(--primary);
 
@@ -27,7 +29,7 @@
     mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 
     span {
-      font-size: 10rem;
+      font-size: 18rem;
 
       -webkit-mask-image: linear-gradient(
         to bottom,
@@ -143,38 +145,30 @@
     position: static;
     align-items: center;
 
-    padding: 2rem;
+    height: fit-content;
 
-    @include header {
-      grid-area: header;
-      position: static;
-      gap: 0.5rem;
-      top: none;
-      left: none;
-      transform: none;
+    padding: 14rem 2rem 5rem 2rem;
 
-      text-align: start;
-      text-transform: capitalize;
+    position: relative;
 
-      -webkit-mask-image: none;
-      mask-image: none;
+    scroll-margin-top: 0;
 
-      br {
-        display: none;
-      }
+    @include title-section("about me");
 
-      span {
-        font-size: $header;
+    &::before {
+      top: 9%;
+    }
 
-        -webkit-mask-image: none;
-        mask-image: none;
-      }
+    h1 {
+      display: none;
     }
 
     .profile {
       grid-area: profile;
 
       overflow: hidden;
+
+      z-index: 1;
 
       -webkit-mask-image: linear-gradient(
         to bottom,
@@ -218,6 +212,8 @@
       margin: 1rem;
       padding: 1.5rem 0;
 
+      z-index: 1;
+
       .textWrapper {
         flex: 1;
         min-height: 0;
@@ -235,26 +231,21 @@
 @include responsiveness($breakpoint-laptop) {
   .about {
     grid-template-columns: 1fr 3fr;
-    padding: 2rem 3rem;
-
-    @include responsiveness($breakpoint-desktop) {
-      margin: 0 4rem 0 4rem;
-    }
-
-    @include responsiveness($breakpoint-large-desktop) {
-      margin: 0 5rem 0 5rem;
-    }
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
 @include responsiveness($breakpoint-desktop) {
   .about {
-    padding: 2rem 4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 
 @include responsiveness($breakpoint-large-desktop) {
   .about {
-    padding: 2rem 5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 }

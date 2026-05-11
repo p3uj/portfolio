@@ -9,52 +9,9 @@
 
   position: relative;
 
-  // Circle Gradient
-  &::after {
-    content: "";
-    height: 100%;
-    width: 100%;
-    background: radial-gradient(
-      circle at top,
-      hsl(271, 91%, 65%, 0.5) 0%,
-      var(--background) 50%
-    );
-
-    position: absolute;
-    top: 0;
-  }
-
-  // Contact Text
-  &::before {
-    content: "contact";
-    text-transform: uppercase;
-    font-size: clamp(7rem, 30vw, 12rem);
-    font-weight: 400;
-    font-family: var(--font-bebas), sans-serif;
-
-    place-self: center;
-
-    color: hsl(271, 91%, 65%, 0.5);
-    text-shadow: 0 0 30px hsl(271, 91%, 65%, 0.15);
-
-    -webkit-mask-image: linear-gradient(
-      to bottom,
-      hsl(271, 91%, 65%) 0%,
-      transparent 90%
-    );
-    mask-image: linear-gradient(
-      to bottom,
-      hsl(271, 91%, 65%) 0%,
-      transparent 90%
-    );
-
-    position: absolute;
-    top: 5%;
-  }
+  @include title-section("contact");
 
   @include header {
-    // justify-self: center;
-
     z-index: 1;
   }
 

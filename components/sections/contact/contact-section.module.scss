@@ -5,14 +5,63 @@
   grid-template-columns: 1fr;
   height: fit-content;
   gap: $space-md;
-  padding: 2rem 0;
+  padding: 14rem 1rem 5rem 1rem;
 
-  @include header;
+  position: relative;
 
-  padding: 1rem;
+  // Circle Gradient
+  &::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(
+      circle at top,
+      hsl(271, 91%, 65%, 0.5) 0%,
+      var(--background) 50%
+    );
+
+    position: absolute;
+    top: 0;
+  }
+
+  // Contact Text
+  &::before {
+    content: "contact";
+    text-transform: uppercase;
+    font-size: clamp(7rem, 30vw, 12rem);
+    font-weight: 400;
+    font-family: var(--font-bebas), sans-serif;
+
+    place-self: center;
+
+    color: hsl(271, 91%, 65%, 0.5);
+    text-shadow: 0 0 30px hsl(271, 91%, 65%, 0.15);
+
+    mask-image: linear-gradient(
+      to bottom,
+      hsl(271, 91%, 65%) 0%,
+      transparent 90%
+    );
+
+    position: absolute;
+    top: 5%;
+  }
+
+  @include header {
+    // justify-self: center;
+
+    z-index: 1;
+  }
+
+  h1 {
+    display: flex;
+    justify-content: center;
+  }
 
   p {
     color: var(--secondary-text);
+
+    z-index: 1;
   }
 
   div {
@@ -20,6 +69,8 @@
     height: 100%;
     padding: $space-md;
     border-radius: $radius-lg;
+
+    z-index: 1;
   }
 }
 
@@ -29,14 +80,21 @@
 
     // prettier-ignore
     grid-template-areas: 
-      "header header"
-      "paragraph paragraph"
+      "header message"
+      "paragraph message"
       "email message"
       "phone message"
       "location message";
 
+    // Contact Text
+    &::before {
+      top: 10%;
+    }
+
     h1 {
       grid-area: header;
+
+      justify-content: start;
     }
 
     p {
@@ -61,32 +119,30 @@
   }
 }
 
-@include responsiveness($breakpoint-sm) {
-  .contact {
-    scroll-margin-top: 84px;
-  }
-}
-
 @include responsiveness($breakpoint-tablet) {
   .contact {
-    padding: 2rem 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
 @include responsiveness($breakpoint-laptop) {
   .contact {
-    padding: 2rem 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
 @include responsiveness($breakpoint-desktop) {
   .contact {
-    padding: 2rem 4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 
 @include responsiveness($breakpoint-large-desktop) {
   .contact {
-    padding: 2rem 5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 }

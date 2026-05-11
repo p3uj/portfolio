@@ -2,7 +2,10 @@
 
 .contactForm {
   form {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
     gap: $space-md;
 
     fieldset {
@@ -41,7 +44,6 @@
       }
 
       .textWrapper {
-        height: 100px;
         margin-right: 1rem;
         padding: $space-sm 6px $space-sm $space-md;
 
@@ -73,6 +75,10 @@
       span {
         color: red;
       }
+    }
+
+    fieldset:last-of-type {
+      flex: 1;
     }
 
     button {

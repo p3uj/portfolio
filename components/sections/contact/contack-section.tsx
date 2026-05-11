@@ -6,6 +6,7 @@ import ContactForm from "@/components/form/contact/contact-form";
 export default function ContactSection() {
   return (
     <section id="contact" className={styles.contact}>
+      {/* <h2>Contact</h2> */}
       <h1>Get in Touch</h1>
 
       {/* prettier-ignore */}

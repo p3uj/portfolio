@@ -37,6 +37,11 @@
     color: hsl(271, 91%, 65%, 0.5);
     text-shadow: 0 0 30px hsl(271, 91%, 65%, 0.15);
 
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      hsl(271, 91%, 65%) 0%,
+      transparent 90%
+    );
     mask-image: linear-gradient(
       to bottom,
       hsl(271, 91%, 65%) 0%,

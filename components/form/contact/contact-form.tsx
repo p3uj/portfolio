@@ -87,11 +87,13 @@ export default function ContactForm() {
             <label htmlFor="message" data-error={!!errors.message}>
               Message
             </label>
-            <textarea
-              data-error={!!errors.message}
-              id="message"
-              placeholder="enter your message"
-              {...register("message")}></textarea>
+            <div className={styles.textWrapper}>
+              <textarea
+                data-error={!!errors.message}
+                id="message"
+                placeholder="enter your message"
+                {...register("message")}></textarea>
+            </div>
 
             {errors.message && <span>{errors.message.message}</span>}
           </fieldset>

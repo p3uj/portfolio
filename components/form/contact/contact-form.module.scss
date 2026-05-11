@@ -23,7 +23,7 @@
       }
 
       input,
-      textarea {
+      .textWrapper {
         background-color: var(--color-stone-100);
         box-shadow: 0 0 0 1px var(--color-stone-200);
 
@@ -37,6 +37,36 @@
 
         &[data-error="true"] {
           box-shadow: 0 0 0 1px red;
+        }
+      }
+
+      .textWrapper {
+        height: 100px;
+        margin-right: 1rem;
+        padding: $space-sm 6px $space-sm $space-md;
+
+        &:focus-within {
+          box-shadow: 0 0 0 1px var(--primary);
+        }
+
+        &:has(textarea[data-error="true"]) {
+          box-shadow: 0 0 0 1px red;
+        }
+
+        textarea {
+          width: 100%;
+          height: 100%;
+          padding-right: $space-sm;
+
+          outline: none;
+          box-shadow: none;
+          background-color: transparent;
+
+          resize: none;
+
+          &:focus {
+            outline: none;
+          }
         }
       }
 
@@ -54,7 +84,8 @@
 
 :global(.dark) .contactForm {
   input,
-  textarea {
+  textarea,
+  .textWrapper {
     background-color: rgba(255, 255, 255, 0.05);
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
   }

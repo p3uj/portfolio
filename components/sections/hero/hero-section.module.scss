@@ -35,12 +35,14 @@
     top: 15%;
 
     font-size: 2rem;
-    line-height: 0.8;
+    line-height: 1;
 
     color: var(--primary);
 
+    font-family: var(--font-bebas), sans-serif;
+
     h1 {
-      font-size: 5rem;
+      font-size: 7rem;
       padding-bottom: 0.2em;
 
       background: linear-gradient(

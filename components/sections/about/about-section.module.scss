@@ -42,10 +42,12 @@
     height: 100%;
     width: 100%;
     position: relative;
+    justify-items: center;
 
     img {
       height: 100%;
       width: 100%;
+      max-width: 350px;
       object-fit: cover;
 
       filter: grayscale(100%) contrast(1.1);
@@ -146,6 +148,7 @@
     @include header {
       grid-area: header;
       position: static;
+      gap: 0.5rem;
       top: none;
       left: none;
       transform: none;
@@ -155,6 +158,10 @@
 
       -webkit-mask-image: none;
       mask-image: none;
+
+      br {
+        display: none;
+      }
 
       span {
         font-size: $header;

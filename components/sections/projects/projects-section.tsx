@@ -14,7 +14,7 @@ interface ProjectProps {
 export default function ProjectsSection({ modalOpen, id }: ProjectProps) {
   return (
     <section id="project" className={styles.project}>
-      <h1>My Projects</h1>
+      <h1>Featured Projects</h1>
 
       <section>
         {PROJECT_MOCK.map((project) => (

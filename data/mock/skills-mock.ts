@@ -33,7 +33,7 @@ export const SKILLS_MOCK: Skill[] = [
   },
   {
     id: 7,
-    name: "js",
+    name: "javascript",
     category: "frontend",
   },
   {
@@ -98,7 +98,7 @@ export const SKILLS_MOCK: Skill[] = [
   },
   {
     id: 20,
-    name: "sql server",
+    name: "sqlserver",
     category: "database",
   },
 ];

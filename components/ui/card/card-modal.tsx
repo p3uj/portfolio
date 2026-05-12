@@ -95,8 +95,8 @@ export default function CardModal({ project_id }: CardModalProps) {
             </section>
 
             <section className={styles.techStack}>
-              {item.tech_stack.map((ts, index) => (
-                <Badge key={index} name={ts.name} />
+              {item.skill.map((skill, index) => (
+                <Badge key={index} name={skill.name} />
               ))}
             </section>
 

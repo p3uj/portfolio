@@ -20,6 +20,7 @@ export const SKILL_CATEGORY = [
   "frontend",
   "backend",
   "database",
+  "mobile",
   "tools",
 ] as const;
 export type SkillCategory = (typeof SKILL_CATEGORY)[number];

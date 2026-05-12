@@ -46,7 +46,10 @@ export default function ContactSection() {
 
         <Tooltip open={copiedIndex === 1}>
           <TooltipTrigger asChild>
-            <Copy onClick={() => handleCopy("bvillesco@gmail.com", 1)} />
+            <Copy
+              className={styles.copyIcon}
+              onClick={() => handleCopy("bvillesco@gmail.com", 1)}
+            />
           </TooltipTrigger>
 
           <TooltipContent hideArrow className="mb-2">
@@ -66,7 +69,10 @@ export default function ContactSection() {
 
         <Tooltip open={copiedIndex === 2}>
           <TooltipTrigger asChild>
-            <Copy onClick={() => handleCopy("0938874883", 2)} />
+            <Copy
+              className={styles.copyIcon}
+              onClick={() => handleCopy("0938874883", 2)}
+            />
           </TooltipTrigger>
 
           <TooltipContent hideArrow className="mb-2">
@@ -86,7 +92,10 @@ export default function ContactSection() {
 
         <Tooltip open={copiedIndex === 3}>
           <TooltipTrigger asChild>
-            <Copy onClick={() => handleCopy("Quezon City, Philippines", 3)} />
+            <Copy
+              className={styles.copyIcon}
+              onClick={() => handleCopy("Quezon City, Philippines", 3)}
+            />
           </TooltipTrigger>
 
           <TooltipContent hideArrow className="mb-2">

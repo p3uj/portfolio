@@ -36,7 +36,7 @@
     z-index: 1;
 
     // Last Icon
-    svg:last-of-type {
+    .copyIcon {
       position: absolute;
       right: 1rem;
       cursor: pointer;

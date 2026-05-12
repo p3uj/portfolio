@@ -52,7 +52,7 @@
   color: #cc6699;
 }
 
-.js {
+.javascript {
   background-color: rgba(247, 223, 30, 0.1);
   box-shadow: 0 0 0 1px #f7df1e;
   color: #f7df1e;
@@ -71,10 +71,17 @@
 }
 
 .nextjs,
-.github {
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 0 1px #ffffff;
-  color: #ffffff;
+.github,
+.shadcn {
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 1px #000000;
+  color: #000000;
+
+  :global(.dark) & {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 1px #ffffff;
+    color: #ffffff;
+  }
 }
 
 .mysql {
@@ -111,4 +118,16 @@
   background-color: rgba(222, 76, 54, 0.1);
   box-shadow: 0 0 0 1px #de4c36;
   color: #de4c36;
+}
+
+.sqlite {
+  background-color: rgba(15, 128, 204, 0.1);
+  box-shadow: 0 0 0 1px #0f80cc;
+  color: #0f80cc;
+}
+
+.sqlserver {
+  background-color: rgba(204, 41, 39, 0.1);
+  box-shadow: 0 0 0 1px #cc2927;
+  color: #cc2927;
 }

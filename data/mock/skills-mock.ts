@@ -1,89 +1,89 @@
-import { TechStack } from "@/types";
+import { Skill } from "@/types";
 
-export const TECH_STACK_MOCK: TechStack[] = [
+export const SKILLS_MOCK: Skill[] = [
   {
     id: 1,
     name: "django",
-    type: "backend",
+    category: "backend",
   },
   {
     id: 2,
     name: "react",
-    type: "frontend",
+    category: "frontend",
   },
   {
     id: 3,
     name: "laravel",
-    type: "backend",
+    category: "backend",
   },
   {
     id: 4,
     name: "html5",
-    type: "frontend",
+    category: "frontend",
   },
   {
     id: 5,
     name: "css3",
-    type: "frontend",
+    category: "frontend",
   },
   {
     id: 6,
     name: "sass",
-    type: "frontend",
+    category: "frontend",
   },
   {
     id: 7,
     name: "js",
-    type: "frontend",
+    category: "frontend",
   },
   {
     id: 8,
     name: "typescript",
-    type: "frontend",
+    category: "frontend",
   },
   {
     id: 9,
     name: "tailwindcss",
-    type: "frontend",
+    category: "frontend",
   },
   {
     id: 10,
     name: "nextjs",
-    type: "frontend",
+    category: "frontend",
   },
   {
     id: 11,
     name: "mysql",
-    type: "database",
+    category: "database",
   },
   {
     id: 12,
     name: "postgresql",
-    type: "database",
+    category: "database",
   },
   {
     id: 13,
     name: "firebase",
-    type: "backend",
+    category: "backend",
   },
   {
     id: 14,
     name: "flutterflow",
-    type: "tools",
+    category: "tools",
   },
   {
     id: 15,
     name: "vitejs",
-    type: "tools",
+    category: "tools",
   },
   {
     id: 16,
     name: "git",
-    type: "tools",
+    category: "tools",
   },
   {
     id: 17,
     name: "github",
-    type: "tools",
+    category: "tools",
   },
 ];

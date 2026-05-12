@@ -3,7 +3,7 @@ import {
   PROJECT_IMAGES_MOCK,
   PROJECT_MOCK,
 } from "@/data/mock/project-mock";
-import { TECH_STACK_MOCK } from "@/data/mock/tech-stack.mock";
+import { SKILLS_MOCK } from "@/data/mock/skills-mock";
 
 function GetImage(
   id: number | null = null,
@@ -24,17 +24,17 @@ function GetImage(
 function GetProject(project_id: number) {
   const project = PROJECT_MOCK.find((project) => project.id === project_id);
   const image = GetImage(null, project_id, true)?.image_path;
-  const tech_stack = GetTechStack(project?.tech_stack_id);
+  const skill = GetSkill(project?.skill_id);
   const feature = GetFeature(project_id);
 
   if (!project) return null;
 
-  const { tech_stack_id, ...cleanedProject } = project;
+  const { skill_id, ...cleanedProject } = project;
 
   return {
     ...cleanedProject,
     cover: image,
-    tech_stack,
+    skill,
     feature,
   };
 }
@@ -42,30 +42,30 @@ function GetProject(project_id: number) {
 function GetProjectWithFeature(project_id: number) {
   const project = PROJECT_MOCK.find((project) => project.id === project_id);
   const image = GetImage(null, project_id, true)?.image_path;
-  const tech_stack = GetTechStack(project?.tech_stack_id);
+  const skill = GetSkill(project?.skill_id);
   const feature = GetFeature(project_id);
 
   if (!project) return null;
 
-  const { tech_stack_id, ...cleanedProject } = project;
+  const { skill_id, ...cleanedProject } = project;
 
   return [
     {
       type: "project",
       ...cleanedProject,
       image_path: image,
-      tech_stack: tech_stack,
+      skill: skill,
     },
     ...feature.map((feature) => ({
       type: "feature",
       ...feature,
-      tech_stack: tech_stack,
+      skill: skill,
     })),
   ];
 }
 
-function GetTechStack(tech_stack_id: number[] = []) {
-  return TECH_STACK_MOCK.filter((tech) => tech_stack_id.includes(tech.id));
+function GetSkill(skill_id: number[] = []) {
+  return SKILLS_MOCK.filter((skill) => skill_id.includes(skill.id));
 }
 
 function GetFeature(project_id: number) {

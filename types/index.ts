@@ -16,23 +16,23 @@ export interface NavBar {
   section: NavBarList["section"];
 }
 
-export const TECH_STACK_TYPES = [
+export const SKILL_CATEGORY = [
   "frontend",
   "backend",
   "database",
   "tools",
 ] as const;
-export type TechStackType = (typeof TECH_STACK_TYPES)[number];
+export type SkillCategory = (typeof SKILL_CATEGORY)[number];
 
-export interface TechStack {
+export interface Skill {
   id: number;
   name: string;
-  type: TechStackType;
+  category: SkillCategory;
 }
 
 export interface Project {
   id: number;
-  tech_stack_id: TechStack["id"][];
+  skill_id: Skill["id"][];
   name: string;
   description: string;
 }

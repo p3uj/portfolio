@@ -3,21 +3,21 @@ import { Project, ProjectFeature, ProjectImage } from "@/types";
 export const PROJECT_MOCK: Project[] = [
   {
     id: 1,
-    tech_stack_id: [1, 2, 3, 4, 5, 6],
+    skill_id: [1, 2, 3, 4, 5, 6],
     name: "Project 1",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam dolore, doloribus facilis cumque nostrum rerum rem at nesciunt nisi dolorem fuga sit accusantium ad quidem, aut impedit temporibus debitis quod!",
   },
   {
     id: 2,
-    tech_stack_id: [1, 2, 3, 4, 5, 6],
+    skill_id: [1, 2, 3, 4, 5, 6],
     name: "Project 2",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam dolore, doloribus facilis cumque nostrum rerum rem at nesciunt nisi dolorem fuga sit accusantium ad quidem, aut impedit temporibus debitis quod!",
   },
   {
     id: 3,
-    tech_stack_id: [1, 2, 3, 4, 5, 6],
+    skill_id: [1, 2, 3, 4, 5, 6],
     name: "Project 3",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam dolore, doloribus facilis cumque nostrum rerum rem at nesciunt nisi dolorem fuga sit accusantium ad quidem, aut impedit temporibus debitis quod!",

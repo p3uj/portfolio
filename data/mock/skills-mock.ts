@@ -69,7 +69,7 @@ export const SKILLS_MOCK: Skill[] = [
   {
     id: 14,
     name: "flutterflow",
-    category: "tools",
+    category: "mobile",
   },
   {
     id: 15,
@@ -85,5 +85,20 @@ export const SKILLS_MOCK: Skill[] = [
     id: 17,
     name: "github",
     category: "tools",
+  },
+  {
+    id: 18,
+    name: "shadcn",
+    category: "frontend",
+  },
+  {
+    id: 19,
+    name: "sqlite",
+    category: "database",
+  },
+  {
+    id: 20,
+    name: "sql server",
+    category: "database",
   },
 ];

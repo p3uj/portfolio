@@ -1,51 +1,58 @@
 @use "../../../styles" as *;
 
-.navigation {
+.navWrapper {
   display: flex;
-  justify-self: center;
   height: fit-content;
+  width: 100%;
 
-  min-width: 0;
-  width: calc(100% - 2rem);
-
-  background: var(--navbar);
-  box-shadow: 0 0 0 1px var(--border-card);
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
+  justify-content: center;
+  padding: 0 1rem;
 
   position: fixed;
   bottom: 24px;
   z-index: 100;
 
-  padding: 8px;
-  border-radius: 33px;
+  left: 50%;
+  transform: translate(-50%);
 
-  overflow: auto;
+  .navigation {
+    width: fit-content;
 
-  ul {
-    display: flex;
-    flex-direction: row;
+    background: var(--navbar);
+    box-shadow: 0 0 0 1px var(--border-card);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
 
-    button {
+    padding: 8px;
+    border-radius: 33px;
+
+    overflow: auto;
+
+    ul {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      border-radius: 25px;
-      gap: 0.25rem;
+      flex-direction: row;
 
-      color: var(--color-neutral-400);
-    }
+      button {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+        gap: 0.25rem;
 
-    button:hover:not(.active) {
-      color: var(--color-purple-500);
-    }
+        color: var(--color-neutral-400);
+      }
 
-    .active {
-      box-shadow: 0 0 0 1px var(--primary);
-      background-color: var(--primary-25);
+      button:hover:not(.active) {
+        color: var(--color-purple-500);
+      }
 
-      color: var(--primary);
+      .active {
+        box-shadow: 0 0 0 1px var(--primary);
+        background-color: var(--primary-25);
+
+        color: var(--primary);
+      }
     }
   }
 }
@@ -58,14 +65,19 @@
 
 // Small Screnn View
 @include responsiveness($breakpoint-sm) {
-  .navigation {
+  .navWrapper {
     top: 24px;
-    border-radius: 40px;
 
-    ul {
-      button {
-        border-radius: 40px;
-        gap: 0.5rem;
+    .navigation {
+      width: fit-content;
+
+      border-radius: 40px;
+
+      ul {
+        button {
+          border-radius: 40px;
+          gap: 0.5rem;
+        }
       }
     }
   }

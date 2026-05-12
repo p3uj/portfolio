@@ -22,7 +22,7 @@ export default function NavBar() {
   const router = useRouter();
   // const { theme } = useTheme();
   // const [isProjectSection, setProjectSection] = useState(false);
-  const isMobile = useMediaQuery("(max-width: 639px)");
+  // const isMobile = useMediaQuery("(max-width: 639px)");
 
   const getIcon = (navBarItem: NavBarList["name"]) => {
     switch (navBarItem) {
@@ -104,32 +104,34 @@ export default function NavBar() {
   */
 
   return (
-    <nav
-      className={cn(
-        styles.navigation,
-        // theme === "light" && isProjectSection ? "!bg-stone-800/20" : "",
-      )}>
-      <ul>
-        {NAV_BAR.map((item, index) => (
-          <li key={index}>
-            <Button
-              variant="ghost"
-              className={cn(
-                {
-                  [styles.active]: activeTab === item.section,
-                },
-                "capitalize",
-              )}
-              onClick={() => {
-                setActiveTab(item.section);
-                router.push(`/#${item.section}`);
-              }}>
-              {getIcon(item.name)}
-              {item.name}
-            </Button>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <section className={styles.navWrapper}>
+      <nav
+        className={cn(
+          styles.navigation,
+          // theme === "light" && isProjectSection ? "!bg-stone-800/20" : "",
+        )}>
+        <ul>
+          {NAV_BAR.map((item, index) => (
+            <li key={index}>
+              <Button
+                variant="ghost"
+                className={cn(
+                  {
+                    [styles.active]: activeTab === item.section,
+                  },
+                  "capitalize",
+                )}
+                onClick={() => {
+                  setActiveTab(item.section);
+                  router.push(`/#${item.section}`);
+                }}>
+                {getIcon(item.name)}
+                {item.name}
+              </Button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </section>
   );
 }

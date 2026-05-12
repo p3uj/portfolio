@@ -22,17 +22,17 @@
 
     line-height: 0.8;
 
-    color: hsl(271, 91%, 65%, 0.5);
-    text-shadow: 0 0 30px hsl(271, 91%, 65%, 0.15);
+    color: hsl(0, 0%, 0%, 0.5);
+    text-shadow: 0 0 30px hsl(0, 0%, 0%, 0.15);
 
     -webkit-mask-image: linear-gradient(
       to bottom,
-      hsl(271, 91%, 65%) 50%,
+      hsl(0, 0%, 0%) 50%,
       transparent 100%
     );
     mask-image: linear-gradient(
       to bottom,
-      hsl(271, 91%, 65%) 50%,
+      hsl(0, 0%, 0%) 50%,
       transparent 100%
     );
   }
@@ -70,11 +70,35 @@
   }
 }
 
+:global(.dark) .skills {
+  h1 {
+    color: hsl(271, 91%, 65%, 0.5);
+    text-shadow: 0 0 30px hsl(271, 91%, 65%, 0.15);
+
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      hsl(271, 91%, 65%) 50%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      hsl(271, 91%, 65%) 50%,
+      transparent 100%
+    );
+  }
+}
+
 @include responsiveness($breakpoint-sm) {
   .skills {
-    // scroll-margin-top: 84px;
-
     &::after {
+      background: radial-gradient(
+        circle at top,
+        hsl(220, 13%, 91%, 0.5) 0%,
+        var(--background) 60%
+      );
+    }
+
+    :global(.dark) &::after {
       background: radial-gradient(
         circle at top,
         hsl(271, 91%, 65%, 0.5) 0%,

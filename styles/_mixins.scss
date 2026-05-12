@@ -48,19 +48,27 @@
     width: 100%;
     background: radial-gradient(
       circle at top,
-      hsl(271, 91%, 65%, 0.5) 0%,
+      hsl(220, 13%, 91%, 0.5) 0%,
       var(--background) 50%
     );
 
     position: absolute;
     top: 0;
   }
+
+  :global(.dark) &::after {
+    background: radial-gradient(
+      circle at top,
+      hsl(271, 91%, 65%, 0.5) 0%,
+      var(--background) 50%
+    );
+  }
 }
 
 @mixin title-section($title) {
   @include circle-gradient();
 
-  // Contact Text
+  // Text
   &::before {
     content: $title;
     text-transform: uppercase;
@@ -68,12 +76,23 @@
     font-weight: 400;
     font-family: var(--font-bebas), sans-serif;
 
-    // display: flex;
-    // flex-wrap: wrap;
-    // line-height: 0.8;
-
     place-self: center;
 
+    color: hsl(0, 0%, 0%, 0.5);
+    text-shadow: 0 0 30px hsl(0, 0%, 0%, 0.15);
+
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      hsl(0, 0%, 0%) 0%,
+      transparent 90%
+    );
+    mask-image: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, transparent 90%);
+
+    position: absolute;
+    top: 5%;
+  }
+
+  :global(.dark) &::before {
     color: hsl(271, 91%, 65%, 0.5);
     text-shadow: 0 0 30px hsl(271, 91%, 65%, 0.15);
 
@@ -87,8 +106,5 @@
       hsl(271, 91%, 65%) 0%,
       transparent 90%
     );
-
-    position: absolute;
-    top: 5%;
   }
 }

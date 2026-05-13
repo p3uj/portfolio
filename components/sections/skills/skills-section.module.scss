@@ -73,18 +73,16 @@
       &:has([data-category="frontend"]) {
         background-color: var(--color-blue-100);
         color: var(--color-blue-600);
-        box-shadow: none;
 
         &:hover {
           background-color: var(--background-card);
-          box-shadow: 0 0 0 1px var(--color-blue-600) !important;
+          box-shadow: 0 0 0 1px var(--color-blue-600);
         }
       }
 
       &:has([data-category="backend"]) {
         background-color: var(--color-emerald-100);
         color: var(--color-emerald-600);
-        box-shadow: none;
 
         &:hover {
           background-color: var(--background-card);
@@ -95,7 +93,6 @@
       &:has([data-category="database"]) {
         background-color: var(--color-amber-100);
         color: var(--color-amber-600);
-        box-shadow: none;
 
         &:hover {
           background-color: var(--background-card);
@@ -106,7 +103,6 @@
       &:has([data-category="mobile"]) {
         background-color: var(--color-purple-100);
         color: var(--color-purple-600);
-        box-shadow: none;
 
         &:hover {
           background-color: var(--background-card);
@@ -117,7 +113,6 @@
       &:has([data-category="tools & deployment"]) {
         background-color: var(--color-gray-200);
         color: var(--color-gray-600);
-        box-shadow: none;
 
         &:hover {
           background-color: var(--background-card);
@@ -228,9 +223,8 @@
         }
       }
 
-      &:hover:not(.badge) {
-        box-shadow: 0 0 0 1px var(--primary);
-
+      // Card Hover
+      &:hover {
         transform: scale(1.01);
 
         svg {

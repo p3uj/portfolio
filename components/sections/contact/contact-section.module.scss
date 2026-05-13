@@ -35,6 +35,13 @@
     position: relative;
     z-index: 1;
 
+    transition: all ease 0.3s;
+
+    &:hover {
+      box-shadow: 0 0 0 1px var(--primary);
+      transform: scale(1.01);
+    }
+
     // Last Icon
     .copyIcon {
       position: absolute;

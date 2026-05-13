@@ -228,11 +228,13 @@
 
 @include responsiveness($breakpoint-sm) {
   .project {
+    padding: calc(20rem + 64px) 1rem 5rem 1rem;
+
     &::after {
       background: radial-gradient(
         circle at top,
         hsl(220, 13%, 91%, 0.5) 0%,
-        var(--background) 60%
+        var(--background) 45rem
       );
     }
 
@@ -240,12 +242,16 @@
       background: radial-gradient(
         circle at top,
         hsl(271, 91%, 65%, 0.5) 0%,
-        var(--background) 60%
+        var(--background) 45rem
       );
     }
 
     h1 {
       top: 0;
+    }
+
+    .tab {
+      top: calc(24px + 64px + 1rem);
     }
 
     .content {
@@ -268,22 +274,6 @@
 
     h1 {
       transform: translate(-45%, 50%);
-    }
-
-    &::after {
-      background: radial-gradient(
-        circle at top,
-        hsl(220, 13%, 91%, 0.5) 0%,
-        var(--background) 70%
-      );
-    }
-
-    :global(.dark) &::after {
-      background: radial-gradient(
-        circle at top,
-        hsl(271, 91%, 65%, 0.5) 0%,
-        var(--background) 70%
-      );
     }
 
     .content {

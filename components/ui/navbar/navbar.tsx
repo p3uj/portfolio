@@ -121,10 +121,7 @@ export default function NavBar() {
                   },
                   "capitalize",
                 )}
-                onClick={() => {
-                  setActiveTab(item.section);
-                  router.push(`/#${item.section}`);
-                }}>
+                onClick={() => router.push(`/#${item.section}`)}>
                 {getIcon(item.name)}
                 {item.name}
               </Button>

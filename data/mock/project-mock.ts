@@ -7,6 +7,7 @@ export const PROJECT_MOCK: Project[] = [
     name: "Project 1",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam dolore, doloribus facilis cumque nostrum rerum rem at nesciunt nisi dolorem fuga sit accusantium ad quidem, aut impedit temporibus debitis quod!",
+    type: "web",
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const PROJECT_MOCK: Project[] = [
     name: "Project 2",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam dolore, doloribus facilis cumque nostrum rerum rem at nesciunt nisi dolorem fuga sit accusantium ad quidem, aut impedit temporibus debitis quod!",
+    type: "web",
   },
   {
     id: 3,
@@ -21,6 +23,23 @@ export const PROJECT_MOCK: Project[] = [
     name: "Project 3",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam dolore, doloribus facilis cumque nostrum rerum rem at nesciunt nisi dolorem fuga sit accusantium ad quidem, aut impedit temporibus debitis quod!",
+    type: "web",
+  },
+  {
+    id: 4,
+    skill_id: [1, 2, 3, 4, 5, 6],
+    name: "Project 4",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam dolore, doloribus facilis cumque nostrum rerum rem at nesciunt nisi dolorem fuga sit accusantium ad quidem, aut impedit temporibus debitis quod!",
+    type: "mobile",
+  },
+  {
+    id: 5,
+    skill_id: [1, 2, 3, 4, 5, 6],
+    name: "Project 5",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam dolore, doloribus facilis cumque nostrum rerum rem at nesciunt nisi dolorem fuga sit accusantium ad quidem, aut impedit temporibus debitis quod!",
+    type: "UI/UX",
   },
 ];
 
@@ -129,5 +148,17 @@ export const PROJECT_IMAGES_MOCK: ProjectImage[] = [
     project_id: 3,
     image_path: "/images/projects/project1/Image2.png",
     is_cover: false,
+  },
+  {
+    id: 10,
+    project_id: 4,
+    image_path: "/images/projects/project1/Image1.png",
+    is_cover: true,
+  },
+  {
+    id: 11,
+    project_id: 5,
+    image_path: "/images/projects/project1/Image2.png",
+    is_cover: true,
   },
 ];

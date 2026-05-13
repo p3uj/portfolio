@@ -58,7 +58,7 @@ export const SKILLS_MOCK: Skill[] = [
   },
   {
     id: 12,
-    name: "postgresql",
+    name: "sqlite",
     category: "database",
   },
   {
@@ -74,17 +74,17 @@ export const SKILLS_MOCK: Skill[] = [
   {
     id: 15,
     name: "vitejs",
-    category: "tools",
+    category: "tools & deployment",
   },
   {
     id: 16,
     name: "git",
-    category: "tools",
+    category: "tools & deployment",
   },
   {
     id: 17,
     name: "github",
-    category: "tools",
+    category: "tools & deployment",
   },
   {
     id: 18,
@@ -93,12 +93,32 @@ export const SKILLS_MOCK: Skill[] = [
   },
   {
     id: 19,
-    name: "sqlite",
+    name: "postgresql",
     category: "database",
   },
   {
     id: 20,
     name: "sqlserver",
     category: "database",
+  },
+  {
+    id: 21,
+    name: "figma",
+    category: "tools & deployment",
+  },
+  {
+    id: 22,
+    name: "railway",
+    category: "tools & deployment",
+  },
+  {
+    id: 23,
+    name: "vercel",
+    category: "tools & deployment",
+  },
+  {
+    id: 24,
+    name: "postman",
+    category: "tools & deployment",
   },
 ];

@@ -21,7 +21,7 @@ export const SKILL_CATEGORY = [
   "backend",
   "database",
   "mobile",
-  "tools",
+  "tools & deployment",
 ] as const;
 export type SkillCategory = (typeof SKILL_CATEGORY)[number];
 

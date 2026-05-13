@@ -31,11 +31,18 @@ export interface Skill {
   category: SkillCategory;
 }
 
+export const PROJECT_TYPE = ["web", "mobile", "UI/UX"] as const;
+export type ProjectType = (typeof PROJECT_TYPE)[number];
+
+export const PROJECT_TAB = ["all", ...PROJECT_TYPE] as const;
+export type ProjectTab = (typeof PROJECT_TAB)[number];
+
 export interface Project {
   id: number;
   skill_id: Skill["id"][];
   name: string;
   description: string;
+  type: ProjectType;
 }
 
 export interface ProjectFeature {

@@ -25,7 +25,7 @@ export default function SkillsSections() {
     frontend: SKILLS_MOCK.filter((item) => item.category === "frontend"),
     backend: SKILLS_MOCK.filter((item) => item.category === "backend"),
     database: SKILLS_MOCK.filter((item) => item.category === "database"),
-    mobile: SKILLS_MOCK.filter((item) => item.category === "mobile"),
+    // mobile: SKILLS_MOCK.filter((item) => item.category === "mobile"),
     tools: SKILLS_MOCK.filter((item) => item.category === "tools & deployment"),
   };
 
@@ -40,8 +40,8 @@ export default function SkillsSections() {
       case "database":
         return <Database />;
 
-      case "mobile":
-        return <Smartphone />;
+      // case "mobile":
+      //   return <Smartphone />;
 
       case "tools & deployment":
         return <Wrench />;

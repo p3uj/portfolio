@@ -20,7 +20,7 @@ export const SKILL_CATEGORY = [
   "frontend",
   "backend",
   "database",
-  "mobile",
+  // "mobile",
   "tools & deployment",
 ] as const;
 export type SkillCategory = (typeof SKILL_CATEGORY)[number];
@@ -31,7 +31,11 @@ export interface Skill {
   category: SkillCategory;
 }
 
-export const PROJECT_TYPE = ["web", "mobile", "UI/UX"] as const;
+export const PROJECT_TYPE = [
+  "web",
+  // "mobile",
+  "UI/UX",
+] as const;
 export type ProjectType = (typeof PROJECT_TYPE)[number];
 
 export const PROJECT_TAB = ["all", ...PROJECT_TYPE] as const;
@@ -69,7 +73,7 @@ export interface ProjectImage {
 
 export const ROLES = [
   "full stack web developer",
-  "mobile developer",
+  // "mobile developer",
   "UI/UX designer",
 ] as const;
 export type RolesType = (typeof ROLES)[number];

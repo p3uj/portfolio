@@ -4,7 +4,7 @@ import {
   PROJECT_MOCK,
 } from "@/data/mock/project-mock";
 import { SKILLS_MOCK } from "@/data/mock/skills-mock";
-import { ProjectTab, ProjectType } from "@/types";
+import { LinkType, ProjectTab, ProjectType } from "@/types";
 
 function GetImage(
   id: number | null = null,
@@ -24,26 +24,6 @@ function GetImage(
 
 function GetProject(project_id: number) {
   const project = PROJECT_MOCK.find((project) => project.id === project_id);
-  const image = GetImage(null, project_id, true)?.image_path;
-  const skill = GetSkill(project?.skill_id);
-  const feature = GetFeature(project_id);
-
-  if (!project) return null;
-
-  const { skill_id, ...cleanedProject } = project;
-
-  return {
-    ...cleanedProject,
-    cover: image,
-    skill,
-    feature,
-  };
-}
-
-function GetProjectByType(project_id: number, type: ProjectType) {
-  const project = PROJECT_MOCK.find(
-    (project) => project.id === project_id && project.type === type,
-  );
   const image = GetImage(null, project_id, true)?.image_path;
   const skill = GetSkill(project?.skill_id);
   const feature = GetFeature(project_id);
@@ -80,17 +60,29 @@ function GetProjectWithFeature(project_id: number) {
 
   return [
     {
-      projectType: "project",
       ...cleanedProject,
       image_path: image,
       skill: skill,
+      is_feature: false,
     },
     ...feature.map((feature) => ({
-      type: "feature",
       ...feature,
       skill: skill,
+      is_feature: true,
     })),
   ];
+}
+
+function GetLink(project_id: number, type: LinkType) {
+  if (type === "watch demo") {
+    return PROJECT_MOCK.find((item) => item.id === project_id)?.watch_demo_link;
+  }
+
+  if (type === "github") {
+    return PROJECT_MOCK.find((item) => item.id === project_id)?.github_link;
+  }
+
+  return PROJECT_MOCK.find((item) => item.id === project_id)?.live_demo_link;
 }
 
 function GetSkill(skill_id: number[] = []) {
@@ -108,4 +100,4 @@ function GetFeature(project_id: number) {
   return features;
 }
 
-export { GetImage, GetProject, GetProjectWithFeature, CountProject };
+export { GetImage, GetProject, GetProjectWithFeature, CountProject, GetLink };

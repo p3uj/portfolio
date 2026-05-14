@@ -37,12 +37,19 @@ export type ProjectType = (typeof PROJECT_TYPE)[number];
 export const PROJECT_TAB = ["all", ...PROJECT_TYPE] as const;
 export type ProjectTab = (typeof PROJECT_TAB)[number];
 
+export const LINK_TYPE = ["watch demo", "live demo", "github"] as const;
+export type LinkType = (typeof LINK_TYPE)[number];
+
 export interface Project {
   id: number;
   skill_id: Skill["id"][];
   name: string;
   description: string;
   type: ProjectType;
+
+  watch_demo_link?: string;
+  live_demo_link?: string;
+  github_link?: string;
 }
 
 export interface ProjectFeature {

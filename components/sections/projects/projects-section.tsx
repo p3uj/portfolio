@@ -33,7 +33,7 @@ export default function ProjectsSection({ modalOpen, id }: ProjectProps) {
 
   return (
     <section id="project" className={styles.project}>
-      <h1>Featured Projects</h1>
+      <h1 className={styles.sectionTitle}>Featured Projects</h1>
 
       <section className={styles.tab}>
         {PROJECT_TAB.map((tab, index) => (
@@ -54,7 +54,8 @@ export default function ProjectsSection({ modalOpen, id }: ProjectProps) {
               modalOpen(true);
               id(project.id);
             }}
-            key={project.id}>
+            key={project.id}
+            className={styles.card}>
             <div className={styles.buttonWrapper}>
               <Button
                 variant="default"
@@ -74,6 +75,13 @@ export default function ProjectsSection({ modalOpen, id }: ProjectProps) {
                 loading="lazy"
                 decoding="async"
               />
+            </div>
+
+            <div className={styles.projectOverview}>
+              <div className={styles.textWrapper}>
+                <h1>{project.name}</h1>
+                <p>{project.description}</p>
+              </div>
             </div>
           </Card>
         ))}

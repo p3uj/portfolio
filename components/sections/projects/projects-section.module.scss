@@ -14,7 +14,7 @@
 
   @include circle-gradient;
 
-  h1 {
+  .sectionTitle {
     font-size: clamp(6rem, 30vw, 12rem);
     font-family: var(--font-bebas), sans-serif;
 
@@ -87,12 +87,12 @@
 
     z-index: 1;
 
-    // Card
-    div:not(.buttonWrapper, .imageWrapper) {
+    .card {
       padding: 0;
       cursor: pointer;
 
       box-shadow: none;
+      background-color: transparent;
 
       position: relative;
 
@@ -164,6 +164,27 @@
         }
       }
 
+      .projectOverview {
+        display: flex;
+        padding-bottom: 1rem;
+
+        animation: up 0.5s ease forwards;
+
+        .textWrapper {
+          padding-left: 0.5rem;
+          border-left: 2px solid var(--primary);
+
+          h1 {
+            color: var(--primary-text);
+          }
+
+          p {
+            font-size: 14px;
+            color: var(--secondary-text);
+          }
+        }
+      }
+
       &:hover .imageWrapper img {
         transform: scale(1.1);
       }
@@ -171,7 +192,7 @@
       button {
         display: none;
 
-        animation: buttomUp 0.5s ease forwards;
+        animation: up 0.5s ease forwards;
       }
 
       &:hover button {
@@ -207,7 +228,7 @@
 }
 
 :global(.dark) .project {
-  h1 {
+  .sectionTitle {
     color: hsl(271, 91%, 65%, 0.5);
     text-shadow: 0 0 30px hsl(271, 91%, 65%, 0.15);
 
@@ -224,7 +245,7 @@
   }
 }
 
-@keyframes buttomUp {
+@keyframes up {
   0% {
     opacity: 0;
     transform: translateY(20);
@@ -256,7 +277,7 @@
       );
     }
 
-    h1 {
+    .sectionTitle {
       top: 0;
     }
 
@@ -266,6 +287,46 @@
 
     .content {
       margin-top: 5rem;
+
+      .projectOverview {
+        display: none !important;
+      }
+
+      .card {
+        &:hover .projectOverview {
+          display: block !important;
+          height: 100%;
+          width: 100%;
+          padding: 1.5rem;
+          padding-right: 5px;
+
+          position: absolute;
+          z-index: 1;
+
+          .textWrapper {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+
+            padding-right: 0.5rem;
+            padding-left: 0;
+            border-left: none;
+
+            font-size: 2rem;
+            font-family: var(--font-bebas);
+
+            color: var(--foreground-primary);
+
+            overflow: auto;
+
+            p {
+              display: none;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -282,7 +343,7 @@
     padding-left: 3rem;
     padding-right: 3rem;
 
-    h1 {
+    .sectionTitle {
       transform: translate(-45%, 50%);
     }
 

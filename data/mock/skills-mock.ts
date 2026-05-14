@@ -66,11 +66,11 @@ export const SKILLS_MOCK: Skill[] = [
     name: "firebase",
     category: "backend",
   },
-  {
-    id: 14,
-    name: "flutterflow",
-    category: "mobile",
-  },
+  // {
+  //   id: 14,
+  //   name: "flutterflow",
+  //   category: "mobile",
+  // },
   {
     id: 15,
     name: "vitejs",

@@ -121,4 +121,14 @@ export const SKILLS_MOCK: Skill[] = [
     name: "postman",
     category: "tools & deployment",
   },
+  {
+    id: 25,
+    name: "python",
+    category: "backend",
+  },
+  {
+    id: 26,
+    name: "php",
+    category: "backend",
+  },
 ];

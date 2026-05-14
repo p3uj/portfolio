@@ -22,7 +22,7 @@ const bebasNeue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: "Bengie Villesco",
+  title: "Bengie Villesco | Portfolio",
   description: "Bengie Villesco's portfolio",
 };
 

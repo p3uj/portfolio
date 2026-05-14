@@ -72,6 +72,14 @@ export default function CardModal({ project_id }: CardModalProps) {
     setActive(index);
   };
 
+  const getTag = (tag: string) => {
+    if (tag === "web") {
+      return "web | overview";
+    }
+
+    return tag;
+  };
+
   return (
     <section className={styles.card}>
       <section
@@ -89,6 +97,10 @@ export default function CardModal({ project_id }: CardModalProps) {
               decoding="async"
             />
 
+            <section className={styles.tag}>
+              <Badge name={getTag(item.type)} />
+            </section>
+
             <section className={styles.textWrapper}>
               <h1>{item.name}</h1>
 
@@ -103,9 +115,15 @@ export default function CardModal({ project_id }: CardModalProps) {
 
             <Button
               onClick={() =>
-                window.open(GetLink(project_id ?? 0, "watch demo"), "_blank")
+                window.open(
+                  GetLink(
+                    project_id ?? 0,
+                    item.type === "web" ? "watch demo" : "live demo",
+                  ),
+                  "_blank",
+                )
               }>
-              Watch Demo
+              {item.type === "UI/UX" ? "Live Demo" : "Watch Demo"}
               <SquareArrowOutUpRight size={20} />
             </Button>
           </div>

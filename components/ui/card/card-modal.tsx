@@ -1,16 +1,17 @@
-import { GetProjectWithFeature } from "@/lib/utils/project";
+import { GetLink, GetProjectWithFeature } from "@/lib/utils/project";
 import styles from "./card-modal.module.scss";
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import Badge from "../badge/badge";
 import Button from "../button/button";
+import { SquareArrowOutUpRight } from "lucide-react";
 
 interface CardModalProps {
   project_id: number | null;
 }
 
 export default function CardModal({ project_id }: CardModalProps) {
-  const Project = GetProjectWithFeature(project_id || 0);
+  const Project = GetProjectWithFeature(project_id ?? 0);
 
   const [active, setActive] = useState(0);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -100,7 +101,13 @@ export default function CardModal({ project_id }: CardModalProps) {
               ))}
             </section>
 
-            <Button>Demo</Button>
+            <Button
+              onClick={() =>
+                window.open(GetLink(project_id ?? 0, "watch demo"), "_blank")
+              }>
+              Watch Demo
+              <SquareArrowOutUpRight size={20} />
+            </Button>
           </div>
         ))}
       </section>

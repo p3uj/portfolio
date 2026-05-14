@@ -10,6 +10,16 @@ export const PROJECT_MOCK: Project[] = [
     type: "web",
     watch_demo_link: "https://youtu.be/3O3qhtrHxSg?si=755AjOTBhFdhQmIe",
   },
+  {
+    id: 2,
+    skill_id: [21],
+    name: "BizTrend Forecast UI/UX Design",
+    description:
+      "A desktop-first UI/UX design for a predictive business analytics platform that visualizes industry growth, revenue forecasting, and market competition insights.",
+    type: "UI/UX",
+    live_demo_link:
+      "https://www.figma.com/proto/WQ5szT2NbGTrffxfJOmMlV/Business-Industry-Prediction-System?node-id=442-728&page-id=0%3A1&starting-point-node-id=549%3A2464&scaling=min-zoom&content-scaling=fixed&t=SKJgc2hy8t7K7STH-1",
+  },
 ];
 
 export const PROJECT_FEATURE_MOCK: ProjectFeature[] = [
@@ -97,5 +107,12 @@ export const PROJECT_IMAGES_MOCK: ProjectImage[] = [
     image_path:
       "/images/projects/biztrend-forecast/biztrend-forecast-profile-management.svg",
     is_cover: false,
+  },
+  {
+    id: 7,
+    project_id: 2,
+    image_path:
+      "/images/projects/biztrend-forecast/biztrend-forecast-landing-page.svg",
+    is_cover: true,
   },
 ];

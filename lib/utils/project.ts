@@ -69,6 +69,7 @@ function GetProjectWithFeature(project_id: number) {
       ...feature,
       skill: skill,
       is_feature: true,
+      type: "feature",
     })),
   ];
 }

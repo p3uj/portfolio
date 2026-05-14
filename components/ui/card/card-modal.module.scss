@@ -57,6 +57,17 @@
         transform: scale(1.2);
       }
 
+      .tag {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+
+        div {
+          background-color: hsl(56, 2%, 11%, 0.3);
+          color: var(--color-neutral-300);
+        }
+      }
+
       .textWrapper {
         display: flex;
         flex-direction: column;

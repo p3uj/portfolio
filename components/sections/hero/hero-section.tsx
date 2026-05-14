@@ -12,6 +12,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip/tooltip";
+import { SKILLS_MOCK } from "@/data/mock/skills-mock";
 
 export default function HeroSection() {
   const router = useRouter();
@@ -66,8 +67,8 @@ export default function HeroSection() {
             <p>Project Done</p>
           </Card>
           <Card className={styles.experience}>
-            <h1>2+</h1>
-            <p>Years Experience</p>
+            <h1>{SKILLS_MOCK.length}+</h1>
+            <p>Total Skills</p>
           </Card>
         </section>
 

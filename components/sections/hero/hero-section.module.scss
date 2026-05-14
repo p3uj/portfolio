@@ -158,6 +158,7 @@
         position: absolute;
       }
 
+      // Full Stack
       .role-0 {
         background-color: var(--color-blue-700);
         color: var(--color-blue-100);
@@ -165,6 +166,8 @@
         animation: floatUpDown 3s ease-in-out infinite;
       }
 
+      // Mobile
+      /*
       .role-1 {
         top: 39%;
         right: 30%;
@@ -174,8 +177,11 @@
 
         animation: floatUpDown 3s ease-in-out 0.5s infinite;
       }
+      */
 
-      .role-2 {
+      // UI/UX
+      .role-2,
+      .role-1 {
         bottom: 0;
         right: 15%;
 
@@ -236,13 +242,16 @@
     }
 
     // Mobile Dev
+    /*
     .role-1 {
       background-color: var(--color-emerald-600);
       box-shadow: 0 0 8px 2px hsl(161, 94%, 30%, 0.4);
     }
+    */
 
     // UI/UX
-    .role-2 {
+    .role-2,
+    .role-1 {
       background-color: var(--color-purple-600);
       box-shadow: 0 0 8px 2px hsl(271, 81%, 56%, 0.4);
     }
@@ -306,8 +315,6 @@
       height: fit-content;
       gap: 0.5rem;
 
-      // background-color: red;
-
       -webkit-mask-image: linear-gradient(
         to bottom,
         black 0%,
@@ -344,8 +351,6 @@
       height: fit-content;
       width: fit-content;
       justify-content: center;
-
-      // background-color: red;
 
       position: absolute;
       bottom: 13rem;

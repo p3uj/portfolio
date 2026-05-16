@@ -55,14 +55,13 @@ export default function ProjectsSection({ modalOpen, id }: ProjectProps) {
 
       <section className={styles.content}>
         {data.map((project) => (
-          <Card
-            onClick={() => {
-              modalOpen(true);
-              id(project.id);
-            }}
-            key={project.id}
-            className={styles.card}>
-            <div className={styles.imageWrapper}>
+          <Card key={project.id} className={styles.card}>
+            <div
+              className={styles.imageWrapper}
+              onClick={() => {
+                modalOpen(true);
+                id(project.id);
+              }}>
               <img
                 src={`${GetImage(null, project.id, true)?.image_path}`}
                 alt={project.name}
@@ -71,7 +70,14 @@ export default function ProjectsSection({ modalOpen, id }: ProjectProps) {
               />
             </div>
 
-            <div className={styles.projectOverview}>
+            <div
+              className={styles.projectOverview}
+              onClick={() => {
+                if (!isMobile) {
+                  modalOpen(true);
+                  id(project.id);
+                }
+              }}>
               <div className={styles.textWrapper}>
                 <h1>{project.name}</h1>
                 <p>{project.description}</p>

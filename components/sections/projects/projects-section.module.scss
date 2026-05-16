@@ -234,6 +234,10 @@
           border: 1.4px solid var(--primary);
         }
 
+        &:hover img {
+          transform: scale(1.1);
+        }
+
         &:hover .projectOverview {
           display: block !important;
           height: 100%;

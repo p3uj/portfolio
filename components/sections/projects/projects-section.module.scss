@@ -83,7 +83,7 @@
   .content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: $space-md;
+    gap: 2rem;
 
     z-index: 1;
 
@@ -94,10 +94,6 @@
       background-color: transparent;
 
       position: relative;
-
-      .buttonWrapper {
-        display: none;
-      }
 
       .imageWrapper {
         overflow: hidden;
@@ -118,7 +114,6 @@
 
       .projectOverview {
         display: flex;
-        padding-bottom: 1rem;
 
         animation: up 0.5s ease forwards;
 
@@ -137,18 +132,25 @@
         }
       }
 
-      button {
-        display: none;
+      .buttonWrapper {
+        display: flex;
+        gap: 0.5rem;
 
-        animation: up 0.5s ease forwards;
-      }
+        button {
+          animation: up 0.5s ease forwards;
+        }
 
-      &:hover button {
-        display: block;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        z-index: 3;
+        button:first-of-type {
+          flex: 1;
+        }
+
+        .github {
+          padding: 12px;
+
+          .githubIcon {
+            height: 24px;
+          }
+        }
       }
     }
   }
@@ -213,6 +215,8 @@
     }
 
     .content {
+      gap: $space-md;
+
       margin-top: 5rem;
 
       .projectOverview {
@@ -222,58 +226,12 @@
       .card {
         cursor: pointer;
 
-        &:hover {
-          border: 1.4px solid var(--primary);
+        button {
+          display: none;
         }
 
-        &:hover .buttonWrapper {
-          display: block;
-          height: 56px;
-          width: 120px;
-
-          background-color: var(--background);
-          border-radius: 40px 0 0 0;
-          border-top: 1.4px solid var(--primary);
-          border-left: 1.4px solid var(--primary);
-
-          position: absolute;
-          bottom: -1.4px;
-          right: -1px;
-          z-index: 2;
-
-          &::before {
-            content: "";
-            height: 25px;
-            width: 40px;
-
-            border-radius: 0 0 40px 0;
-            background-color: transparent;
-            border-bottom: 1.4px solid var(--primary);
-            border-right: 1.4px solid var(--primary);
-
-            box-shadow: 7px 7px var(--background);
-
-            position: absolute;
-            bottom: 0.1px;
-            left: -39px;
-          }
-
-          &::after {
-            content: "";
-            height: 25px;
-            width: 40px;
-
-            border-radius: 0 0 40px 0;
-            background-color: transparent;
-            border-bottom: 1px solid var(--primary);
-            border-right: 1px solid var(--primary);
-
-            box-shadow: 17px 2px var(--background);
-
-            position: absolute;
-            top: -25;
-            right: 0.1;
-          }
+        &:hover {
+          border: 1.4px solid var(--primary);
         }
 
         &:hover .projectOverview {
@@ -307,6 +265,62 @@
             p {
               display: none;
             }
+          }
+        }
+
+        &:hover .buttonWrapper {
+          display: flex;
+          justify-content: end;
+          align-items: end;
+          height: 56px;
+          width: 120px;
+
+          background-color: var(--background);
+          border-radius: 40px 0 0 0;
+          border-top: 1.4px solid var(--primary);
+          border-left: 1.4px solid var(--primary);
+
+          position: absolute;
+          bottom: -1.4px;
+          right: -1px;
+          z-index: 2;
+
+          .view {
+            display: block;
+          }
+
+          &::before {
+            content: "";
+            height: 25px;
+            width: 40px;
+
+            border-radius: 0 0 40px 0;
+            background-color: transparent;
+            border-bottom: 1.4px solid var(--primary);
+            border-right: 1.4px solid var(--primary);
+
+            box-shadow: 7px 7px var(--background);
+
+            position: absolute;
+            bottom: 0.1px;
+            left: -39px;
+          }
+
+          &::after {
+            content: "";
+            height: 25px;
+            width: 40px;
+
+            border-radius: 0 0 40px 0;
+            background-color: transparent;
+            border-bottom: 1px solid var(--primary);
+            border-right: 1px solid var(--primary);
+
+            box-shadow: 17px 2px var(--background);
+
+            position: absolute;
+            top: -25;
+            right: 0.1;
           }
         }
 

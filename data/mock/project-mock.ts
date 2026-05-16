@@ -9,6 +9,7 @@ export const PROJECT_MOCK: Project[] = [
       "BizTrend Forecast is a predictive system for the business industry that utilizing data analytics and machine learning to forecast trends such as growth rate, revenue, and least crowded.",
     type: "web",
     watch_demo_link: "https://youtu.be/3O3qhtrHxSg?si=755AjOTBhFdhQmIe",
+    github_link: "https://github.com/p3uj/BizTrend-Forecast",
   },
   {
     id: 2,

@@ -7,6 +7,10 @@ import { PROJECT_MOCK } from "@/data/mock/project-mock";
 import { CountProject, GetImage } from "@/lib/utils/project";
 import { useEffect, useState } from "react";
 import { PROJECT_TAB, ProjectTab } from "@/types";
+import StackIcon from "tech-stack-icons";
+import { SquareArrowOutUpRight } from "lucide-react";
+import { useMediaQuery } from "@/hooks/use-media-query";
+import { useTheme } from "next-themes";
 
 interface ProjectProps {
   modalOpen: (value: boolean) => void;
@@ -16,6 +20,8 @@ interface ProjectProps {
 export default function ProjectsSection({ modalOpen, id }: ProjectProps) {
   const [activeTab, setActiveTab] = useState<ProjectTab>("all");
   const [data, setData] = useState(PROJECT_MOCK);
+  const isMobile = useMediaQuery("(max-width: 639px)");
+  const { theme } = useTheme();
 
   const getData = (tab: ProjectTab) => {
     if (tab != "all") {
@@ -56,18 +62,6 @@ export default function ProjectsSection({ modalOpen, id }: ProjectProps) {
             }}
             key={project.id}
             className={styles.card}>
-            <div className={styles.buttonWrapper}>
-              <Button
-                variant="default"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  modalOpen(true);
-                  id(project.id);
-                }}>
-                View Details
-              </Button>
-            </div>
-
             <div className={styles.imageWrapper}>
               <img
                 src={`${GetImage(null, project.id, true)?.image_path}`}
@@ -82,6 +76,50 @@ export default function ProjectsSection({ modalOpen, id }: ProjectProps) {
                 <h1>{project.name}</h1>
                 <p>{project.description}</p>
               </div>
+            </div>
+
+            <div className={styles.buttonWrapper}>
+              {project.watch_demo_link && (
+                <Button
+                  onClick={() =>
+                    window.open(project.watch_demo_link, "_blank")
+                  }>
+                  Watch Demo
+                  <SquareArrowOutUpRight size={20} />
+                </Button>
+              )}
+
+              {project.live_demo_link && (
+                <Button
+                  onClick={() => window.open(project.live_demo_link, "_blank")}>
+                  Live Demo
+                  <SquareArrowOutUpRight size={20} />
+                </Button>
+              )}
+
+              <Button
+                variant={isMobile ? "outline" : "default"}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  modalOpen(true);
+                  id(project.id);
+                }}
+                className={styles.view}>
+                View Details
+              </Button>
+
+              {project.type === "web" && project.github_link && (
+                <Button
+                  variant="outline"
+                  className={styles.github}
+                  onClick={() => window.open(project.github_link, "_blank")}>
+                  <StackIcon
+                    name="github"
+                    variant={theme === "light" ? "light" : "dark"}
+                    className={styles.githubIcon}
+                  />
+                </Button>
+              )}
             </div>
           </Card>
         ))}

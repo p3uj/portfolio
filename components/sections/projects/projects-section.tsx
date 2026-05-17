@@ -6,7 +6,7 @@ import Button from "@/components/ui/button/button";
 import { PROJECT_MOCK } from "@/data/mock/project-mock";
 import { CountProject, GetImage } from "@/lib/utils/project";
 import { useEffect, useState } from "react";
-import { PROJECT_TAB, ProjectTab } from "@/types";
+import { PROJECT_TAB, ProjectTab, ProjectType } from "@/types";
 import StackIcon from "tech-stack-icons";
 import { SquareArrowOutUpRight } from "lucide-react";
 import { useMediaQuery } from "@/hooks/use-media-query";
@@ -15,9 +15,14 @@ import { useTheme } from "next-themes";
 interface ProjectProps {
   modalOpen: (value: boolean) => void;
   id: (value: number | null) => void;
+  projectType: (value: ProjectType) => void;
 }
 
-export default function ProjectsSection({ modalOpen, id }: ProjectProps) {
+export default function ProjectsSection({
+  modalOpen,
+  id,
+  projectType,
+}: ProjectProps) {
   const [activeTab, setActiveTab] = useState<ProjectTab>("all");
   const [data, setData] = useState(PROJECT_MOCK);
   const isMobile = useMediaQuery("(max-width: 639px)");
@@ -61,6 +66,7 @@ export default function ProjectsSection({ modalOpen, id }: ProjectProps) {
               onClick={() => {
                 modalOpen(true);
                 id(project.id);
+                projectType(project.type);
               }}>
               <img
                 src={`${GetImage(null, project.id, true)?.image_path}`}
@@ -76,6 +82,7 @@ export default function ProjectsSection({ modalOpen, id }: ProjectProps) {
                 if (!isMobile) {
                   modalOpen(true);
                   id(project.id);
+                  projectType(project.type);
                 }
               }}>
               <div className={styles.textWrapper}>
@@ -109,6 +116,7 @@ export default function ProjectsSection({ modalOpen, id }: ProjectProps) {
                   e.stopPropagation();
                   modalOpen(true);
                   id(project.id);
+                  projectType(project.type);
                 }}
                 className={styles.view}>
                 View Details

@@ -30,7 +30,13 @@ cd portfolio
 npm install
 ```
 
-4. Start the development server
+4. Copy `env.example` to `env.local` and update the variables for your local environment
+
+```bash
+cp .env.example .env.local
+```
+
+5. Start the development server
 
 ```bash
 npm run dev

@@ -5,12 +5,17 @@ import { cn } from "@/lib/utils";
 import Badge from "../badge/badge";
 import Button from "../button/button";
 import { SquareArrowOutUpRight } from "lucide-react";
+import { ProjectType } from "@/types";
 
 interface CardModalProps {
   project_id: number | null;
+  project_type: ProjectType | null;
 }
 
-export default function CardModal({ project_id }: CardModalProps) {
+export default function CardModal({
+  project_id,
+  project_type,
+}: CardModalProps) {
   const Project = GetProjectWithFeature(project_id ?? 0);
 
   const [active, setActive] = useState(0);
@@ -118,12 +123,12 @@ export default function CardModal({ project_id }: CardModalProps) {
                 window.open(
                   GetLink(
                     project_id ?? 0,
-                    item.type === "web" ? "watch demo" : "live demo",
+                    project_type === "web" ? "watch demo" : "live demo",
                   ),
                   "_blank",
                 )
               }>
-              {item.type === "UI/UX" ? "Live Demo" : "Watch Demo"}
+              {project_type === "UI/UX" ? "Live Demo" : "Watch Demo"}
               <SquareArrowOutUpRight size={20} />
             </Button>
           </div>

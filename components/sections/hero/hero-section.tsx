@@ -13,6 +13,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip/tooltip";
 import { SKILLS_MOCK } from "@/data/mock/skills-mock";
+import { HERO_CONTENT } from "@/data/mock/portfolio-content";
 
 export default function HeroSection() {
   const router = useRouter();
@@ -27,10 +28,7 @@ export default function HeroSection() {
       </span>
 
       <Card className={styles.card1}>
-        {/* prettier-ignore */}
-        <p>
-        I create complete digital experiences by combining UI/UX design with full stack development. I focus on building fast, responsive, and user-friendly applications that solve real problems.
-      </p>
+        <p>{HERO_CONTENT.desription}</p>
       </Card>
 
       <Card className={styles.card2} onClick={() => router.push("/#contact")}>

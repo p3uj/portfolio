@@ -46,6 +46,11 @@ export default function NavBar() {
     }
   };
 
+  // Force initial URL to #home on first render
+  useEffect(() => {
+    window.history.replaceState(null, "", "#home");
+  }, []);
+
   // Update activeTab state and url when scroll
   useEffect(() => {
     const sectionSelector = NAVBAR_LIST.map(

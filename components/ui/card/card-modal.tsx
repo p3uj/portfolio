@@ -6,6 +6,7 @@ import Badge from "../badge/badge";
 import Button from "../button/button";
 import { SquareArrowOutUpRight } from "lucide-react";
 import { ProjectType } from "@/types";
+import StackIcon from "tech-stack-icons";
 
 interface CardModalProps {
   project_id: number | null;
@@ -20,6 +21,7 @@ export default function CardModal({
 
   const [active, setActive] = useState(0);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const githubLink = project_id ? GetLink(project_id, "github") : null;
 
   const items = [
     "Feature 1",
@@ -118,19 +120,34 @@ export default function CardModal({
               ))}
             </section>
 
-            <Button
-              onClick={() =>
-                window.open(
-                  GetLink(
-                    project_id ?? 0,
-                    project_type === "web" ? "watch demo" : "live demo",
-                  ),
-                  "_blank",
-                )
-              }>
-              {project_type === "UI/UX" ? "Live Demo" : "Watch Demo"}
-              <SquareArrowOutUpRight size={20} />
-            </Button>
+            <section className={styles.buttonWrapper}>
+              <Button
+                onClick={() =>
+                  window.open(
+                    GetLink(
+                      project_id ?? 0,
+                      project_type === "web" ? "watch demo" : "live demo",
+                    ),
+                    "_blank",
+                  )
+                }>
+                {project_type === "UI/UX" ? "Live Demo" : "Watch Demo"}
+                <SquareArrowOutUpRight size={20} />
+              </Button>
+
+              {project_type === "web" && githubLink && (
+                <Button
+                  variant="outline"
+                  className={styles.github}
+                  onClick={() => window.open(githubLink, "_blank")}>
+                  <StackIcon
+                    name="github"
+                    variant="dark"
+                    className={styles.githubIcon}
+                  />
+                </Button>
+              )}
+            </section>
           </div>
         ))}
       </section>

@@ -105,10 +105,23 @@
         padding: 0 1rem;
       }
 
-      button {
-        width: calc(100% - 2rem);
+      .buttonWrapper {
+        display: flex;
+        gap: 0.5rem;
         margin: 0 1rem;
         margin-bottom: 1rem;
+
+        button:first-of-type {
+          flex: 1;
+        }
+
+        .github {
+          padding: 12px;
+
+          .githubIcon {
+            height: 24px;
+          }
+        }
       }
     }
 

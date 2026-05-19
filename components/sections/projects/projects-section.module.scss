@@ -264,9 +264,11 @@
             font-size: 2rem;
             font-family: var(--font-bebas);
 
-            color: var(--foreground-primary);
-
             overflow: auto;
+
+            h1 {
+              color: var(--foreground-primary);
+            }
 
             p {
               display: none;

@@ -27,6 +27,7 @@ export default function ProjectsSection({
   const [data, setData] = useState(PROJECT_MOCK);
   const isMobile = useMediaQuery("(max-width: 639px)");
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   const getData = (tab: ProjectTab) => {
     if (tab != "all") {
@@ -41,6 +42,12 @@ export default function ProjectsSection({
 
     setData(data);
   }, [activeTab]);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <section id="project" className={styles.project}>

@@ -28,6 +28,7 @@ export default function ProjectsSection({
   const isMobile = useMediaQuery("(max-width: 639px)");
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const iconVariant = mounted && theme === "light" ? "light" : "dark";
 
   const getData = (tab: ProjectTab) => {
     if (tab != "all") {
@@ -47,7 +48,7 @@ export default function ProjectsSection({
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  // if (!mounted) return null;
 
   return (
     <section id="project" className={styles.project}>
@@ -136,7 +137,7 @@ export default function ProjectsSection({
                   onClick={() => window.open(project.github_link, "_blank")}>
                   <StackIcon
                     name="github"
-                    variant={theme === "light" ? "light" : "dark"}
+                    variant={iconVariant}
                     className={styles.githubIcon}
                   />
                 </Button>

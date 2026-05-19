@@ -21,6 +21,17 @@ export const PROJECT_MOCK: Project[] = [
     live_demo_link:
       "https://www.figma.com/proto/WQ5szT2NbGTrffxfJOmMlV/Business-Industry-Prediction-System?node-id=442-728&page-id=0%3A1&starting-point-node-id=549%3A2464&scaling=min-zoom&content-scaling=fixed&t=SKJgc2hy8t7K7STH-1",
   },
+  {
+    id: 3,
+    skill_id: [3, 26, 7, 5, 20, 15],
+    name: "RentEase",
+    description:
+      "RentEase is a web-based rental platform that helps tenants and landlords connect more easily through property posting, searching, and management features. The system aims to provide a convenient, accessible, and efficient rental experience for users.",
+    type: "web",
+    watch_demo_link: "https://youtu.be/4_xOdCWI0bs",
+    github_link:
+      "https://github.com/p3uj/Case-Study_Web_Dev_and_DBA_A.Y-2024-2025",
+  },
 ];
 
 export const PROJECT_FEATURE_MOCK: ProjectFeature[] = [
@@ -63,6 +74,62 @@ export const PROJECT_FEATURE_MOCK: ProjectFeature[] = [
     name: "Account Profile Management",
     description:
       "The system allows users to update their personal information, including their first and last name, and change their profile picture for personalized account management.",
+  },
+  {
+    id: 6,
+    project_id: 3,
+    image_id: 9,
+    name: "Registration",
+    description:
+      "The system allows new users to create an account by providing basic information to access the platform.",
+  },
+  {
+    id: 7,
+    project_id: 3,
+    image_id: 10,
+    name: "Secure Login Authentication",
+    description:
+      "Secure login system using Laravel authentication to protect user accounts and data.",
+  },
+  {
+    id: 8,
+    project_id: 3,
+    image_id: 11,
+    name: "Property Posting",
+    description:
+      "The system enables landlords to post rental properties with details such as unit category, location, price, occupancy, and description.",
+  },
+  {
+    id: 9,
+    project_id: 3,
+    image_id: 12,
+    name: "Find Roommate/Tenant Posting",
+    description:
+      "The system allows users to post or search for roommates or tenants for shared or available living spaces.",
+  },
+  {
+    id: 10,
+    project_id: 3,
+    image_id: 13,
+    name: "Reviews and Ratings",
+    description:
+      "The system allows users to leave feedback and ratings for tenants or landlords to build trust and transparency.",
+  },
+  {
+    id: 11,
+    project_id: 3,
+    image_id: 14,
+    name: "Profile Management",
+    description:
+      "The system allows users to manage and update their profile information and view their own posts and activities.",
+  },
+  {
+    id: 12,
+    project_id: 3,
+    image_id: 15,
+    name: "User Search & Profile Viewing",
+    description:
+      "The system allows users to search for other users and view their profiles, posts, reviews and ratings.",
   },
 ];
 
@@ -115,5 +182,54 @@ export const PROJECT_IMAGES_MOCK: ProjectImage[] = [
     image_path:
       "/images/projects/biztrend-forecast/biztrend-forecast-landing-page.svg",
     is_cover: true,
+  },
+  {
+    id: 8,
+    project_id: 3,
+    image_path: "/images/projects/rentease-web/rentease-home.svg",
+    is_cover: true,
+  },
+  {
+    id: 9,
+    project_id: 3,
+    image_path: "/images/projects/rentease-web/rentease-registration.svg",
+    is_cover: false,
+  },
+  {
+    id: 10,
+    project_id: 3,
+    image_path: "/images/projects/rentease-web/rentease-login.svg",
+    is_cover: false,
+  },
+  {
+    id: 11,
+    project_id: 3,
+    image_path: "/images/projects/rentease-web/rentease-properties.svg",
+    is_cover: false,
+  },
+  {
+    id: 12,
+    project_id: 3,
+    image_path:
+      "/images/projects/rentease-web/rentease-search-roommate-tenant.svg",
+    is_cover: false,
+  },
+  {
+    id: 13,
+    project_id: 3,
+    image_path: "/images/projects/rentease-web/rentease-review.svg",
+    is_cover: false,
+  },
+  {
+    id: 14,
+    project_id: 3,
+    image_path: "/images/projects/rentease-web/rentease-profile-management.svg",
+    is_cover: false,
+  },
+  {
+    id: 15,
+    project_id: 3,
+    image_path: "/images/projects/rentease-web/rentease-search-user.svg",
+    is_cover: false,
   },
 ];

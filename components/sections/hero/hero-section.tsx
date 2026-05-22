@@ -23,7 +23,7 @@ export default function HeroSection() {
       <Badge name="available for work" className={styles.status} />
 
       <span>
-        Hi, I'm
+        Hi, I&apos;m
         <h1>Bengie</h1>
       </span>
 
@@ -32,7 +32,7 @@ export default function HeroSection() {
       </Card>
 
       <Card className={styles.card2} onClick={() => router.push("/#contact")}>
-        <p>Let's build something meaningful together.</p>
+        <p>Let&apos;s build something meaningful together.</p>
         <ArrowUpRight size={18} />
       </Card>
 
@@ -45,7 +45,6 @@ export default function HeroSection() {
           Projects
           <ArrowUpRight size={18} />
         </Button>
-        <Button variant="outline">Resume</Button>
       </section>
 
       <section className={styles.profileWrapper}>

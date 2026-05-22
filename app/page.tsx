@@ -6,13 +6,14 @@ import Footer from "@/components/ui/footer/footer";
 import Modal from "@/components/ui/modal/modal";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "../components/ui/theme-toggle";
+// import { ThemeToggle } from "../components/ui/theme-toggle";
 import HeroSection from "@/components/sections/hero/hero-section";
 import AboutSection from "../components/sections/about/about-section";
 import ProjectsSection from "../components/sections/projects/projects-section";
 import SkillsSections from "../components/sections/skills/skills-section";
 import ContactSection from "@/components/sections/contact/contack-section";
 import { ProjectType } from "@/types";
+import { ThemeTogglerButton } from "@/components/animate-ui/components/buttons/theme-toggler";
 
 export default function Page() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -36,7 +37,11 @@ export default function Page() {
         />
       )}
 
-      <ThemeToggle />
+      <ThemeTogglerButton
+        variant={"ghost"}
+        className="fixed right-4 top-4 z-[101] cursor-pointer"
+      />
+      {/* <ThemeToggle /> */}
 
       <div className={cn(styles.layout, modalOpen && styles.noScroll)}>
         <NavBar />

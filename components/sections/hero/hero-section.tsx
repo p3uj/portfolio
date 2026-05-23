@@ -14,6 +14,8 @@ import {
 } from "@/components/ui/tooltip/tooltip";
 import { SKILLS_MOCK } from "@/data/mock/skills-mock";
 import { HERO_CONTENT } from "@/data/mock/portfolio-content";
+import { SlidingNumber } from "@/components/animate-ui/primitives/texts/sliding-number";
+import { PROJECT_MOCK } from "@/data/mock/project-mock";
 
 export default function HeroSection() {
   const router = useRouter();
@@ -22,8 +24,8 @@ export default function HeroSection() {
     <section id="home" className={styles.hero}>
       <Badge name="available for work" className={styles.status} />
 
-      <span>
-        Hi, I&apos;m
+      <span className={styles.title}>
+        Hi, I'm
         <h1>Bengie</h1>
       </span>
 
@@ -60,11 +62,23 @@ export default function HeroSection() {
 
         <section className={styles.overview}>
           <Card className={styles.projectDone}>
-            <h1>3+</h1>
+            <div className={styles.numberWrapper}>
+              <SlidingNumber
+                number={PROJECT_MOCK.length}
+                className={styles.slidingNumber}
+              />
+              <span className={styles.plus}>+</span>
+            </div>
             <p>Project Done</p>
           </Card>
           <Card className={styles.experience}>
-            <h1>{SKILLS_MOCK.length}+</h1>
+            <div className={styles.numberWrapper}>
+              <SlidingNumber
+                number={SKILLS_MOCK.length}
+                className={styles.slidingNumber}
+              />
+              <span className={styles.plus}>+</span>
+            </div>
             <p>Total Skills</p>
           </Card>
         </section>

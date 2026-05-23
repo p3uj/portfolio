@@ -26,7 +26,7 @@
     }
   }
 
-  span {
+  .title {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -332,6 +332,23 @@
 
         padding: 1rem;
 
+        .slidingNumber,
+        .plus {
+          margin: 0;
+
+          font-weight: 600;
+          font-size: 26px;
+          line-height: 1;
+
+          span {
+            margin: 0;
+          }
+        }
+
+        .plus {
+          animation: fade 1.5s ease forwards;
+        }
+
         h1 {
           font-size: 26px;
           line-height: 1;
@@ -452,6 +469,16 @@
     .project {
       bottom: 9rem;
     }
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 

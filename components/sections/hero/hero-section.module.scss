@@ -7,6 +7,8 @@
 
   position: relative;
 
+  overflow: hidden;
+
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 0.1) 0%,
@@ -65,7 +67,10 @@
     margin: 1rem;
     bottom: calc(48px + 8px + 50px + 8px);
 
-    z-index: 1;
+    z-index: 2;
+
+    opacity: 0;
+    animation: fadeRight 0.5s ease forwards;
 
     p {
       text-align: justify;
@@ -85,6 +90,9 @@
     align-items: center;
 
     transition: all ease 0.3s;
+
+    opacity: 0;
+    animation: fadeDown 0.5s ease 0.5s forwards;
 
     p {
       font-size: 12px;
@@ -113,6 +121,9 @@
 
     display: flex;
     gap: 0.5rem;
+
+    opacity: 0;
+    animation: fadeUp 0.5s ease 0.5s forwards;
 
     button:not(button:first-of-type) {
       -webkit-backdrop-filter: blur(3px);
@@ -205,6 +216,16 @@
   .overview,
   .project {
     display: none;
+
+    opacity: 1;
+  }
+
+  .overview {
+    animation: fadeUp 0.5s ease forwards;
+  }
+
+  .project {
+    animation: zoomIn 0.5s ease forwards;
   }
 }
 
@@ -273,6 +294,52 @@
 
   50% {
     transform: translateY(-6px);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 // ----------------- END ANIMATION ----------------- //
@@ -379,6 +446,8 @@
         z-index: 2;
 
         div:nth-child(1) {
+          // animation: project1Hover 0.5s ease forwards;
+
           left: -55px;
           rotate: -12deg;
           transform: scale(1.05);
@@ -423,6 +492,7 @@
         z-index: 1;
 
         transition: all 0.5s ease;
+        // animation: project1 0.5s ease forwards;
       }
 
       div:nth-child(2) {

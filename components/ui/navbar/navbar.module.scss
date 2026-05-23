@@ -18,6 +18,9 @@
   .navigation {
     width: fit-content;
 
+    opacity: 0;
+    @include animation-down;
+
     background: var(--navbar);
     box-shadow: 0 0 0 1px var(--border-card);
     -webkit-backdrop-filter: blur(3px);

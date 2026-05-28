@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useTheme } from "next-themes";
-import { Monitor, Moon, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { VariantProps } from "class-variance-authority";
 
 import {
@@ -12,22 +12,7 @@ import {
   type Resolved,
 } from "@/components/animate-ui/primitives/effects/theme-toggler";
 import { buttonVariants } from "@/components/animate-ui/components/buttons/icon";
-import { cn } from "@/lib/utils";
-
-const getIcon = (
-  effective: ThemeSelection,
-  resolved: Resolved,
-  modes: ThemeSelection[],
-) => {
-  const theme = modes.includes("system") ? effective : resolved;
-  return theme === "system" ? (
-    <Monitor />
-  ) : theme === "dark" ? (
-    <Moon />
-  ) : (
-    <Sun />
-  );
-};
+import styles from "./switch.module.scss";
 
 const getNextTheme = (
   effective: ThemeSelection,
@@ -49,7 +34,6 @@ function ThemeTogglerButton({
   variant = "default",
   size = "default",
   modes = ["light", "dark"],
-  direction = "ltr",
   onImmediateChange,
   onClick,
   className,
@@ -65,6 +49,8 @@ function ThemeTogglerButton({
 
   if (!mounted) return null;
 
+  const direction = resolvedTheme === "dark" ? "rtl" : "ltr";
+
   return (
     <ThemeTogglerPrimitive
       theme={theme as ThemeSelection}
@@ -74,14 +60,18 @@ function ThemeTogglerButton({
       onImmediateChange={onImmediateChange}>
       {({ effective, resolved, toggleTheme }) => (
         <button
-          data-slot="theme-toggler-button"
-          className={cn(buttonVariants({ variant, size, className }))}
+          type="button"
+          data-mode={resolved}
+          className={styles.switch}
           onClick={(e) => {
             onClick?.(e);
             toggleTheme(getNextTheme(effective, modes));
-          }}
-          {...props}>
-          {getIcon(effective, resolved, modes)}
+          }}>
+          {resolved === "light" ? (
+            <Moon data-mode={resolved} size={12} />
+          ) : (
+            <Sun data-mode={resolved} size={12} />
+          )}
         </button>
       )}
     </ThemeTogglerPrimitive>

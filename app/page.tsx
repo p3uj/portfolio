@@ -37,10 +37,7 @@ export default function Page() {
         />
       )}
 
-      <ThemeTogglerButton
-        variant={"ghost"}
-        className="fixed right-4 top-4 z-[101] cursor-pointer"
-      />
+      <ThemeTogglerButton variant={"ghost"} />
       {/* <ThemeToggle /> */}
 
       <div className={cn(styles.layout, modalOpen && styles.noScroll)}>

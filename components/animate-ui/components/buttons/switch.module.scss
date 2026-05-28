@@ -1,0 +1,68 @@
+@use "../../../../styles/" as *;
+
+.switch {
+  height: 24px;
+  width: 40px;
+
+  background-color: var(--color-neutral-300);
+  border-radius: 9999px;
+
+  padding: 4px;
+  display: flex;
+  justify-content: space-around;
+
+  align-items: center;
+
+  cursor: pointer;
+
+  position: fixed;
+  top: 18;
+  right: 18;
+  z-index: 101;
+
+  svg {
+    @include zoom-in-animation;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+
+    height: 18px;
+    width: 18px;
+
+    border-radius: 9999px;
+
+    box-shadow:
+      0 1px 1px rgba(0, 0, 0, 0.03),
+      0 6px 16px rgba(0, 0, 0, 0.05);
+
+    transition: left 0.5s ease;
+  }
+
+  &[data-mode="light"] {
+    &::before {
+      left: 3px;
+
+      background-color: var(--color-neutral-50);
+    }
+
+    justify-content: flex-end;
+  }
+
+  &[data-mode="dark"] {
+    &::before {
+      left: 19px;
+
+      background-color: var(--color-stone-900);
+    }
+
+    justify-content: flex-start;
+  }
+}
+
+:global(.dark) .switch {
+  background-color: var(--color-stone-800);
+}

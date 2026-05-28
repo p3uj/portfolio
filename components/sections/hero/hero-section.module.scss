@@ -20,8 +20,20 @@
     position: absolute;
     top: 7%;
 
+    display: inline-flex;
+    white-space: nowrap;
+
     align-items: center;
-    gap: 12px;
+
+    @include zoom-in-animation;
+
+    span {
+      width: 0;
+
+      overflow: hidden;
+
+      animation: expand-width 0.5s ease 0.5s forwards;
+    }
 
     &::before {
       @include circle;
@@ -42,6 +54,8 @@
     color: var(--primary);
 
     font-family: var(--font-bebas), sans-serif;
+
+    @include fade-up-animation;
 
     h1 {
       font-size: 7rem;
@@ -70,7 +84,8 @@
     z-index: 2;
 
     opacity: 0;
-    animation: fadeRight 0.5s ease forwards;
+    // animation: fadeRight 0.5s ease forwards;
+    @include fade-right-animation;
 
     p {
       text-align: justify;
@@ -92,7 +107,10 @@
     transition: all ease 0.3s;
 
     opacity: 0;
-    animation: fadeDown 0.5s ease 0.5s forwards;
+
+    @include fade-down-animation {
+      animation-delay: 0.5s;
+    }
 
     p {
       font-size: 12px;
@@ -123,7 +141,9 @@
     gap: 0.5rem;
 
     opacity: 0;
-    animation: fadeUp 0.5s ease 0.5s forwards;
+    @include fade-up-animation {
+      animation-delay: 0.5s;
+    }
 
     button:not(button:first-of-type) {
       -webkit-backdrop-filter: blur(3px);
@@ -221,11 +241,11 @@
   }
 
   .overview {
-    animation: fadeUp 0.5s ease forwards;
+    @include fade-up-animation;
   }
 
   .project {
-    animation: zoomIn 0.5s ease forwards;
+    @include zoom-in-animation;
   }
 }
 
@@ -297,49 +317,16 @@
   }
 }
 
-@keyframes fadeRight {
-  from {
-    opacity: 0;
-    transform: translateX(-300px);
+@keyframes expand-width {
+  0% {
+    width: 0;
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  1% {
+    margin-left: 12px;
   }
-}
-
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
+  100% {
+    width: 102px;
+    margin-left: 12px;
   }
 }
 // ----------------- END ANIMATION ----------------- //
@@ -360,7 +347,7 @@
     padding-top: 60px;
 
     .status,
-    span {
+    .title {
       margin-top: 60px;
     }
 

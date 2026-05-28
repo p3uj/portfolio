@@ -19,7 +19,7 @@
     width: fit-content;
 
     opacity: 0;
-    @include animation-down;
+    @include fade-down-animation;
 
     background: var(--navbar);
     box-shadow: 0 0 0 1px var(--border-card);

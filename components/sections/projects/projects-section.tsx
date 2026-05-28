@@ -11,6 +11,7 @@ import StackIcon from "tech-stack-icons";
 import { SquareArrowOutUpRight } from "lucide-react";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { useTheme } from "next-themes";
+import { Highlight } from "@/components/animate-ui/primitives/effects/highlight";
 
 interface ProjectProps {
   modalOpen: (value: boolean) => void;
@@ -55,15 +56,19 @@ export default function ProjectsSection({
       <h1 className={styles.sectionTitle}>Featured Projects</h1>
 
       <section className={styles.tab}>
-        {PROJECT_TAB.map((tab, index) => (
-          <Button
-            key={index}
-            variant="ghost"
-            className={activeTab === tab ? styles.active : ""}
-            onClick={() => setActiveTab(tab)}>
-            {tab} <span>({CountProject(tab)})</span>
-          </Button>
-        ))}
+        <Highlight
+          defaultValue={PROJECT_TAB[0]}
+          className="rounded-full bg-[var(--primary)] inset-0">
+          {PROJECT_TAB.map((tab, index) => (
+            <Button
+              key={index}
+              data-value={tab}
+              variant="ghost"
+              onClick={() => setActiveTab(tab)}>
+              {tab} <span>({CountProject(tab)})</span>
+            </Button>
+          ))}
+        </Highlight>
       </section>
 
       <section className={styles.content}>

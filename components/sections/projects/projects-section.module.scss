@@ -65,18 +65,12 @@
       }
     }
 
-    button:hover:not(.active) {
-      color: var(--primary);
-    }
-
-    button:active {
-      background-color: transparent;
-      box-shadow: none;
-    }
-
-    .active {
-      background-color: var(--primary);
+    button[data-active="true"] {
       color: var(--color-neutral-50);
+    }
+
+    button:hover:not(button[data-active="true"]) {
+      color: var(--primary);
     }
   }
 

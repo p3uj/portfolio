@@ -8,6 +8,8 @@ interface BadgeProps {
 
 export default function Badge({ name, className = "" }: BadgeProps) {
   return (
-    <div className={cn(styles.badge, styles[name], className)}>{name}</div>
+    <div className={cn(styles.badge, styles[name], className)}>
+      <span>{name}</span>
+    </div>
   );
 }

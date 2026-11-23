@@ -87,13 +87,70 @@ export default function HeroSection() {
           <TooltipTrigger asChild>
             <section className={styles.project}>
               <div onClick={() => router.push("/#project")}>
-                <img src="/images/projects/project1/Image1.png" alt="image" />
+                <img
+                  src="/images/projects/project1/Image1-800.webp"
+                  srcSet="
+                    /images/projects/project1/Image1-400.webp 400w,
+                    /images/projects/project1/Image1-800.webp 800w,
+                    /images/projects/project1/Image1-1200.webp 1200w,
+                    /images/projects/project1/Image1-1600.webp 1600w
+                  "
+                  sizes="
+                    (max-width: 767px) 100vw,
+                    (max-width: 1023px) 80vw,
+                    (max-width: 1439px) 761px,
+                    761px
+                  "
+                  alt="Project 1 image"
+                  width="2000"
+                  height="2000"
+                  fetchPriority="high"
+                  decoding="async"
+                />
               </div>
               <div onClick={() => router.push("/#project")}>
-                <img src="/images/projects/project1/Image2.png" alt="image" />
+                <img
+                  src="/images/projects/project1/Image2-800.webp"
+                  srcSet="
+                    /images/projects/project1/Image2-400.webp 400w,
+                    /images/projects/project1/Image2-800.webp 800w,
+                    /images/projects/project1/Image2-1200.webp 1200w,
+                    /images/projects/project1/Image2-1600.webp 1600w
+                  "
+                  sizes="
+                    (max-width: 767px) 100vw,
+                    (max-width: 1023px) 80vw,
+                    (max-width: 1439px) 761px,
+                    761px
+                  "
+                  alt="Project 2 image"
+                  width="2000"
+                  height="2000"
+                  fetchPriority="high"
+                  decoding="async"
+                />
               </div>
               <div onClick={() => router.push("/#project")}>
-                <img src="/images/projects/project1/Image3.png" alt="image" />
+                <img
+                  src="/images/projects/project1/Image3-800.webp"
+                  srcSet="
+                    /images/projects/project1/Image3-400.webp 400w,
+                    /images/projects/project1/Image3-800.webp 800w,
+                    /images/projects/project1/Image3-1200.webp 1200w,
+                    /images/projects/project1/Image3-1600.webp 1600w
+                  "
+                  sizes="
+                    (max-width: 767px) 100vw,
+                    (max-width: 1023px) 80vw,
+                    (max-width: 1439px) 761px,
+                    761px  
+                  "
+                  alt="Project 3 image"
+                  width="2000"
+                  height="2000"
+                  fetchPriority="high"
+                  decoding="async"
+                />
               </div>
             </section>
           </TooltipTrigger>
@@ -102,7 +159,26 @@ export default function HeroSection() {
           </TooltipContent>
         </Tooltip>
 
-        <img src="/images/ID.png" alt="Bengie Villesco" />
+        <img
+          src="/images/ID-800.webp"
+          srcSet="
+            /images/ID-400.webp 400w,
+            /images/ID-800.webp 800w,
+            /images/ID-1200.webp 1200w,
+            /images/ID-1600.webp 1600w
+          "
+          sizes="
+            (max-width: 767px) 100vw,
+            (max-width: 1023px) 80vw,
+            (max-width: 1439px) 761px,
+            761px
+          "
+          alt="Bengie Villesco Profile Picture"
+          width="2000"
+          height="2000"
+          fetchPriority="high"
+          decoding="async"
+        />
       </section>
     </section>
   );

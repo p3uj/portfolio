@@ -22,150 +22,14 @@ export default function HeroSection() {
 
   return (
     <section id="home" className={styles.hero}>
-      <Badge name="available for work" className={styles.status} />
-
-      <span className={styles.title}>
-        Hi, I'm
-        <h1>Bengie</h1>
-      </span>
-
-      <Card className={styles.card1}>
-        <p>{HERO_CONTENT.desription}</p>
-      </Card>
-
-      <Card className={styles.card2} onClick={() => router.push("/#contact")}>
-        <p>Let&apos;s build something meaningful together.</p>
-        <ArrowUpRight size={18} />
-      </Card>
-
-      <section className={styles.buttonWrapper}>
-        <Button onClick={() => router.push("/#contact")}>
-          <MousePointerClick size={18} />
-          Hire Me
-        </Button>
-        <Button variant="outline" onClick={() => router.push("/#project")}>
-          Projects
-          <ArrowUpRight size={18} />
-        </Button>
-      </section>
-
-      <section className={styles.profileWrapper}>
-        <section className={styles.roleWrapper}>
-          {ROLES.map((role, index) => (
-            <Badge
-              key={index}
-              name={role}
-              className={styles[`role-${index}`]}
-            />
-          ))}
-        </section>
-
-        <section className={styles.overview}>
-          <Card className={styles.projectDone}>
-            <div className={styles.numberWrapper}>
-              <SlidingNumber
-                number={PROJECT_MOCK.length}
-                className={styles.slidingNumber}
-              />
-              <span className={styles.plus}>+</span>
-            </div>
-            <p>Project Done</p>
-          </Card>
-          <Card className={styles.experience}>
-            <div className={styles.numberWrapper}>
-              <SlidingNumber
-                number={SKILLS_MOCK.length}
-                className={styles.slidingNumber}
-              />
-              <span className={styles.plus}>+</span>
-            </div>
-            <p>Total Skills</p>
-          </Card>
-        </section>
-
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <section className={styles.project}>
-              <div onClick={() => router.push("/#project")}>
-                <img
-                  src="/images/projects/project1/Image1-800.webp"
-                  srcSet="
-                    /images/projects/project1/Image1-400.webp 400w,
-                    /images/projects/project1/Image1-800.webp 800w,
-                    /images/projects/project1/Image1-1200.webp 1200w,
-                    /images/projects/project1/Image1-1600.webp 1600w
-                  "
-                  sizes="
-                    (max-width: 767px) 100vw,
-                    (max-width: 1023px) 80vw,
-                    (max-width: 1439px) 761px,
-                    761px
-                  "
-                  alt="Project 1 image"
-                  width="2000"
-                  height="2000"
-                  fetchPriority="high"
-                  decoding="async"
-                />
-              </div>
-              <div onClick={() => router.push("/#project")}>
-                <img
-                  src="/images/projects/project1/Image2-800.webp"
-                  srcSet="
-                    /images/projects/project1/Image2-400.webp 400w,
-                    /images/projects/project1/Image2-800.webp 800w,
-                    /images/projects/project1/Image2-1200.webp 1200w,
-                    /images/projects/project1/Image2-1600.webp 1600w
-                  "
-                  sizes="
-                    (max-width: 767px) 100vw,
-                    (max-width: 1023px) 80vw,
-                    (max-width: 1439px) 761px,
-                    761px
-                  "
-                  alt="Project 2 image"
-                  width="2000"
-                  height="2000"
-                  fetchPriority="high"
-                  decoding="async"
-                />
-              </div>
-              <div onClick={() => router.push("/#project")}>
-                <img
-                  src="/images/projects/project1/Image3-800.webp"
-                  srcSet="
-                    /images/projects/project1/Image3-400.webp 400w,
-                    /images/projects/project1/Image3-800.webp 800w,
-                    /images/projects/project1/Image3-1200.webp 1200w,
-                    /images/projects/project1/Image3-1600.webp 1600w
-                  "
-                  sizes="
-                    (max-width: 767px) 100vw,
-                    (max-width: 1023px) 80vw,
-                    (max-width: 1439px) 761px,
-                    761px  
-                  "
-                  alt="Project 3 image"
-                  width="2000"
-                  height="2000"
-                  fetchPriority="high"
-                  decoding="async"
-                />
-              </div>
-            </section>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>View projects</p>
-          </TooltipContent>
-        </Tooltip>
-
+      <picture>
         <img
-          src="/images/ID-800.webp"
+          src="/images/hero-profile-800.webp"
           srcSet="
-            /images/ID-400.webp 400w,
-            /images/ID-800.webp 800w,
-            /images/ID-1200.webp 1200w,
-            /images/ID-1600.webp 1600w
+            /images/hero-profile-400.webp 400w,
+            /images/hero-profile-800.webp 800w,
+            /images/hero-profile-1200.webp 1200w,
+            /images/hero-profile-1600.webp 1600w
           "
           sizes="
             (max-width: 767px) 100vw,
@@ -179,7 +43,23 @@ export default function HeroSection() {
           fetchPriority="high"
           decoding="async"
         />
-      </section>
+      </picture>
+
+      <h1>
+        BUILDING <br />
+        DIGITAL <br />
+        SOLUTIONS <br />
+        THAT MAKE A <br />
+        DIFFERENCE
+      </h1>
+
+      <div className={styles.details_container}>
+        <h3>Bengie Villesco</h3>
+
+        <p>I'm a Full Stack Developer focused on <span className={styles.highlight}>building functional, scalable, and user-friendly</span> web applications that help businesses solve problems and turn ideas into reality.</p>
+      </div>
+
+      <h2 className={styles.role_mobile}>—FULL STACK DEVELOPER</h2>
     </section>
   );
 }
